@@ -15,3 +15,17 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.cu__brand--big-letter {
+    font-size: 5rem;
+    font-weight: bold;
+    color: #6e9c22;
+}
+.cu__brand {
+    font-size: 2.5rem;
+    color: #3b506c;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
