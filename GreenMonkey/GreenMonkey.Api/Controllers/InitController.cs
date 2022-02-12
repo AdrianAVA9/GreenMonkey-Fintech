@@ -40,14 +40,9 @@ namespace GreenMonkey.Api.Controllers
 
         [HttpGet]
         [Route("HealthCheck")]
-        public async Task<string> HealthCheck()
+        public string HealthCheck()
         {
-            var result = await CenfoBank.HealthCheck();
-
-            if (result)
-                return "Ok";
-
-            return "The service is down";
+            return "Ok";
         }
     }
 }
