@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 
@@ -10,18 +11,18 @@ namespace GreenMonkey.Api.ThirdPartyApi
 {
     public class CenfoBankSource
     {
-        private string URL { get; set; }
+        private string BaseUrl { get; set; }
 
         public CenfoBankSource()
         {
-            URL = "https://sunpe-cenfobank.azurewebsites.net/api/Suscription/";
+            BaseUrl = "https://sunpe-cenfobank.azurewebsites.net/api/";
         }
 
         public async Task<bool> Init()
         {
-            var endpoint = "Subscribe";
+            var endpoint = "Suscription/Subscribe";
             var httpClient = new HttpClient();
-            var uri = new Uri(URL + endpoint);
+            var url = new Uri(BaseUrl + endpoint);
             var suscriptor = new Suscriptor()
             {
                 Name = "GreenMonkey",
@@ -32,20 +33,21 @@ namespace GreenMonkey.Api.ThirdPartyApi
             };
 
             var contentType = "application/json";
-            var body = new StringContent(Newtonsoft.Json.JsonConvert.SerializeObject(suscriptor));
+            var body = new StringContent(Newtonsoft.Json.JsonConvert.SerializeObject(suscriptor),
+                Encoding.UTF8);
             body.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue(contentType);
-            var response = await httpClient.PostAsync(uri, body);
+            var response = await httpClient.PostAsync(url, body);
 
             return response.IsSuccessStatusCode;
         }
 
         public async Task<ApiResponse> RetrieveAllSuscriptor()
         {
-            var endpoint = "RetrieveAll";
+            var endpoint = "Suscription/RetrieveAll";
             var httClient = new HttpClient();
-            var uri = new Uri(URL + endpoint);
+            var url = new Uri(BaseUrl + endpoint);
 
-            var response = await httClient.GetAsync(uri);
+            var response = await httClient.GetAsync(url);
 
             if (!response.IsSuccessStatusCode)
                 return new ApiResponse() { Message = "We could not load the suscriptors" };
@@ -56,11 +58,11 @@ namespace GreenMonkey.Api.ThirdPartyApi
 
         public async Task<bool> HealthCheck()
         {
-            var endpoint = "Init";
+            var endpoint = "Suscription/Init";
             var httpClient = new HttpClient();
-            var uri = new Uri(URL + endpoint);
+            var url = new Uri(BaseUrl + endpoint);
 
-            var response = await httpClient.PostAsync(uri, null);
+            var response = await httpClient.PostAsync(url, null);
             return response.IsSuccessStatusCode;
         }
     }

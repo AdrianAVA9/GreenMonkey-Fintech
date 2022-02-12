@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiResponse.cs" />
+    <Compile Include="FintechStatus.cs" />
     <Compile Include="Suscriptor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
