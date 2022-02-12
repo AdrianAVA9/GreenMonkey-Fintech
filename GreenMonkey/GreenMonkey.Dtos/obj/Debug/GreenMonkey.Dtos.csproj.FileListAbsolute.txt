@@ -1,0 +1,6 @@
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Dtos\bin\Debug\GreenMonkey.Dtos.dll
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Dtos\bin\Debug\GreenMonkey.Dtos.pdb
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Dtos\obj\Debug\GreenMonkey.Dtos.csproj.AssemblyReference.cache
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Dtos\obj\Debug\GreenMonkey.Dtos.csproj.CoreCompileInputs.cache
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Dtos\obj\Debug\GreenMonkey.Dtos.dll
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Dtos\obj\Debug\GreenMonkey.Dtos.pdb

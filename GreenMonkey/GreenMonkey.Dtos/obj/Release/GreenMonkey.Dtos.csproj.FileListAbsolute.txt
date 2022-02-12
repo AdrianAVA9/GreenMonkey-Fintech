@@ -1,0 +1,5 @@
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Dtos\bin\Release\GreenMonkey.Dtos.dll
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Dtos\bin\Release\GreenMonkey.Dtos.pdb
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Dtos\obj\Release\GreenMonkey.Dtos.csproj.CoreCompileInputs.cache
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Dtos\obj\Release\GreenMonkey.Dtos.dll
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Dtos\obj\Release\GreenMonkey.Dtos.pdb

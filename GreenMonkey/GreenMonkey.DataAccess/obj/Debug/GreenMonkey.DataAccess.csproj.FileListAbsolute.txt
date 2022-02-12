@@ -1,0 +1,5 @@
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.DataAccess\bin\Debug\GreenMonkey.DataAccess.dll
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.DataAccess\bin\Debug\GreenMonkey.DataAccess.pdb
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.DataAccess\obj\Debug\GreenMonkey.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.DataAccess\obj\Debug\GreenMonkey.DataAccess.dll
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.DataAccess\obj\Debug\GreenMonkey.DataAccess.pdb

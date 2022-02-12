@@ -156,11 +156,13 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InitController.cs" />
     <Compile Include="Controllers\SuscriptorController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ThirdPartyApi\CenfoBankSource.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -3034,6 +3036,7 @@
     <Content Include="Content\assets\libs\jquery.scrollbar\scrollbar.jquery.json" />
     <Content Include="Content\assets\libs\nouislider\CHANGELOG.MD" />
     <Content Include="Content\assets\libs\sticky-kit\dist\Tupfile" />
+    <None Include="Properties\PublishProfiles\green-monkeybank - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -3088,6 +3091,12 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GreenMonkey.Dtos\GreenMonkey.Dtos.csproj">
+      <Project>{0C8497E2-D4FC-47DF-BA2C-D1D5DF066915}</Project>
+      <Name>GreenMonkey.Dtos</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

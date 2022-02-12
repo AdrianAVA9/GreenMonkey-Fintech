@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "0c8497e2-d4fc-47df-ba2c-d1d5df066915": {
+      "ProjectGuid": "0c8497e2-d4fc-47df-ba2c-d1d5df066915",
+      "DisplayName": "GreenMonkey.Dtos",
+      "ColorIndex": 0
+    },
+    "36b32eef-fdbf-4a8f-8c90-69149a158cf8": {
+      "ProjectGuid": "36b32eef-fdbf-4a8f-8c90-69149a158cf8",
+      "DisplayName": "GreenMonkey.DataAccess",
+      "ColorIndex": 1
+    },
+    "75dcb721-0f10-4567-9683-0bd11e2637c0": {
+      "ProjectGuid": "75dcb721-0f10-4567-9683-0bd11e2637c0",
+      "DisplayName": "GreenMonkey.Api",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}
