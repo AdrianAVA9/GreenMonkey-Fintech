@@ -44,7 +44,7 @@ namespace GreenMonkey.Api.Controllers
         [Route("HealthCheck")]
         public string HealthCheck()
         {
-            return "Ok";
+            return "Online";
         }
 
         [HttpGet]
