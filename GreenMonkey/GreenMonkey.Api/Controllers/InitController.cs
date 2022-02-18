@@ -47,7 +47,7 @@ namespace GreenMonkey.Api.Controllers
             return "Online";
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("HealthCheck")]
         public IHttpActionResult HealthCheck([FromBody] List<FintechStatusDto> fintechsDto)
         {
@@ -62,6 +62,27 @@ namespace GreenMonkey.Api.Controllers
                 manager.AddFintech(fintechs);
 
                 return Ok();
+            }
+            catch (Exception)
+            {
+                return InternalServerError();
+            }
+        }
+
+        [HttpGet]
+        [Route("RetrieveFintechStatus")]
+        public IHttpActionResult RetrieveFintechStatus()
+        {
+            try
+            {
+                var manager = new FintechManager();
+                var apiResponse = new ApiResponse()
+                {
+                    Data = manager.RetrieveAllAddFintech(),
+                    Message = "Success"
+                };
+
+                return Ok(apiResponse);
             }
             catch (Exception)
             {

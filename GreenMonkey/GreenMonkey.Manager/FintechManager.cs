@@ -16,5 +16,18 @@ namespace GreenMonkey.Manager
                 MemoryPersistence.StoreData(fintechStatus.Suscriptor.Code, fintechStatus);
             });
         }
+
+        public List<FintechStatus> RetrieveAllAddFintech()
+        {
+            var data = MemoryPersistence.GetData();
+            var fintechStatusList = new List<FintechStatus>();
+            
+            foreach(var fintechStatus in data.Values)
+            {
+                fintechStatusList.Add((FintechStatus)fintechStatus);
+            }
+
+            return fintechStatusList;
+        }
     }
 }
