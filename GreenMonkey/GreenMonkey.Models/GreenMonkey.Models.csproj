@@ -41,7 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationMessage.cs" />
+    <Compile Include="BaseEntity.cs" />
+    <Compile Include="Customer.cs" />
     <Compile Include="FintechStatus.cs" />
+    <Compile Include="ObjectDumper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Suscriptor.cs" />
   </ItemGroup>

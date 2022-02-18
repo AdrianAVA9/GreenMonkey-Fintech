@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GreenMonkey.Models
 {
-    public class Suscriptor
+    public class Suscriptor : BaseEntity
     {
         public string Name { get; set; }
         public string Description { get; set; }

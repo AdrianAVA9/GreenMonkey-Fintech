@@ -20,7 +20,12 @@
       "ProjectGuid": "9beb82e6-6cb1-4852-87ce-886062f6f26c",
       "DisplayName": "GreenMonkey.Manager",
       "ColorIndex": 3
+    },
+    "4acb1a1a-0926-477c-bf6f-daf30d861183": {
+      "ProjectGuid": "4acb1a1a-0926-477c-bf6f-daf30d861183",
+      "DisplayName": "GreenMonkey.Models",
+      "ColorIndex": 4
     }
   },
-  "NextColorIndex": 4
+  "NextColorIndex": 5
 }

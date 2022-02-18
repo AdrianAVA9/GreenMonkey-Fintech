@@ -1,0 +1,11 @@
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Manager\bin\Release\GreenMonkey.Manager.dll
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Manager\bin\Release\GreenMonkey.Manager.pdb
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Manager\bin\Release\GreenMonkey.DataAccess.dll
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Manager\bin\Release\GreenMonkey.Models.dll
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Manager\bin\Release\GreenMonkey.DataAccess.pdb
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Manager\bin\Release\GreenMonkey.Models.pdb
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Manager\obj\Release\GreenMonkey.Manager.csproj.AssemblyReference.cache
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Manager\obj\Release\GreenMonkey.Manager.csproj.CoreCompileInputs.cache
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Manager\obj\Release\GreenMonkey.Manager.csproj.CopyComplete
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Manager\obj\Release\GreenMonkey.Manager.dll
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Manager\obj\Release\GreenMonkey.Manager.pdb

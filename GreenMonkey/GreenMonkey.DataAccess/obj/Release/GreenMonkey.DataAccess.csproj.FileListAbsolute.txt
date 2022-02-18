@@ -1,0 +1,9 @@
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.DataAccess\bin\Release\GreenMonkey.DataAccess.dll
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.DataAccess\bin\Release\GreenMonkey.DataAccess.pdb
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.DataAccess\bin\Release\GreenMonkey.Dtos.dll
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.DataAccess\bin\Release\GreenMonkey.Dtos.pdb
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.DataAccess\obj\Release\GreenMonkey.DataAccess.csproj.AssemblyReference.cache
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.DataAccess\obj\Release\GreenMonkey.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.DataAccess\obj\Release\GreenMonkey.DataAccess.csproj.CopyComplete
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.DataAccess\obj\Release\GreenMonkey.DataAccess.dll
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.DataAccess\obj\Release\GreenMonkey.DataAccess.pdb

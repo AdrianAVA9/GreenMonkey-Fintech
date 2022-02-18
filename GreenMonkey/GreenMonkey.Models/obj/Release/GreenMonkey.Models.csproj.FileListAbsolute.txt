@@ -1,0 +1,5 @@
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Models\bin\Release\GreenMonkey.Models.dll
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Models\bin\Release\GreenMonkey.Models.pdb
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Models\obj\Release\GreenMonkey.Models.csproj.CoreCompileInputs.cache
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Models\obj\Release\GreenMonkey.Models.dll
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Models\obj\Release\GreenMonkey.Models.pdb

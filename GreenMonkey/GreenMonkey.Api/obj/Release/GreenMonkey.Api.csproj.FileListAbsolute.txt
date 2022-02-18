@@ -85,3 +85,9 @@ C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey
 C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Api\obj\Release\GreenMonkey.Api.csproj.CopyComplete
 C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Api\obj\Release\GreenMonkey.Api.dll
 C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Api\obj\Release\GreenMonkey.Api.pdb
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Api\bin\GreenMonkey.Manager.dll
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Api\bin\GreenMonkey.Models.dll
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Api\bin\GreenMonkey.DataAccess.dll
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Api\bin\GreenMonkey.Manager.pdb
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Api\bin\GreenMonkey.Models.pdb
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Api\bin\GreenMonkey.DataAccess.pdb
