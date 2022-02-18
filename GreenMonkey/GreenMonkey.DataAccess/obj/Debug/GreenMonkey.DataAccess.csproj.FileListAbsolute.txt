@@ -4,3 +4,6 @@ C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey
 C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.DataAccess\obj\Debug\GreenMonkey.DataAccess.dll
 C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.DataAccess\obj\Debug\GreenMonkey.DataAccess.pdb
 C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.DataAccess\obj\Debug\GreenMonkey.DataAccess.csproj.AssemblyReference.cache
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.DataAccess\bin\Debug\GreenMonkey.Dtos.dll
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.DataAccess\bin\Debug\GreenMonkey.Dtos.pdb
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.DataAccess\obj\Debug\GreenMonkey.DataAccess.csproj.CopyComplete

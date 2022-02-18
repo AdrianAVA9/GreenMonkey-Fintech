@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GreenMonkey.DataAccess;
+using GreenMonkey.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,9 +10,11 @@ namespace GreenMonkey.Manager
 {
     public class FintechManager
     {
-        public void AddFintech(FintechStatus )
+        public void AddFintech(List<FintechStatus> fintechStatuses)
         {
-
+            fintechStatuses.ForEach(fintechStatus => {
+                MemoryPersistence.StoreData(fintechStatus.Suscriptor.Code, fintechStatus);
+            });
         }
     }
 }

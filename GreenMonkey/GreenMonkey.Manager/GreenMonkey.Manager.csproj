@@ -44,5 +44,15 @@
     <Compile Include="FintechManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GreenMonkey.DataAccess\GreenMonkey.DataAccess.csproj">
+      <Project>{36B32EEF-FDBF-4A8F-8C90-69149A158CF8}</Project>
+      <Name>GreenMonkey.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GreenMonkey.Models\GreenMonkey.Models.csproj">
+      <Project>{4ACB1A1A-0926-477C-BF6F-DAF30D861183}</Project>
+      <Name>GreenMonkey.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

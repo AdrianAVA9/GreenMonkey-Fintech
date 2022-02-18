@@ -23,7 +23,7 @@ namespace GreenMonkey.Api.ThirdPartyApi
             var endpoint = "Suscription/Subscribe";
             var httpClient = new HttpClient();
             var url = new Uri(BaseUrl + endpoint);
-            var suscriptor = new Suscriptor()
+            var suscriptor = new SuscriptorDto()
             {
                 Name = "GreenMonkey",
                 Description = "The bank of Green Monkey",

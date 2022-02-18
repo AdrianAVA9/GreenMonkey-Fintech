@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GreenMonkey.Dtos
 {
-    public class Suscriptor
+    public class SuscriptorDto
     {
         public string Name { get; set; }
         public string Description { get; set; }

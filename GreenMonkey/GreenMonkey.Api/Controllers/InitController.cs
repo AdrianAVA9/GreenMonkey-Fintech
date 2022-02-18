@@ -1,5 +1,7 @@
-﻿using GreenMonkey.Api.ThirdPartyApi;
+﻿using GreenMonkey.Api.Mappers;
+using GreenMonkey.Api.ThirdPartyApi;
 using GreenMonkey.Dtos;
+using GreenMonkey.Manager;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,17 +49,19 @@ namespace GreenMonkey.Api.Controllers
 
         [HttpGet]
         [Route("HealthCheck")]
-        public IHttpActionResult HealthCheck([FromBody] List<FintechStatus> fintechs)
+        public IHttpActionResult HealthCheck([FromBody] List<FintechStatusDto> fintechsDto)
         {
             try
             {
-                if (fintechs == null)
-                    return BadRequest(String.Format("The {0} is invalid", nameof(fintechs)));
+                if (fintechsDto == null)
+                    return BadRequest(String.Format("The {0} is invalid", nameof(fintechsDto)));
 
-                fintechs.ForEach(fintech =>
-                {
+                var manager = new FintechManager();
+                var fintechs = fintechsDto.Select(fintech => FintechStatusMapper.GetFintech(fintech))
+                    .ToList();
+                manager.AddFintech(fintechs);
 
-                });
+                return Ok();
             }
             catch (Exception)
             {

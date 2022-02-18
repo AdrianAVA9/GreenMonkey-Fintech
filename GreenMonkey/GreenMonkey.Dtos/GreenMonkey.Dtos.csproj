@@ -42,8 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiResponse.cs" />
-    <Compile Include="FintechStatus.cs" />
-    <Compile Include="Suscriptor.cs" />
+    <Compile Include="FintechStatusDto.cs" />
+    <Compile Include="SuscriptorDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

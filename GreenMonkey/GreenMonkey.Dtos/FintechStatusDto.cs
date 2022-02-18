@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace GreenMonkey.Dtos
 {
-    public class FintechStatus
+    public class FintechStatusDto
     {
-        public Suscriptor Suscriptor { get; set; }
+        public SuscriptorDto Suscriptor { get; set; }
         public string Status { get; set; }
         public string UpdatedDate { get; set; }
     }
