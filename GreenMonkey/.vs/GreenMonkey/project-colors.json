@@ -15,7 +15,12 @@
       "ProjectGuid": "75dcb721-0f10-4567-9683-0bd11e2637c0",
       "DisplayName": "GreenMonkey.Api",
       "ColorIndex": 2
+    },
+    "9beb82e6-6cb1-4852-87ce-886062f6f26c": {
+      "ProjectGuid": "9beb82e6-6cb1-4852-87ce-886062f6f26c",
+      "DisplayName": "GreenMonkey.Manager",
+      "ColorIndex": 3
     }
   },
-  "NextColorIndex": 3
+  "NextColorIndex": 4
 }

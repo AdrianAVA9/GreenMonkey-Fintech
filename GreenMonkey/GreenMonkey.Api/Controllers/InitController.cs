@@ -44,5 +44,25 @@ namespace GreenMonkey.Api.Controllers
         {
             return "Ok";
         }
+
+        [HttpGet]
+        [Route("HealthCheck")]
+        public IHttpActionResult HealthCheck([FromBody] List<FintechStatus> fintechs)
+        {
+            try
+            {
+                if (fintechs == null)
+                    return BadRequest(String.Format("The {0} is invalid", nameof(fintechs)));
+
+                fintechs.ForEach(fintech =>
+                {
+
+                });
+            }
+            catch (Exception)
+            {
+                return InternalServerError();
+            }
+        }
     }
 }

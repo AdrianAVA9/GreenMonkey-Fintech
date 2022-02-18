@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenMonkey.Dtos", "GreenMo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenMonkey.DataAccess", "GreenMonkey.DataAccess\GreenMonkey.DataAccess.csproj", "{36B32EEF-FDBF-4A8F-8C90-69149A158CF8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenMonkey.Manager", "GreenMonkey.Manager\GreenMonkey.Manager.csproj", "{9BEB82E6-6CB1-4852-87CE-886062F6F26C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenMonkey.Models", "GreenMonkey.Models\GreenMonkey.Models.csproj", "{4ACB1A1A-0926-477C-BF6F-DAF30D861183}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{36B32EEF-FDBF-4A8F-8C90-69149A158CF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{36B32EEF-FDBF-4A8F-8C90-69149A158CF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36B32EEF-FDBF-4A8F-8C90-69149A158CF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BEB82E6-6CB1-4852-87CE-886062F6F26C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BEB82E6-6CB1-4852-87CE-886062F6F26C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BEB82E6-6CB1-4852-87CE-886062F6F26C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BEB82E6-6CB1-4852-87CE-886062F6F26C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4ACB1A1A-0926-477C-BF6F-DAF30D861183}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4ACB1A1A-0926-477C-BF6F-DAF30D861183}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4ACB1A1A-0926-477C-BF6F-DAF30D861183}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4ACB1A1A-0926-477C-BF6F-DAF30D861183}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
