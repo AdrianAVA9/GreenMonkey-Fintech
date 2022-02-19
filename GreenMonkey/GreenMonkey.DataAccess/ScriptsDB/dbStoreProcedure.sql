@@ -1,4 +1,6 @@
-﻿CREATE PROCEDURE CRE_SUSCRIPTOR_PR(
+﻿
+-- Create suscriptor
+CREATE PROCEDURE CRE_SUSCRIPTOR_PR(
 	@CODE nvarchar(4),
 	@NAME nvarchar(50),
 	@DESCRIPTION nvarchar(250),
@@ -11,5 +13,13 @@ BEGIN
 
 	INSERT INTO TBL_Suscriptor(Code, Name, Description, Owner, BaseUrl, Active)
 	VALUES
-		(@CODE, @NAME, @DESCRIPTION, @OWNER, @BASE_URL, 'A')
+		(@CODE, @NAME, @DESCRIPTION, @OWNER, @BASE_URL, 'S')
+END
+
+-- Retrieve all suscriptors
+CREATE PROCEDURE RET_ALL_SUSCRIPTOR_PR
+AS
+BEGIN
+	SET NOCOUNT ON;
+	SELECT * FROM TBL_Suscriptor WHERE Active = 'S'
 END
