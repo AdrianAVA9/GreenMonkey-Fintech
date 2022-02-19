@@ -1,11 +1,11 @@
 ﻿
 -- Create suscriptor
 CREATE PROCEDURE CRE_SUSCRIPTOR_PR(
-	@CODE nvarchar(4),
-	@NAME nvarchar(50),
-	@DESCRIPTION nvarchar(250),
-	@OWNER nvarchar(50),
-	@BASE_URL nvarchar(50)
+	@P_CODE nvarchar(4),
+	@P_NAME nvarchar(50),
+	@P_DESCRIPTION nvarchar(250),
+	@P_OWNER nvarchar(50),
+	@P_BASE_URL nvarchar(50)
 )
 AS
 BEGIN
@@ -13,7 +13,7 @@ BEGIN
 
 	INSERT INTO TBL_Suscriptor(Code, Name, Description, Owner, BaseUrl, Active)
 	VALUES
-		(@CODE, @NAME, @DESCRIPTION, @OWNER, @BASE_URL, 'S')
+		(@P_CODE, @P_NAME, @P_DESCRIPTION, @P_OWNER, @P_BASE_URL, 'S')
 END
 
 -- Retrieve all suscriptors
