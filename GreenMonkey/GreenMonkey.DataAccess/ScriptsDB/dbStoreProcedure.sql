@@ -36,7 +36,12 @@ CREATE PROCEDURE RET_SUSCRIPTOR_PR(
 AS
 BEGIN
 	SET NOCOUNT ON;
-	SELECT * FROM TBL_Suscriptor WHERE Code = @P_CODE AND Active = 'S'
+	SELECT Code AS CODE
+		,Name AS NAME
+		,Description AS DESCRIPTION
+		,Owner AS OWNER
+		,BaseUrl AS BASE_URL
+	FROM TBL_Suscriptor WHERE Code = @P_CODE AND Active = 'S'
 END
 
 -- Update suscriptor
