@@ -8,7 +8,9 @@ namespace GreenMonkey.DataAccess.Mapper
     {
         private const string DB_COL_CODE = "CODE";
         private const string DB_COL_NAME = "NAME";
-
+        private const string DB_COL_DESCRIPTION = "DESCRIPTION";
+        private const string DB_COL_OWNER = "OWNER";
+        private const string DB_COL_BASE_URL = "BASE_URL";
 
         public SqlOperation GetCreateStatement(BaseEntity entity)
         {
@@ -17,10 +19,12 @@ namespace GreenMonkey.DataAccess.Mapper
             var c = (Suscriptor) entity;            
             operation.AddVarcharParam(DB_COL_CODE, c.Code);
             operation.AddVarcharParam(DB_COL_NAME, c.Name);
+            operation.AddVarcharParam(DB_COL_DESCRIPTION, c.Description);
+            operation.AddVarcharParam(DB_COL_OWNER, c.Owner);
+            operation.AddVarcharParam(DB_COL_BASE_URL, c.BaseUrl);
 
             return operation;
         }
-
 
         public SqlOperation GetRetriveStatement(BaseEntity entity)
         {
@@ -45,6 +49,9 @@ namespace GreenMonkey.DataAccess.Mapper
             var c = (Suscriptor)entity;
             operation.AddVarcharParam(DB_COL_CODE, c.Code);
             operation.AddVarcharParam(DB_COL_NAME, c.Name);
+            operation.AddVarcharParam(DB_COL_DESCRIPTION, c.Description);
+            operation.AddVarcharParam(DB_COL_OWNER, c.Owner);
+            operation.AddVarcharParam(DB_COL_BASE_URL, c.BaseUrl);
 
             return operation;
         }
@@ -68,7 +75,7 @@ namespace GreenMonkey.DataAccess.Mapper
                 lstResults.Add(SUSCRIPTOR);
             }
 
-            return lstResults;            
+            return lstResults;
         }
 
         public BaseEntity BuildObject(Dictionary<string, object> row)
@@ -77,6 +84,9 @@ namespace GreenMonkey.DataAccess.Mapper
             {
                 Code = GetStringValue(row, DB_COL_CODE),
                 Name = GetStringValue(row, DB_COL_NAME),
+                Description = GetStringValue(row, DB_COL_DESCRIPTION),
+                BaseUrl = GetStringValue(row, DB_COL_BASE_URL),
+                Owner = GetStringValue(row, DB_COL_OWNER)
            };
 
             return suscriptor;
