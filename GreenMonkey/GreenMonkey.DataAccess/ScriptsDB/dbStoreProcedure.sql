@@ -23,3 +23,13 @@ BEGIN
 	SET NOCOUNT ON;
 	SELECT * FROM TBL_Suscriptor WHERE Active = 'S'
 END
+
+-- Retrieve suscriptor by code
+CREATE PROCEDURE RET_SUSCRIPTOR_PR(
+	@P_CODE NVARCHAR(4)
+)
+AS
+BEGIN
+	SET NOCOUNT ON;
+	SELECT * FROM TBL_Suscriptor WHERE Code = @P_CODE AND Active = 'S'
+END
