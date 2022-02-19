@@ -61,3 +61,9 @@ BEGIN
 	SET Active = 'N'
 	WHERE Code = @P_CODE;
 END
+
+EXEC CRE_SUSCRIPTOR_PR '1028', 'GreenMonkey - Bank', 'Banco Green Monkey', 'Adrian Vega', 'https://green-monkeybank.azurewebsites.net'
+EXEC RET_ALL_SUSCRIPTOR_PR
+EXEC RET_SUSCRIPTOR_PR '1028'
+EXEC UPD_SUSCRIPTOR_PR '1028', 'GreenMonkey - Bank', 'Banco Green Monkey', 'Adrian Vega', 'https://green-monkeybank.azurewebsites.net'
+EXEC DEL_SUSCRIPTOR_PR '1028'
