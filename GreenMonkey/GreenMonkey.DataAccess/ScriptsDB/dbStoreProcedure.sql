@@ -33,3 +33,19 @@ BEGIN
 	SET NOCOUNT ON;
 	SELECT * FROM TBL_Suscriptor WHERE Code = @P_CODE AND Active = 'S'
 END
+
+-- Update suscriptor
+CREATE PROCEDURE UPD_SUSCRIPTOR_PR(
+	@P_CODE nvarchar(4),
+	@P_NAME nvarchar(50),
+	@P_DESCRIPTION nvarchar(250),
+	@P_OWNER nvarchar(50),
+	@P_BASE_URL nvarchar(50)
+)
+AS
+BEGIN
+	SET NOCOUNT ON;
+	UPDATE TBL_Suscriptor
+	SET Name = @P_NAME, Description = @P_DESCRIPTION, Owner = @P_OWNER, BaseUrl = @P_BASE_URL
+	WHERE Code = @P_CODE;
+END
