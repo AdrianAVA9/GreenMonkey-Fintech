@@ -1,4 +1,8 @@
-﻿using System;
+﻿using AutoMapper;
+using DataAcess.Crud;
+using GreenMonkey.Dtos;
+using GreenMonkey.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -7,33 +11,34 @@ using System.Web.Http;
 
 namespace GreenMonkey.Api.Controllers
 {
+    [RoutePrefix("api/suscriptors")]
     public class SuscriptorController : ApiController
     {
-        // GET api/values
-        public IEnumerable<string> Get()
+        private SuscriptorCrudFactory _suscriptorCrud { get; set; }
+        public IMapper _mapper { get; set; }
+        public SuscriptorController(IMapper mapper)
         {
-            return new string[] { "value1", "value2" };
+            _suscriptorCrud = new SuscriptorCrudFactory();
+            _mapper = mapper;
         }
-
-        // GET api/values/5
-        public string Get(int id)
+        
+        [Route("")]
+        [HttpGet]
+        public IHttpActionResult RetreaveAll()
         {
-            return "value";
-        }
+            try
+            {
+                var suscriptors = _suscriptorCrud.RetrieveAll<Suscriptor>();
+                var apiResponse = new ApiResponse() { 
+                    Data = suscriptors.Select(suscriptor => _mapper.Map<SuscriptorDto>(suscriptor))
+                };
 
-        // POST api/values
-        public void Post([FromBody] string value)
-        {
-        }
-
-        // PUT api/values/5
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/values/5
-        public void Delete(int id)
-        {
+                return Ok(apiResponse);
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError();
+            }
         }
     }
 }
