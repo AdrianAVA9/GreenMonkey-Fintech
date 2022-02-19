@@ -42,13 +42,13 @@ namespace GreenMonkey.Api.Controllers
             }
         }
 
-        [Route("{suscriptorCode}")]
+        [Route("{code}")]
         [HttpGet]
-        public IHttpActionResult RetreaveSuscriptor(string suscriptorCode)
+        public IHttpActionResult RetreaveSuscriptor(string code)
         {
             try
             {
-                var suscriptor = _suscriptorCrud.Retrieve<Suscriptor>(new Suscriptor() { Code = suscriptorCode });
+                var suscriptor = _suscriptorCrud.Retrieve<Suscriptor>(new Suscriptor() { Code = code });
 
                 //if(suscriptor == null)
                 //{
@@ -59,7 +59,7 @@ namespace GreenMonkey.Api.Controllers
                 {
                     Data = _mapper.Map<SuscriptorDto>(suscriptor),
                     Message = suscriptor == null 
-                        ? String.Format("The suscriptor code: {0} does not exists", suscriptorCode) 
+                        ? String.Format("The suscriptor code: {0} does not exists", code) 
                         : ""
                 };
 
