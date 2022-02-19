@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http;
 
 namespace GreenMonkey.Api.Controllers
@@ -36,6 +37,35 @@ namespace GreenMonkey.Api.Controllers
                 return Ok(apiResponse);
             }
             catch (Exception ex)
+            {
+                return InternalServerError();
+            }
+        }
+
+        [Route("{suscriptorCode}")]
+        [HttpGet]
+        public IHttpActionResult RetreaveSuscriptor(string suscriptorCode)
+        {
+            try
+            {
+                var suscriptor = _suscriptorCrud.Retrieve<Suscriptor>(new Suscriptor() { Code = suscriptorCode });
+
+                //if(suscriptor == null)
+                //{
+                //    return NotFound();
+                //}
+
+                var apiResponse = new ApiResponse()
+                {
+                    Data = _mapper.Map<SuscriptorDto>(suscriptor),
+                    Message = suscriptor == null 
+                        ? String.Format("The suscriptor code: {0} does not exists", suscriptorCode) 
+                        : ""
+                };
+
+                return Ok(apiResponse);
+            }
+            catch (Exception)
             {
                 return InternalServerError();
             }
