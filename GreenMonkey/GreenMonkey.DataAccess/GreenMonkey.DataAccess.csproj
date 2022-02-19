@@ -95,6 +95,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ScriptsDB\db.sql" />
+    <Content Include="ScriptsDB\dbStoreProcedure.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
