@@ -49,3 +49,15 @@ BEGIN
 	SET Name = @P_NAME, Description = @P_DESCRIPTION, Owner = @P_OWNER, BaseUrl = @P_BASE_URL
 	WHERE Code = @P_CODE;
 END
+
+-- Delete suscriptor
+CREATE PROCEDURE DEL_SUSCRIPTOR_PR(
+	@P_CODE nvarchar(4)
+)
+AS
+BEGIN
+	SET NOCOUNT ON;
+	UPDATE TBL_Suscriptor
+	SET Active = 'N'
+	WHERE Code = @P_CODE;
+END
