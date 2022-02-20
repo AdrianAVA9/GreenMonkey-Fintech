@@ -36,12 +36,6 @@ namespace GreenMonkey.UI.Controllers
             return View(suscriptor);
         }
 
-        // GET: Suscriptor/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
         public ActionResult SuscriptorForm()
         {
             var suscriptorViewModel = new SuscriptorForViewModel() { 
@@ -129,19 +123,29 @@ namespace GreenMonkey.UI.Controllers
             }
         }
 
-        // GET: Suscriptor/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(string code)
         {
-            return View();
+            if (string.IsNullOrEmpty(code))
+                RedirectToAction("NotFound", "Error");
+
+            var suscriptor = _service.RetreaveSuscriptor(code);
+
+            if (suscriptor == null)
+                RedirectToAction("NotFound", "Error");
+
+            return View(suscriptor);
         }
 
-        // POST: Suscriptor/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Remove(string code)
         {
             try
             {
-                // TODO: Add delete logic here
+                if (string.IsNullOrEmpty(code))
+                    RedirectToAction("NotFound", "Error");
+
+                _service.DeleteSuscriptor(code);
 
                 return RedirectToAction("Index");
             }

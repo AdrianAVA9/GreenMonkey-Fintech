@@ -53,5 +53,13 @@ namespace GreenMonkey.UI.Services
 
             return result.IsSuccessStatusCode;
         }
+
+        public bool DeleteSuscriptor(string code)
+        {
+            var client = GreenMonkeyHttpClient.GetClient();
+            var result = client.DeleteAsync(string.Format("{0}/{1}", Collection, code)).Result;
+
+            return result.IsSuccessStatusCode;
+        }
     }
 }

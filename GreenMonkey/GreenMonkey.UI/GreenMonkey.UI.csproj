@@ -180,6 +180,7 @@
     <Content Include="Views\Error\NotFound.cshtml" />
     <Content Include="Views\Suscriptor\Details.cshtml" />
     <Content Include="Views\Suscriptor\SuscriptorForm.cshtml" />
+    <Content Include="Views\Suscriptor\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

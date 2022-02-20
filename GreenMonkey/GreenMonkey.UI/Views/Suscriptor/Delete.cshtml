@@ -1,0 +1,64 @@
+﻿@model GreenMonkey.UI.Models.Suscriptor
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Eliminar</h2>
+
+<h3>Esta seguro que desea eliminar esto?</h3>
+<div>
+    <h4>Suscriptor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Código
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Code)
+        </dd>
+
+        <dt>
+            Nombre
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            Descripción
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            Propietario
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Owner)
+        </dd>
+
+        <dt>
+            Url
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BaseUrl)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm("Remove", "Suscriptor")) {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(model => model.Code)
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Ir a inicio", "Index")
+        </div>
+    }
+</div>
