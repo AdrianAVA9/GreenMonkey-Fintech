@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using Autofac.Integration.WebApi;
 using AutoMapper;
+using GreenMonkey.Api.Validators;
 using GreenMonkey.Dtos;
 using GreenMonkey.Models;
 using Microsoft.Owin;
@@ -26,6 +27,7 @@ namespace GreenMonkey.Api.App_Start
 
             var builder = new ContainerBuilder();
             builder.RegisterInstance(mapper);
+            builder.RegisterInstance(new SuscriptorValidator());
             builder.RegisterApiControllers(System.Reflection.Assembly.GetExecutingAssembly());
             
             var container = builder.Build();
