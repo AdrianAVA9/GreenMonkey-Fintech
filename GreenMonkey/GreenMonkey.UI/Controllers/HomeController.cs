@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace GreenMonkey.UI.Controllers
 {
-    public class SuscriptorController : Controller
+    public class HomeController : Controller
     {
         public ActionResult Index()
         {
