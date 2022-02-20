@@ -30,6 +30,50 @@ namespace GreenMonkey.Api.Controllers
         }
 
         [Route("")]
+        [HttpPost]
+        public IHttpActionResult CreateSuscriptor([FromBody] SuscriptorDto suscriptorDto)
+        {
+            try
+            {
+                if (suscriptorDto == null || !_validator.Validate(suscriptorDto).IsValid)
+                {
+                    var validations = new List<ValidationFailure>();
+
+                    if (suscriptorDto == null)
+                    {
+                        validations.Add(new ValidationFailure("Suscriptor", "The suscriptor can not be null"));
+                    }
+                    else
+                    {
+                        validations.AddRange(_validator.Validate(suscriptorDto).Errors);
+                    }
+
+                    return new ErrorResult(Request, HttpStatusCode.BadRequest, validations);
+                }
+
+                var suscriptor = _mapper.Map<Suscriptor>(suscriptorDto);
+                var existingSuscriptor = _suscriptorCrud.Retrieve<Suscriptor>(suscriptor);
+
+                if (existingSuscriptor != null)
+                {
+                    return new ErrorResult(Request, HttpStatusCode.Conflict, new List<ValidationFailure>() {
+                        new ValidationFailure("Code", string.Format("The suscriptor code: {0} already exists", suscriptor.Code))
+                    });
+                }
+
+                _suscriptorCrud.Create(suscriptor);
+                var newSuscriptor = _suscriptorCrud.Retrieve<Suscriptor>(suscriptor);
+
+                return Created(string.Format("{0}/suscriptors/{1}", Request.RequestUri, newSuscriptor.Code),
+                    _mapper.Map<SuscriptorDto>(newSuscriptor));
+            }
+            catch (Exception)
+            {
+                return InternalServerError();
+            }
+        }
+
+        [Route("")]
         [HttpPut]
         public IHttpActionResult UpdateSuscriptor([FromBody]SuscriptorDto suscriptorDto)
         {
