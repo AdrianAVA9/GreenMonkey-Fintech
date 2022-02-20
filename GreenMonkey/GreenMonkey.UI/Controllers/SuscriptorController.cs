@@ -24,7 +24,14 @@ namespace GreenMonkey.UI.Controllers
         // GET: Suscriptor/Details/5
         public ActionResult Details(string code)
         {
-            return View();
+            var suscriptor = _service.RetreaveSuscriptor(code);
+
+            if(suscriptor == null)
+            {
+                RedirectToAction("NotFound", "Error");
+            }
+
+            return View(suscriptor);
         }
 
         // GET: Suscriptor/Create

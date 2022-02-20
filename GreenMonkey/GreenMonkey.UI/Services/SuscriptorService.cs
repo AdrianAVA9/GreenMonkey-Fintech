@@ -21,5 +21,17 @@ namespace GreenMonkey.UI.Services
             var suscriptors = Newtonsoft.Json.JsonConvert.DeserializeObject<ICollection<Suscriptor>>(content);
             return suscriptors;
         }
+
+        public Suscriptor RetreaveSuscriptor(string code)
+        {
+            var client = GreenMonkeyHttpClient.GetClient();
+            var result = client.GetAsync(string.Format("{0}/{1}", Collection, code)).Result;
+
+            if (!result.IsSuccessStatusCode)
+                return null;
+
+            var content = result.Content.ReadAsStringAsync().Result;
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<Suscriptor>(content);
+        }
     }
 }
