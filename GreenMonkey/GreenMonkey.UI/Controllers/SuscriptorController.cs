@@ -26,12 +26,12 @@ namespace GreenMonkey.UI.Controllers
         public ActionResult Details(string code)
         {
             if (string.IsNullOrEmpty(code))
-                RedirectToAction("NotFound", "Error");
+                return RedirectToAction("NotFound", "Error");
 
             var suscriptor = _service.RetreaveSuscriptor(code);
 
             if(suscriptor == null)
-                RedirectToAction("NotFound", "Error");
+                return RedirectToAction("NotFound", "Error");
 
             return View(suscriptor);
         }
@@ -76,12 +76,12 @@ namespace GreenMonkey.UI.Controllers
         public ActionResult Edit(string code)
         {
             if (string.IsNullOrEmpty(code))
-                RedirectToAction("NotFound", "Error");
+                return RedirectToAction("NotFound", "Error");
 
             var suscriptor = _service.RetreaveSuscriptor(code);
 
             if (suscriptor == null)
-                RedirectToAction("NotFound", "Error");
+                return RedirectToAction("NotFound", "Error");
 
             var suscriptorViewModel = new SuscriptorForViewModel() {
                 Code = suscriptor.Code,
@@ -126,12 +126,12 @@ namespace GreenMonkey.UI.Controllers
         public ActionResult Delete(string code)
         {
             if (string.IsNullOrEmpty(code))
-                RedirectToAction("NotFound", "Error");
+                return RedirectToAction("NotFound", "Error");
 
             var suscriptor = _service.RetreaveSuscriptor(code);
 
             if (suscriptor == null)
-                RedirectToAction("NotFound", "Error");
+                return RedirectToAction("NotFound", "Error");
 
             return View(suscriptor);
         }
@@ -143,7 +143,7 @@ namespace GreenMonkey.UI.Controllers
             try
             {
                 if (string.IsNullOrEmpty(code))
-                    RedirectToAction("NotFound", "Error");
+                    return RedirectToAction("NotFound", "Error");
 
                 _service.DeleteSuscriptor(code);
 
