@@ -142,11 +142,36 @@ namespace GreenMonkey.Api.Controllers
                 if (suscriptor == null)
                 {
                     return new ErrorResult(Request, HttpStatusCode.NotFound, new List<ValidationFailure>() {
-                        new ValidationFailure("Suscriptor", String.Format("The suscriptor code: {0} does not exists", code) )
+                        new ValidationFailure("Suscriptor", string.Format("The suscriptor code: {0} does not exists", code) )
                     });
                 }
 
                 return Ok(_mapper.Map<SuscriptorDto>(suscriptor));
+            }
+            catch (Exception)
+            {
+                return InternalServerError();
+            }
+        }
+
+        [Route("{code}")]
+        [HttpDelete]
+        public IHttpActionResult DeleteSuscriptor(string code)
+        {
+            try
+            {
+                var existingSuscriptor = _suscriptorCrud.Retrieve<Suscriptor>(new Suscriptor() { Code = code });
+
+                if (existingSuscriptor == null)
+                {
+                    return new ErrorResult(Request, HttpStatusCode.NotFound, new List<ValidationFailure>() {
+                        new ValidationFailure("Suscriptor", string.Format("The suscriptor code: {0} does not exists", code))
+                    });
+                }
+
+                _suscriptorCrud.Delete(existingSuscriptor);
+
+                return StatusCode(HttpStatusCode.NoContent);
             }
             catch (Exception)
             {
