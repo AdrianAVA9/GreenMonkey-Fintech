@@ -16,7 +16,7 @@ namespace GreenMonkey.DataAccess.Mapper
         {
             var operation = new SqlOperation {ProcedureName = "CRE_SUSCRIPTOR_PR"};
 
-            var c = (Suscriptor) entity;            
+            var c = (Suscriptor) entity;
             operation.AddVarcharParam(DB_COL_CODE, c.Code);
             operation.AddVarcharParam(DB_COL_NAME, c.Name);
             operation.AddVarcharParam(DB_COL_DESCRIPTION, c.Description);

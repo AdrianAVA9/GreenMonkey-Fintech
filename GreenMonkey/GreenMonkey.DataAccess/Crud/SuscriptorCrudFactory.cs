@@ -18,7 +18,7 @@ namespace DataAcess.Crud
 
         public override void Create(BaseEntity entity)
         {
-            var customer=(Customer) entity;
+            var customer=(Suscriptor) entity;
             var sqlOperation = mapper.GetCreateStatement(customer);
             dao.ExecuteProcedure(sqlOperation);
         }
@@ -56,13 +56,13 @@ namespace DataAcess.Crud
 
         public override void Update(BaseEntity entity)
         {
-            var customer = (Customer)entity;
+            var customer = (Suscriptor)entity;
             dao.ExecuteProcedure(mapper.GetUpdateStatement(customer));
         }
 
         public override void Delete(BaseEntity entity)
         {
-            var customer = (Customer)entity;
+            var customer = (Suscriptor)entity;
             dao.ExecuteProcedure(mapper.GetDeleteStatement(customer));
         }
     }
