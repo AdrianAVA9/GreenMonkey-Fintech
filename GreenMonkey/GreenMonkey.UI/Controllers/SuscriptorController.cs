@@ -51,6 +51,34 @@ namespace GreenMonkey.UI.Controllers
             return View(suscriptorViewModel);
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(SuscriptorForViewModel viewModel)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    return View("SuscriptorForm", viewModel);
+                }
+
+                _service.CreateSuscriptor(new Suscriptor
+                {
+                    Code = viewModel.Code,
+                    Name = viewModel.Name,
+                    Owner = viewModel.Owner,
+                    Description = viewModel.Description,
+                    BaseUrl = viewModel.BaseUrl
+                });
+
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
         public ActionResult Edit(string code)
         {
             if (string.IsNullOrEmpty(code))

@@ -42,10 +42,10 @@ namespace GreenMonkey.UI.ViewModels
                 Expression<Func<SuscriptorController, ActionResult>> update =
                     (c => c.Update(this));
 
-                //Expression<Func<SuscriptorController, ActionResult>> create =
-                //    (c => c.Create(this));
+                Expression<Func<SuscriptorController, ActionResult>> create =
+                    (c => c.Create(this));
 
-                var action = !string.IsNullOrEmpty(Code) ? update : null;
+                var action = !string.IsNullOrEmpty(Code) ? update : create;
                 return (action.Body as MethodCallExpression).Method.Name;
             }
 

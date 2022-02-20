@@ -44,5 +44,14 @@ namespace GreenMonkey.UI.Services
 
             return result.IsSuccessStatusCode;
         }
+
+        public bool CreateSuscriptor(Suscriptor suscriptor)
+        {
+            var client = GreenMonkeyHttpClient.GetClient();
+            var payload = new StringContent(Newtonsoft.Json.JsonConvert.SerializeObject(suscriptor), Encoding.Unicode, "application/json");
+            var result = client.PostAsync(string.Format("{0}", Collection), payload).Result;
+
+            return result.IsSuccessStatusCode;
+        }
     }
 }
