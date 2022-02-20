@@ -122,13 +122,10 @@ namespace GreenMonkey.Api.Controllers
             try
             {
                 var suscriptors = _suscriptorCrud.RetrieveAll<Suscriptor>();
-                var apiResponse = new ApiResponse() { 
-                    Data = suscriptors.Select(suscriptor => _mapper.Map<SuscriptorDto>(suscriptor))
-                };
 
-                return Ok(apiResponse);
+                return Ok(suscriptors.Select(suscriptor => _mapper.Map<SuscriptorDto>(suscriptor)));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return InternalServerError();
             }
@@ -144,18 +141,12 @@ namespace GreenMonkey.Api.Controllers
 
                 if (suscriptor == null)
                 {
-                    return NotFound();
+                    return new ErrorResult(Request, HttpStatusCode.NotFound, new List<ValidationFailure>() {
+                        new ValidationFailure("Suscriptor", String.Format("The suscriptor code: {0} does not exists", code) )
+                    });
                 }
 
-                var apiResponse = new ApiResponse()
-                {
-                    Data = _mapper.Map<SuscriptorDto>(suscriptor),
-                    Message = suscriptor == null 
-                        ? String.Format("The suscriptor code: {0} does not exists", code) 
-                        : ""
-                };
-
-                return Ok(apiResponse);
+                return Ok(_mapper.Map<SuscriptorDto>(suscriptor));
             }
             catch (Exception)
             {
