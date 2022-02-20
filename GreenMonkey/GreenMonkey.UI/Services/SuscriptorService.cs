@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Text;
 using System.Web;
 
 namespace GreenMonkey.UI.Services
@@ -32,6 +34,15 @@ namespace GreenMonkey.UI.Services
 
             var content = result.Content.ReadAsStringAsync().Result;
             return Newtonsoft.Json.JsonConvert.DeserializeObject<Suscriptor>(content);
+        }
+
+        public bool EditSuscriptor(Suscriptor suscriptor)
+        {
+            var client = GreenMonkeyHttpClient.GetClient();
+            var payload = new StringContent(Newtonsoft.Json.JsonConvert.SerializeObject(suscriptor), Encoding.Unicode, "application/json");
+            var result = client.PutAsync(string.Format("{0}", Collection), payload).Result;
+
+            return result.IsSuccessStatusCode;
         }
     }
 }

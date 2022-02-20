@@ -1,4 +1,6 @@
-﻿using GreenMonkey.UI.Services;
+﻿using GreenMonkey.UI.Models;
+using GreenMonkey.UI.Services;
+using GreenMonkey.UI.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,15 +23,15 @@ namespace GreenMonkey.UI.Controllers
             return View(sucriptors);
         }
 
-        // GET: Suscriptor/Details/5
         public ActionResult Details(string code)
         {
+            if (string.IsNullOrEmpty(code))
+                RedirectToAction("NotFound", "Error");
+
             var suscriptor = _service.RetreaveSuscriptor(code);
 
             if(suscriptor == null)
-            {
                 RedirectToAction("NotFound", "Error");
-            }
 
             return View(suscriptor);
         }
@@ -40,35 +42,56 @@ namespace GreenMonkey.UI.Controllers
             return View();
         }
 
-        // POST: Suscriptor/Create
+        public ActionResult SuscriptorForm()
+        {
+            var suscriptorViewModel = new SuscriptorForViewModel() { 
+                Heading = "Registrar suscriptor"
+            };
+
+            return View(suscriptorViewModel);
+        }
+
+        public ActionResult Edit(string code)
+        {
+            if (string.IsNullOrEmpty(code))
+                RedirectToAction("NotFound", "Error");
+
+            var suscriptor = _service.RetreaveSuscriptor(code);
+
+            if (suscriptor == null)
+                RedirectToAction("NotFound", "Error");
+
+            var suscriptorViewModel = new SuscriptorForViewModel() {
+                Code = suscriptor.Code,
+                Name = suscriptor.Name,
+                Owner = suscriptor.Owner,
+                Description = suscriptor.Description,
+                BaseUrl = suscriptor.BaseUrl,
+                Heading = "Editar suscriptor"
+            };
+
+            return View("SuscriptorForm", suscriptorViewModel);
+        }
+
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Update(SuscriptorForViewModel viewModel)
         {
             try
             {
-                // TODO: Add insert logic here
+                if (!ModelState.IsValid)
+                {
+                    return View("SuscriptorForm", viewModel);
+                }
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Suscriptor/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: Suscriptor/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
+                _service.EditSuscriptor(new Suscriptor
+                {
+                    Code = viewModel.Code,
+                    Name = viewModel.Name,
+                    Owner = viewModel.Owner,
+                    Description = viewModel.Description,
+                    BaseUrl = viewModel.BaseUrl
+                });
 
                 return RedirectToAction("Index");
             }
