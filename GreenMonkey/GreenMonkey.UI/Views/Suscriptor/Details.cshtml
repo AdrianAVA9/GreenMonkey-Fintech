@@ -5,10 +5,9 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Detalles</h2>
+<h2>Detalles del suscriptor</h2>
 
 <div>
-    <h4>Suscriptor</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -53,5 +52,5 @@
 </div>
 <p>
     @Html.ActionLink("Editar", "Edit", new { code = Model.Code }) |
-    @Html.ActionLink("Ver lista de suscriptores", "Index")
+    @Html.ActionLink("Ir a inicio", "Index")
 </p>

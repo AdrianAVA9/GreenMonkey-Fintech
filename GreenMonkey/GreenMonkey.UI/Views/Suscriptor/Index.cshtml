@@ -1,9 +1,9 @@
 ﻿@model ICollection<GreenMonkey.UI.Models.Suscriptor>
 
 <p>
-    @Html.ActionLink("Registrar suscriptor", "SuscriptorForm")
+    @Html.ActionLink("Registrar suscriptor", "SuscriptorForm", null, new { @class="btn btn-primary pull-right" } )
 </p>
-<table class="table">
+<table class="table" style="margin-top:70px;">
     <tr>
         <th>
             Código
@@ -41,9 +41,9 @@
             @Html.DisplayFor(modelItem => item.BaseUrl)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { code =item.Code }) |
-            @Html.ActionLink("Details", "Details", new { code = item.Code }) |
-            @Html.ActionLink("Delete", "Delete", new { code = item.Code })
+            @Html.ActionLink("Editar", "Edit", new { code =item.Code }) |
+            @Html.ActionLink("Detalles", "Details", new { code = item.Code }) |
+            @Html.ActionLink("Eliminar", "Delete", new { code = item.Code })
         </td>
     </tr>
 }
