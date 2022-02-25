@@ -77,3 +77,24 @@ EXEC RET_ALL_SUSCRIPTOR_PR
 EXEC RET_SUSCRIPTOR_PR '1028'
 EXEC UPD_SUSCRIPTOR_PR '1028', 'GreenMonkey - Bank', 'Banco Green Monkey', 'Adrian Vega', 'https://green-monkeybank.azurewebsites.net'
 EXEC DEL_SUSCRIPTOR_PR '1028'
+
+
+
+
+------------------------------------------- STORE PROCEDURE OF SUSCRIPTOR STATUS --------------------------------------------------
+
+CREATE PROCEDURE CRE_SUSCRIPTOR_STATUS_PR(
+	@P_CODE nvarchar(4),
+	@P_STATUS nvarchar(10),
+	@P_UPDATED_DATE DATETIME
+)
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	INSERT INTO TBL_Suscriptor_Status(Code, Status, UpdatedDate)
+	VALUES
+		(@P_CODE, @P_STATUS, @P_UPDATED_DATE)
+END
+
+EXEC CRE_SUSCRIPTOR_STATUS_PR '1028', 'Offline', '2022-02-24 15:21:03'
