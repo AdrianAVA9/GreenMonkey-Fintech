@@ -29,17 +29,20 @@ namespace GreenMonkey.DataAccess.Mapper
 
         public SqlOperation GetRetriveStatement(BaseEntity entity)
         {
-            var operation = new SqlOperation { ProcedureName = "RET_SUSCRIPTOR_STATUS_PR" };
-
-            var c = (SuscriptorStatus)entity;
-            operation.AddVarcharParam(DB_COL_CODE, c.Code);
-
-            return operation;
+            throw new NotImplementedException();
         }
 
         public SqlOperation GetRetriveAllStatement()
         {
-            var operation = new SqlOperation { ProcedureName = "RET_ALL_SUSCRIPTOR_STATUS_PR" };
+            throw new NotImplementedException();
+        }
+
+        public SqlOperation GetRetriveAllStatement(BaseEntity entity)
+        {
+            var operation = new SqlOperation { ProcedureName = "RET_SUSCRIPTOR_STATUS_BY_SUSCRIPTOR_PR" };
+
+            var c = (SuscriptorStatus)entity;
+            operation.AddVarcharParam(DB_COL_CODE, c.Code);
             return operation;
         }
 
