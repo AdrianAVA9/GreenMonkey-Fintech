@@ -13,7 +13,7 @@ namespace GreenMonkey.DataAccess.Mapper
         private const string DB_COL_ID = "ID";
         private const string DB_COL_CODE = "CODE";
         private const string DB_COL_STATUS = "STATUS";
-        private const string DB_COL_UPDATED_DATE = "UDPATED_DATE";
+        private const string DB_COL_UPDATED_DATE = "UPDATED_DATE";
 
         public SqlOperation GetCreateStatement(BaseEntity entity)
         {
