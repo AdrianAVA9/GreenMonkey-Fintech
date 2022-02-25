@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace GreenMonkey.Models
 {
-    public class SuscriptorStatus
+    public class SuscriptorStatus : BaseEntity
     {
+        public int Id { get; set; }
+        public string Code { get; set; }
         public string Status { get; set; }
-        public DateTime UpdatedAt { get; set; }
+        public DateTime UpdatedDate { get; set; }
     }
 }
