@@ -10,6 +10,6 @@ namespace GreenMonkey.Dtos
     {
         public SuscriptorDto Suscriptor { get; set; }
         public string Status { get; set; }
-        public string UpdatedDate { get; set; }
+        public DateTime UpdatedDate { get; set; }
     }
 }

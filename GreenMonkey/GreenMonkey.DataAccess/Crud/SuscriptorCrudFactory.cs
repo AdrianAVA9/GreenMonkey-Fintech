@@ -1,10 +1,11 @@
-﻿using GreenMonkey.DataAccess.Dao;
+﻿using DataAcess.Crud;
+using GreenMonkey.DataAccess.Dao;
 using GreenMonkey.DataAccess.Mapper;
 using GreenMonkey.Models;
 using System;
 using System.Collections.Generic;
 
-namespace DataAcess.Crud
+namespace GreenMonkey.DataAccess.Crud
 {
     public class SuscriptorCrudFactory : CrudFactory
     {

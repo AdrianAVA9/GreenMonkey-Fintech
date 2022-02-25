@@ -63,7 +63,7 @@ namespace GreenMonkey.Api.Controllers
 
                 return Ok();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return InternalServerError();
             }
