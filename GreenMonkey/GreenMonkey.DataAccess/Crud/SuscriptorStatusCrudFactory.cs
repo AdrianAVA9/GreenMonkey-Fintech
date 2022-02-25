@@ -56,14 +56,12 @@ namespace GreenMonkey.DataAccess.Crud
 
         public override void Update(BaseEntity entity)
         {
-            var customer = (SuscriptorStatus)entity;
-            dao.ExecuteProcedure(mapper.GetUpdateStatement(customer));
+            throw new NotImplementedException();
         }
 
         public override void Delete(BaseEntity entity)
         {
-            var customer = (SuscriptorStatus)entity;
-            dao.ExecuteProcedure(mapper.GetDeleteStatement(customer));
+            throw new NotImplementedException();
         }
     }
 }

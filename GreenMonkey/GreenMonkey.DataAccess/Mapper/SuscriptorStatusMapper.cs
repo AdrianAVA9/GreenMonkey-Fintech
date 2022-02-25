@@ -48,24 +48,12 @@ namespace GreenMonkey.DataAccess.Mapper
 
         public SqlOperation GetUpdateStatement(BaseEntity entity)
         {
-            var operation = new SqlOperation { ProcedureName = "UPD_SUSCRIPTOR_STATUS_PR" };
-
-            var c = (SuscriptorStatus)entity;
-            operation.AddIntParam(DB_COL_ID, c.Id);
-            operation.AddVarcharParam(DB_COL_CODE, c.Code);
-            operation.AddVarcharParam(DB_COL_CODE, c.Status);
-            operation.AddDateTimeParam(DB_COL_UPDATED_DATE, c.UpdatedDate);
-
-            return operation;
+            throw new NotImplementedException();
         }
 
         public SqlOperation GetDeleteStatement(BaseEntity entity)
         {
-            var operation = new SqlOperation { ProcedureName = "DEL_SUSCRIPTOR_STATUS_PR" };
-
-            var c = (SuscriptorStatus)entity;
-            operation.AddIntParam(DB_COL_ID, c.Id);
-            return operation;
+            throw new NotImplementedException();
         }
 
         public List<BaseEntity> BuildObjects(List<Dictionary<string, object>> lstRows)
