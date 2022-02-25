@@ -32,7 +32,7 @@ namespace GreenMonkey.DataAccess.Mapper
             var operation = new SqlOperation { ProcedureName = "RET_SUSCRIPTOR_STATUS_PR" };
 
             var c = (SuscriptorStatus)entity;
-            operation.AddIntParam(DB_COL_CODE, c.Id);
+            operation.AddVarcharParam(DB_COL_CODE, c.Code);
 
             return operation;
         }

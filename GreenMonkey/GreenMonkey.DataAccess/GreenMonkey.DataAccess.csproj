@@ -60,6 +60,8 @@
     <Compile Include="Crud\AppMessagesCrudFactory.cs" />
     <Compile Include="Crud\CrudFactory.cs" />
     <Compile Include="Crud\SuscriptorCrudFactory.cs" />
+    <Compile Include="Crud\SuscriptorStatusCrudFactory.cs" />
+    <Compile Include="Mapper\SuscriptorStatusMapper.cs" />
     <Compile Include="Dao\SqlDao.cs" />
     <Compile Include="Dao\SqlOperation.cs" />
     <Compile Include="Mapper\AppMessageMapper.cs" />
