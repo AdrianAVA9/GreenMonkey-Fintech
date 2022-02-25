@@ -6,3 +6,10 @@
 	[BaseUrl] [nvarchar](50) NOT NULL,
 	[Active] [char](1) NOT NULL DEFAULT('S'),
 )
+
+CREATE TABLE [dbo].[TBL_Suscriptor_Status](
+	[Id] [int] IDENTITY(1,1),
+	[Code] [nvarchar](4) NOT NULL PRIMARY KEY,
+	[Status] [nvarchar](10) NOT NULL,
+	[UpdatedDate] [DateTime] NOT NULL
+)
