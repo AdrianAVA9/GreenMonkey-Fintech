@@ -104,7 +104,10 @@ AS
 BEGIN
 	SET NOCOUNT ON;
 
-	SELECT * 
+	SELECT Id AS ID,
+		Code AS CODE,
+		Status AS STATUS,
+		UpdatedDate AS UPDATED_DATE
 	FROM TBL_Suscriptor_Status
 	WHERE Code = @P_CODE
 END
