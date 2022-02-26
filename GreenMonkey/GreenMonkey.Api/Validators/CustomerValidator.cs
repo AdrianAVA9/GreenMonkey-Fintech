@@ -33,8 +33,8 @@ namespace GreenMonkey.Api.Validators
 
             RuleFor(x => x.Birthdate)
                 .NotNull()
-                .Must(x => (DateTime.Today.Year - x.Year) >= 18)
-                .WithMessage("You must be of legal age (18)");
+                .Must(x => DateTime.Now.AddYears(-18).Date >= x.Date)
+                .WithMessage("Must be 18 years of age");
         }
     }
 }
