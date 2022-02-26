@@ -65,7 +65,30 @@ namespace GreenMonkey.Api.Controllers
                 return Created(string.Format("{0}/customers/{1}", Request.RequestUri, newCustomer.Id),
                     _mapper.Map<CustomerDto>(newCustomer));
             }
-            catch (Exception ex)
+            catch (Exception)
+            {
+                return InternalServerError();
+            }
+        }
+
+        [Route("{id}")]
+        [HttpGet]
+        public IHttpActionResult RetreaveCustomer(string id)
+        {
+            try
+            {
+                var customer = _customerManager.RetrieveCustomer(new Customer() { Id = id });
+
+                if (customer == null)
+                {
+                    return new ErrorResult(Request, HttpStatusCode.NotFound, new List<ValidationFailure>() {
+                        new ValidationFailure("customer", string.Format("The customer id: {0} does not exists", id) )
+                    });
+                }
+
+                return Ok(_mapper.Map<CustomerDto>(customer));
+            }
+            catch (Exception)
             {
                 return InternalServerError();
             }
