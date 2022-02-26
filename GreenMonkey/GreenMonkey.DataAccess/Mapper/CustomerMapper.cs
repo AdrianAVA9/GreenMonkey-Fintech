@@ -39,9 +39,10 @@ namespace GreenMonkey.DataAccess.Mapper
             return operation;
         }
 
-        SqlOperation ISqlStaments.GetRetriveAllStatement()
+        public SqlOperation GetRetriveAllStatement()
         {
-            throw new System.NotImplementedException();
+            var operation = new SqlOperation { ProcedureName = "RET_ALL_CUSTOMER_PR" };
+            return operation;
         }
 
         SqlOperation ISqlStaments.GetUpdateStatement(BaseEntity entity)

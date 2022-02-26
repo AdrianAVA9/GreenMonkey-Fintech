@@ -25,5 +25,10 @@ namespace GreenMonkey.Manager
         {
             return CustomerFactory.Retrieve<Customer>(customer);
         }
+
+        public List<Customer> RetrieveAllCustomers()
+        {
+            return CustomerFactory.RetrieveAll<Customer>();
+        }
     }
 }

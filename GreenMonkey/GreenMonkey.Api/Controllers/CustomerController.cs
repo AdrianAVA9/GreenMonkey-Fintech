@@ -93,5 +93,21 @@ namespace GreenMonkey.Api.Controllers
                 return InternalServerError();
             }
         }
+
+        [Route("")]
+        [HttpGet]
+        public IHttpActionResult RetreaveAllCustomers()
+        {
+            try
+            {
+                var customers = _customerManager.RetrieveAllCustomers();
+
+                return Ok(customers.Select(customer => _mapper.Map<CustomerDto>(customer)));
+            }
+            catch (Exception)
+            {
+                return InternalServerError();
+            }
+        }
     }
 }

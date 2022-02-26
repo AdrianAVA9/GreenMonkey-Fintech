@@ -39,7 +39,7 @@ namespace GreenMonkey.DataAccess.Crud
         }
         public override List<T> RetrieveAll<T>()
         {
-            var lstCustomers = new List<T>();
+            var lstSuscriptors = new List<T>();
             
             var lstResult = dao.ExecuteQueryProcedure(mapper.GetRetriveAllStatement());
             var dic = new Dictionary<string, object>();
@@ -48,11 +48,11 @@ namespace GreenMonkey.DataAccess.Crud
                 var objs = mapper.BuildObjects(lstResult);
                 foreach (var c in objs)
                 {
-                    lstCustomers.Add((T)Convert.ChangeType(c, typeof(T)));
+                    lstSuscriptors.Add((T)Convert.ChangeType(c, typeof(T)));
                 }
             }
            
-            return lstCustomers;
+            return lstSuscriptors;
         }
 
         public override void Update(BaseEntity entity)

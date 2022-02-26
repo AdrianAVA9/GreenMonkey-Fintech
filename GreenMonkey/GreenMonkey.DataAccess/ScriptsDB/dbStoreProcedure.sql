@@ -158,5 +158,21 @@ BEGIN
 END
 
 
+-- Retrieve all customers
+CREATE PROCEDURE RET_ALL_CUSTOMER_PR
+AS
+BEGIN
+	SET NOCOUNT ON;
+	SELECT Id AS ID
+		,Name AS NAME
+		,Lastname AS LASTNAME
+		,Nickname AS NICKNAME
+		,Status AS STATUS
+		,Birthdate AS BIRTHDATE
+		,RegisteredAt AS REGISTERED_AT
+	FROM TBL_Customer WHERE Active = 'S'
+END
+
 EXEC CRE_CUSTOMER_PR '116410260', 'Adrián Antonio', 'Vega Acevedo', 'My Nick', 'Soltero', '1996-05-05'
 EXEC RET_CUSTOMER_PR '116410260'
+EXEC RET_ALL_CUSTOMER_PR
