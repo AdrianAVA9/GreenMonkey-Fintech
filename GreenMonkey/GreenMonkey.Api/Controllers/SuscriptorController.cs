@@ -20,11 +20,13 @@ namespace GreenMonkey.Api.Controllers
     public class SuscriptorController : ApiController
     {
         private SuscriptorCrudFactory _suscriptorCrud { get; set; }
+        private SuscriptorStatusCrudFactory _suscriptorStatusCrud { get; set; }
         public IMapper _mapper { get; set; }
         public SuscriptorValidator _validator { get; set; }
         public SuscriptorController(IMapper mapper, SuscriptorValidator validator)
         {
             _suscriptorCrud = new SuscriptorCrudFactory();
+            _suscriptorStatusCrud = new SuscriptorStatusCrudFactory();
             _validator = validator;
             _mapper = mapper;
         }
@@ -122,8 +124,16 @@ namespace GreenMonkey.Api.Controllers
             try
             {
                 var suscriptors = _suscriptorCrud.RetrieveAll<Suscriptor>();
+                var suscriptorsDto = suscriptors.Select(suscriptor => _mapper.Map<SuscriptorDto>(suscriptor)).ToList();
 
-                return Ok(suscriptors.Select(suscriptor => _mapper.Map<SuscriptorDto>(suscriptor)));
+                foreach(var suscriptorDto in suscriptorsDto)
+                {
+                    suscriptorDto.StatusList = _suscriptorStatusCrud.RetrieveAll<SuscriptorStatus>(new SuscriptorStatus() { Code = suscriptorDto.Code })
+                        .Select(status => _mapper.Map<SuscriptorStatusDto>(status))
+                        .ToList();
+                }
+
+                return Ok(suscriptorsDto);
             }
             catch (Exception)
             {
@@ -146,7 +156,12 @@ namespace GreenMonkey.Api.Controllers
                     });
                 }
 
-                return Ok(_mapper.Map<SuscriptorDto>(suscriptor));
+                var suscriptorDto = _mapper.Map<SuscriptorDto>(suscriptor);
+                suscriptorDto.StatusList = _suscriptorStatusCrud.RetrieveAll<SuscriptorStatus>(new SuscriptorStatus() { Code = suscriptorDto.Code })
+                        .Select(status => _mapper.Map<SuscriptorStatusDto>(status))
+                        .ToList();
+
+                return Ok(suscriptorDto);
             }
             catch (Exception)
             {

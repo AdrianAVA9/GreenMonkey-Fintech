@@ -45,6 +45,7 @@
     <Compile Include="FintechStatusDto.cs" />
     <Compile Include="SuscriptorDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SuscriptorStatusDto.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

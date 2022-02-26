@@ -13,5 +13,6 @@ namespace GreenMonkey.Dtos
         public string Owner { get; set; }
         public string BaseUrl { get; set; }
         public string Code { get; set; }
+        public List<SuscriptorStatusDto> StatusList { get; set; }
     }
 }

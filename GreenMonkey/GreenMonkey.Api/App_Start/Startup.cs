@@ -21,6 +21,8 @@ namespace GreenMonkey.Api.App_Start
             var mapperConfiguration = new MapperConfiguration(mapConfig => {
                 mapConfig.CreateMap<Suscriptor, SuscriptorDto>()
                     .ReverseMap();
+                mapConfig.CreateMap<SuscriptorStatus, SuscriptorStatusDto>()
+                .ReverseMap();
             });
 
             var mapper = mapperConfiguration.CreateMapper();
