@@ -41,8 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseManager.cs" />
     <Compile Include="FintechManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SuscriptorManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GreenMonkey.DataAccess\GreenMonkey.DataAccess.csproj">

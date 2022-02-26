@@ -4,6 +4,7 @@ using GreenMonkey.Api.Models;
 using GreenMonkey.Api.Validators;
 using GreenMonkey.DataAccess.Crud;
 using GreenMonkey.Dtos;
+using GreenMonkey.Manager;
 using GreenMonkey.Models;
 using System;
 using System.Collections.Generic;
@@ -19,13 +20,13 @@ namespace GreenMonkey.Api.Controllers
     [RoutePrefix("api/suscriptors")]
     public class SuscriptorController : ApiController
     {
-        private SuscriptorCrudFactory _suscriptorCrud { get; set; }
+        private SuscriptorManager _suscriptorManager { get; set; }
         private SuscriptorStatusCrudFactory _suscriptorStatusCrud { get; set; }
         public IMapper _mapper { get; set; }
         public SuscriptorValidator _validator { get; set; }
         public SuscriptorController(IMapper mapper, SuscriptorValidator validator)
         {
-            _suscriptorCrud = new SuscriptorCrudFactory();
+            _suscriptorManager = new SuscriptorManager();
             _suscriptorStatusCrud = new SuscriptorStatusCrudFactory();
             _validator = validator;
             _mapper = mapper;
@@ -54,7 +55,7 @@ namespace GreenMonkey.Api.Controllers
                 }
 
                 var suscriptor = _mapper.Map<Suscriptor>(suscriptorDto);
-                var existingSuscriptor = _suscriptorCrud.Retrieve<Suscriptor>(suscriptor);
+                var existingSuscriptor = _suscriptorManager.RetrieveSuscriptor(suscriptor);
 
                 if (existingSuscriptor != null)
                 {
@@ -63,8 +64,8 @@ namespace GreenMonkey.Api.Controllers
                     });
                 }
 
-                _suscriptorCrud.Create(suscriptor);
-                var newSuscriptor = _suscriptorCrud.Retrieve<Suscriptor>(suscriptor);
+                _suscriptorManager.CreateSuscriptor(suscriptor);
+                var newSuscriptor = _suscriptorManager.RetrieveSuscriptor(suscriptor);
 
                 return Created(string.Format("{0}/suscriptors/{1}", Request.RequestUri, newSuscriptor.Code),
                     _mapper.Map<SuscriptorDto>(newSuscriptor));
@@ -98,7 +99,7 @@ namespace GreenMonkey.Api.Controllers
                 }
 
                 var suscriptor = _mapper.Map<Suscriptor>(suscriptorDto);
-                var existingSuscriptor = _suscriptorCrud.Retrieve<Suscriptor>(suscriptor);
+                var existingSuscriptor = _suscriptorManager.RetrieveSuscriptor(suscriptor);
                 
                 if(existingSuscriptor == null)
                 {
@@ -107,7 +108,7 @@ namespace GreenMonkey.Api.Controllers
                     });
                 }
 
-                _suscriptorCrud.Update(suscriptor);
+                _suscriptorManager.UpdateSuscriptor(suscriptor);
 
                 return Ok(suscriptorDto);
             }
@@ -123,7 +124,7 @@ namespace GreenMonkey.Api.Controllers
         {
             try
             {
-                var suscriptors = _suscriptorCrud.RetrieveAll<Suscriptor>();
+                var suscriptors = _suscriptorManager.RetrieveAllSuscriptors();
                 var suscriptorsDto = suscriptors.Select(suscriptor => _mapper.Map<SuscriptorDto>(suscriptor)).ToList();
 
                 foreach(var suscriptorDto in suscriptorsDto)
@@ -147,7 +148,7 @@ namespace GreenMonkey.Api.Controllers
         {
             try
             {
-                var suscriptor = _suscriptorCrud.Retrieve<Suscriptor>(new Suscriptor() { Code = code });
+                var suscriptor = _suscriptorManager.RetrieveSuscriptor(new Suscriptor() { Code = code });
 
                 if (suscriptor == null)
                 {
@@ -175,7 +176,7 @@ namespace GreenMonkey.Api.Controllers
         {
             try
             {
-                var existingSuscriptor = _suscriptorCrud.Retrieve<Suscriptor>(new Suscriptor() { Code = code });
+                var existingSuscriptor = _suscriptorManager.RetrieveSuscriptor(new Suscriptor() { Code = code });
 
                 if (existingSuscriptor == null)
                 {
@@ -184,7 +185,7 @@ namespace GreenMonkey.Api.Controllers
                     });
                 }
 
-                _suscriptorCrud.Delete(existingSuscriptor);
+                _suscriptorManager.DeleteSuscriptor(existingSuscriptor);
 
                 return StatusCode(HttpStatusCode.NoContent);
             }
