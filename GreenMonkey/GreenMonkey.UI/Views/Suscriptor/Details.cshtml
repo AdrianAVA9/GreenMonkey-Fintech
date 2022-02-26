@@ -49,7 +49,16 @@
             <a href="@Html.DisplayFor(model => model.BaseUrl)">@Html.DisplayFor(model => model.BaseUrl)</a>
         </dd>
     </dl>
+    <dl class="">
+        <h4>Lista de status</h4>
+        @foreach (var status in Model.StatusList)
+        {
+            <p>@(status.UpdatedDate.ToString("yyyy-MM-dd hh:mm:ss")) - <span class="label @(status.Status == "Online" ? "label-success" : "label-danger")">@(status.Status)</span></p>
+        }
+    </dl>
 </div>
+<br>
+<br>
 <p>
     @Html.ActionLink("Editar", "Edit", new { code = Model.Code }) |
     @Html.ActionLink("Ir a inicio", "Index")

@@ -134,6 +134,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Suscriptor.cs" />
+    <Compile Include="Models\SuscriptorStatus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\GreenMonkeyHttpClient.cs" />
     <Compile Include="Services\SuscriptorService.cs" />
