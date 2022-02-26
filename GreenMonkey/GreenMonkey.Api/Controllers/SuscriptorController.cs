@@ -21,13 +21,11 @@ namespace GreenMonkey.Api.Controllers
     public class SuscriptorController : ApiController
     {
         private SuscriptorManager _suscriptorManager { get; set; }
-        private SuscriptorStatusCrudFactory _suscriptorStatusCrud { get; set; }
         public IMapper _mapper { get; set; }
         public SuscriptorValidator _validator { get; set; }
         public SuscriptorController(IMapper mapper, SuscriptorValidator validator)
         {
             _suscriptorManager = new SuscriptorManager();
-            _suscriptorStatusCrud = new SuscriptorStatusCrudFactory();
             _validator = validator;
             _mapper = mapper;
         }
@@ -125,16 +123,8 @@ namespace GreenMonkey.Api.Controllers
             try
             {
                 var suscriptors = _suscriptorManager.RetrieveAllSuscriptors();
-                var suscriptorsDto = suscriptors.Select(suscriptor => _mapper.Map<SuscriptorDto>(suscriptor)).ToList();
 
-                foreach(var suscriptorDto in suscriptorsDto)
-                {
-                    suscriptorDto.StatusList = _suscriptorStatusCrud.RetrieveAll<SuscriptorStatus>(new SuscriptorStatus() { Code = suscriptorDto.Code })
-                        .Select(status => _mapper.Map<SuscriptorStatusDto>(status))
-                        .ToList();
-                }
-
-                return Ok(suscriptorsDto);
+                return Ok(suscriptors.Select(suscriptor => _mapper.Map<SuscriptorDto>(suscriptor)));
             }
             catch (Exception)
             {
@@ -157,12 +147,7 @@ namespace GreenMonkey.Api.Controllers
                     });
                 }
 
-                var suscriptorDto = _mapper.Map<SuscriptorDto>(suscriptor);
-                suscriptorDto.StatusList = _suscriptorStatusCrud.RetrieveAll<SuscriptorStatus>(new SuscriptorStatus() { Code = suscriptorDto.Code })
-                        .Select(status => _mapper.Map<SuscriptorStatusDto>(status))
-                        .ToList();
-
-                return Ok(suscriptorDto);
+                return Ok(_mapper.Map<SuscriptorDto>(suscriptor));
             }
             catch (Exception)
             {

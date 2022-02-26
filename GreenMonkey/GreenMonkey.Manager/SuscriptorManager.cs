@@ -10,11 +10,13 @@ namespace GreenMonkey.Manager
 {
     public class SuscriptorManager : BaseManager
     {
-        public SuscriptorCrudFactory SuscriptorFactory { get; private set; }
+        private SuscriptorCrudFactory SuscriptorFactory { get; set; }
+        private SuscriptorStatusCrudFactory SuscriptorStatusFactory { get; set; }
 
         public SuscriptorManager()
         {
             SuscriptorFactory = new SuscriptorCrudFactory();
+            SuscriptorStatusFactory = new SuscriptorStatusCrudFactory();
         }
 
         public void CreateSuscriptor(Suscriptor suscriptor)
@@ -29,12 +31,26 @@ namespace GreenMonkey.Manager
 
         public List<Suscriptor> RetrieveAllSuscriptors()
         {
-            return SuscriptorFactory.RetrieveAll<Suscriptor>();
+            var suscriptors = SuscriptorFactory.RetrieveAll<Suscriptor>();
+
+            foreach (var suscriptor in suscriptors)
+            {
+                suscriptor.StatusList = SuscriptorStatusFactory.RetrieveAll<SuscriptorStatus>(new SuscriptorStatus() { Code = suscriptor.Code });
+            }
+
+            return suscriptors;
         }
 
         public Suscriptor RetrieveSuscriptor(Suscriptor suscriptor)
         {
-            return SuscriptorFactory.Retrieve<Suscriptor>(suscriptor);
+            var existingSuscriptor = SuscriptorFactory.Retrieve<Suscriptor>(suscriptor);
+
+            if(existingSuscriptor != null)
+            {
+                existingSuscriptor.StatusList = SuscriptorStatusFactory.RetrieveAll<SuscriptorStatus>(new SuscriptorStatus() { Code = suscriptor.Code });
+            }
+
+            return existingSuscriptor;
         }
 
         public void DeleteSuscriptor(Suscriptor suscriptor)

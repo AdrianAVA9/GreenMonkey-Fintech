@@ -14,5 +14,6 @@ namespace GreenMonkey.Models
         public string BaseUrl { get; set; }
         public string Code { get; set; }
         public string Active { get; set; }
+        public List<SuscriptorStatus> StatusList { get; set; }
     }
 }

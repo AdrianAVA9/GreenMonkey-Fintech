@@ -45,6 +45,7 @@
     <Compile Include="FintechManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SuscriptorManager.cs" />
+    <Compile Include="SuscriptorStatusManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GreenMonkey.DataAccess\GreenMonkey.DataAccess.csproj">
