@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GreenMonkey.Models
+namespace GreenMonkey.Dtos
 {
-    public class Customer : BaseEntity
+    public class CustomerDto
     {
         public string Id { get; set; }
         public string Name { get; set; }
@@ -14,11 +14,7 @@ namespace GreenMonkey.Models
         public string Nickname { get; set; }
         public string Status { get; set; }
         public DateTime Birthdate { get; set; }
-        public int Age {
-            get {
-                return DateTime.Today.Year - Birthdate.Year;
-            }
-        }
+        public int Age { get; set; }
         public DateTime RegisteredAt { get; set; }
     }
 }

@@ -14,3 +14,15 @@ CREATE TABLE [dbo].[TBL_Suscriptor_Status](
 	[Status] [nvarchar](10) NOT NULL,
 	[UpdatedDate] [DateTime] NOT NULL
 )
+
+
+CREATE TABLE [dbo].[TBL_Customer](
+	[Id] [nvarchar](15) NOT NULL PRIMARY KEY,
+	[Name] [nvarchar](50) NOT NULL,
+	[Lastname] [nvarchar](50) NOT NULL,
+	[Nickname] [nvarchar](30) NOT NULL,
+	[Status] [nvarchar](15) NOT NULL,
+	[Birthdate] [Datetime] NOT NULL,
+	[RegisteredAt] [Datetime] NOT NULL,
+	[Active] [char](1) NOT NULL DEFAULT('S'),
+)

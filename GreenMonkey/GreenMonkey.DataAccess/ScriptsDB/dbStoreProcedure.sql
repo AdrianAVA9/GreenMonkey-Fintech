@@ -115,3 +115,48 @@ END
 
 EXEC RET_SUSCRIPTOR_STATUS_BY_SUSCRIPTOR_PR '1028'
 EXEC CRE_SUSCRIPTOR_STATUS_PR '1028', 'Offline', '2022-02-24 15:21:03'
+
+
+
+
+------------------------------------------- STORE PROCEDURE OF CUSTOMER --------------------------------------------------
+
+-- Create customer
+CREATE PROCEDURE CRE_CUSTOMER_PR(
+	@P_ID nvarchar(15),
+	@P_NAME nvarchar(50),
+	@P_LASTNAME nvarchar(50),
+	@P_NICKNAME nvarchar(30),
+	@P_STATUS nvarchar(15),
+	@P_BIRTHDATE DATETIME
+)
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	INSERT INTO TBL_Customer(Id, Name, Lastname, Nickname, Status, Birthdate, RegisteredAt, Active)
+	VALUES
+		(@P_ID, @P_NAME, @P_LASTNAME, @P_NICKNAME, @P_STATUS, @P_BIRTHDATE, GETDATE(), 'S')
+END
+
+
+-- Retrieve customer by Id
+CREATE PROCEDURE RET_CUSTOMER_PR(
+	@P_ID NVARCHAR(15)
+)
+AS
+BEGIN
+	SET NOCOUNT ON;
+	SELECT Id AS ID
+		,Name AS NAME
+		,Lastname AS LASTNAME
+		,Nickname AS NICKNAME
+		,Status AS STATUS
+		,Birthdate AS BIRTHDATE
+		,RegisteredAt AS REGISTERED_AT
+	FROM TBL_Customer WHERE Id = @P_ID AND Active = 'S'
+END
+
+
+EXEC CRE_CUSTOMER_PR '116410260', 'Adrián Antonio', 'Vega Acevedo', 'My Nick', 'Soltero', '1996-05-05'
+EXEC RET_CUSTOMER_PR '116410260'

@@ -22,7 +22,9 @@ namespace GreenMonkey.Api.App_Start
                 mapConfig.CreateMap<Suscriptor, SuscriptorDto>()
                     .ReverseMap();
                 mapConfig.CreateMap<SuscriptorStatus, SuscriptorStatusDto>()
-                .ReverseMap();
+                    .ReverseMap();
+                mapConfig.CreateMap<Customer, CustomerDto>()
+                    .ReverseMap();
             });
 
             var mapper = mapperConfiguration.CreateMapper();
@@ -30,6 +32,7 @@ namespace GreenMonkey.Api.App_Start
             var builder = new ContainerBuilder();
             builder.RegisterInstance(mapper);
             builder.RegisterInstance(new SuscriptorValidator());
+            builder.RegisterInstance(new CustomerValidator());
             builder.RegisterApiControllers(System.Reflection.Assembly.GetExecutingAssembly());
             
             var container = builder.Build();
