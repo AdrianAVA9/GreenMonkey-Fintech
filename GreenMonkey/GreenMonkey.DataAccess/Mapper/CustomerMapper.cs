@@ -60,9 +60,13 @@ namespace GreenMonkey.DataAccess.Mapper
             return operation;
         }
 
-        SqlOperation ISqlStaments.GetDeleteStatement(BaseEntity entity)
+        public SqlOperation GetDeleteStatement(BaseEntity entity)
         {
-            throw new System.NotImplementedException();
+            var operation = new SqlOperation { ProcedureName = "DEL_CUSTOMER_PR" };
+
+            var c = (Customer)entity;
+            operation.AddVarcharParam(DB_COL_ID, c.Id);
+            return operation;
         }
 
         public List<BaseEntity> BuildObjects(List<Dictionary<string, object>> lstRows)

@@ -190,7 +190,21 @@ BEGIN
 	WHERE Id = @P_ID
 END
 
+-- Delete customer
+CREATE PROCEDURE DEL_CUSTOMER_PR(
+	@P_ID nvarchar(15)
+)
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	UPDATE TBL_Customer
+	SET Active = 'N'
+	WHERE Id = @P_ID
+END
+
 EXEC CRE_CUSTOMER_PR '116410260', 'Adrián Antonio', 'Vega Acevedo', 'My Nick', 'Soltero', '1996-05-05'
 EXEC UPD_CUSTOMER_PR '116410260', 'Adrián Antonio', 'Vega Acevedo', 'Adrián', 'Soltero', '1996-05-10'
+EXEC DEL_CUSTOMER_PR '116410260'
 EXEC RET_CUSTOMER_PR '116410260'
 EXEC RET_ALL_CUSTOMER_PR

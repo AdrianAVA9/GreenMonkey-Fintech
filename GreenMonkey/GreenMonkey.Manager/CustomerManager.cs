@@ -35,5 +35,10 @@ namespace GreenMonkey.Manager
         {
             CustomerFactory.Update(customer);
         }
+
+        public void DeleteCustomer(Customer customer)
+        {
+            CustomerFactory.Delete(customer);
+        }
     }
 }

@@ -26,7 +26,8 @@ namespace GreenMonkey.DataAccess.Crud
 
         public override void Delete(BaseEntity entity)
         {
-            throw new NotImplementedException();
+            var customer = (Customer)entity;
+            dao.ExecuteProcedure(mapper.GetDeleteStatement(customer));
         }
 
         public override T Retrieve<T>(BaseEntity entity)

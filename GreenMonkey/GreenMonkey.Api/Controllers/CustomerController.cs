@@ -73,7 +73,7 @@ namespace GreenMonkey.Api.Controllers
 
         [Route("")]
         [HttpPut]
-        public IHttpActionResult UpdateSuscriptor([FromBody] CustomerDto customerDto)
+        public IHttpActionResult UpdateCustomer([FromBody] CustomerDto customerDto)
         {
             try
             {
@@ -106,6 +106,31 @@ namespace GreenMonkey.Api.Controllers
                 _customerManager.UpdateCustomer(customer);
 
                 return Ok(customerDto);
+            }
+            catch (Exception)
+            {
+                return InternalServerError();
+            }
+        }
+
+        [Route("{id}")]
+        [HttpDelete]
+        public IHttpActionResult DeleteCustomer(string id)
+        {
+            try
+            {
+                var existingCustomer = _customerManager.RetrieveCustomer(new Customer() { Id = id });
+
+                if (existingCustomer == null)
+                {
+                    return new ErrorResult(Request, HttpStatusCode.NotFound, new List<ValidationFailure>() {
+                        new ValidationFailure("Customer", string.Format("The customer code: {0} does not exists", id))
+                    });
+                }
+
+                _customerManager.DeleteCustomer(existingCustomer);
+
+                return StatusCode(HttpStatusCode.NoContent);
             }
             catch (Exception)
             {
