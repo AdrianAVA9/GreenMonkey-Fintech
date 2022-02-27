@@ -173,6 +173,24 @@ BEGIN
 	FROM TBL_Customer WHERE Active = 'S'
 END
 
+CREATE PROCEDURE UPD_CUSTOMER_PR(
+	@P_ID nvarchar(15),
+	@P_NAME nvarchar(50),
+	@P_LASTNAME nvarchar(50),
+	@P_NICKNAME nvarchar(30),
+	@P_STATUS nvarchar(15),
+	@P_BIRTHDATE DATETIME
+)
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	UPDATE TBL_Customer
+	SET Name = @P_NAME, Lastname = @P_LASTNAME, Nickname = @P_NICKNAME, Status = @P_STATUS, Birthdate = @P_BIRTHDATE
+	WHERE Id = @P_ID
+END
+
 EXEC CRE_CUSTOMER_PR '116410260', 'Adrián Antonio', 'Vega Acevedo', 'My Nick', 'Soltero', '1996-05-05'
+EXEC UPD_CUSTOMER_PR '116410260', 'Adrián Antonio', 'Vega Acevedo', 'Adrián', 'Soltero', '1996-05-10'
 EXEC RET_CUSTOMER_PR '116410260'
 EXEC RET_ALL_CUSTOMER_PR

@@ -30,5 +30,10 @@ namespace GreenMonkey.Manager
         {
             return CustomerFactory.RetrieveAll<Customer>();
         }
+
+        public void UpdateCustomer(Customer customer)
+        {
+            CustomerFactory.Update(customer);
+        }
     }
 }

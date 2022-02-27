@@ -45,9 +45,19 @@ namespace GreenMonkey.DataAccess.Mapper
             return operation;
         }
 
-        SqlOperation ISqlStaments.GetUpdateStatement(BaseEntity entity)
+        public SqlOperation GetUpdateStatement(BaseEntity entity)
         {
-            throw new System.NotImplementedException();
+            var operation = new SqlOperation { ProcedureName = "UPD_CUSTOMER_PR" };
+
+            var c = (Customer)entity;
+            operation.AddVarcharParam(DB_COL_ID, c.Id);
+            operation.AddVarcharParam(DB_COL_NAME, c.Name);
+            operation.AddVarcharParam(DB_COL_LASTNAME, c.LastName);
+            operation.AddVarcharParam(DB_COL_NICKNAME, c.Nickname);
+            operation.AddVarcharParam(DB_COL_STATUS, c.Status);
+            operation.AddDateTimeParam(DB_COL_BIRTHDATE, c.Birthdate);
+
+            return operation;
         }
 
         SqlOperation ISqlStaments.GetDeleteStatement(BaseEntity entity)

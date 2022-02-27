@@ -71,6 +71,48 @@ namespace GreenMonkey.Api.Controllers
             }
         }
 
+        [Route("")]
+        [HttpPut]
+        public IHttpActionResult UpdateSuscriptor([FromBody] CustomerDto customerDto)
+        {
+            try
+            {
+                if (customerDto == null || !_validator.Validate(customerDto).IsValid)
+                {
+                    var validations = new List<ValidationFailure>();
+
+                    if (customerDto == null)
+                    {
+                        validations.Add(new ValidationFailure("Customer", "The customer can not be null"));
+                    }
+                    else
+                    {
+                        validations.AddRange(_validator.Validate(customerDto).Errors);
+                    }
+
+                    return new ErrorResult(Request, HttpStatusCode.BadRequest, validations);
+                }
+
+                var customer = _mapper.Map<Customer>(customerDto);
+                var existingCustomer = _customerManager.RetrieveCustomer(customer);
+
+                if (existingCustomer == null)
+                {
+                    return new ErrorResult(Request, HttpStatusCode.NotFound, new List<ValidationFailure>() {
+                        new ValidationFailure("Id", string.Format("The customer id: {0} does not exists", customer.Id))
+                    });
+                }
+
+                _customerManager.UpdateCustomer(customer);
+
+                return Ok(customerDto);
+            }
+            catch (Exception)
+            {
+                return InternalServerError();
+            }
+        }
+
         [Route("{id}")]
         [HttpGet]
         public IHttpActionResult RetreaveCustomer(string id)

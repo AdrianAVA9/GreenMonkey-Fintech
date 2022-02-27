@@ -63,7 +63,8 @@ namespace GreenMonkey.DataAccess.Crud
 
         public override void Update(BaseEntity entity)
         {
-            throw new NotImplementedException();
+            var customer = (Customer)entity;
+            dao.ExecuteProcedure(mapper.GetUpdateStatement(customer));
         }
     }
 }
