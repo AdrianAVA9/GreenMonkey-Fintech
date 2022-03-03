@@ -49,6 +49,7 @@
     <Compile Include="SuscriptorDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SuscriptorStatusDto.cs" />
+    <Compile Include="TransactionDto.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -218,6 +218,7 @@
     <Compile Include="Validators\CoinValidator.cs" />
     <Compile Include="Validators\CustomerValidator.cs" />
     <Compile Include="Validators\SuscriptorValidator.cs" />
+    <Compile Include="Validators\TransactionValidator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
