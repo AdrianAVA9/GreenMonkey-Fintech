@@ -20,5 +20,10 @@ namespace GreenMonkey.Manager
         {
             CoinFactory.Create(coin);
         }
+
+        public List<Coin> RetrieveAllCoin()
+        {
+            return CoinFactory.RetrieveAll<Coin>();
+        }
     }
 }

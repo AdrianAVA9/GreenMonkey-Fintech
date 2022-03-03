@@ -38,7 +38,20 @@ namespace GreenMonkey.DataAccess.Crud
 
         public override List<T> RetrieveAll<T>()
         {
-            throw new NotImplementedException();
+            var lstCoins = new List<T>();
+
+            var lstResult = dao.ExecuteQueryProcedure(mapper.GetRetriveAllStatement());
+            var dic = new Dictionary<string, object>();
+            if (lstResult.Count > 0)
+            {
+                var objs = mapper.BuildObjects(lstResult);
+                foreach (var c in objs)
+                {
+                    lstCoins.Add((T)Convert.ChangeType(c, typeof(T)));
+                }
+            }
+
+            return lstCoins;
         }
 
         public override void Update(BaseEntity entity)

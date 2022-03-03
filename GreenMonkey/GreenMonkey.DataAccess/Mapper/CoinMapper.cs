@@ -32,7 +32,8 @@ namespace GreenMonkey.DataAccess.Mapper
 
         public SqlOperation GetRetriveAllStatement()
         {
-            throw new NotImplementedException();
+            var operation = new SqlOperation { ProcedureName = "RET_ALL_COIN_PR" };
+            return operation;
         }
 
         public SqlOperation GetRetriveStatement(BaseEntity entity)
