@@ -25,6 +25,7 @@ namespace GreenMonkey.Api.Controllers
         public CoinController(IMapper mapper, CoinValidator validator)
         {
             _coinManager = new CoinManager();
+            _suscriptorManager = new SuscriptorManager();
             _validator = validator;
             _mapper = mapper;
         }
