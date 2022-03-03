@@ -29,6 +29,8 @@ namespace GreenMonkey.Api.Controllers
             _mapper = mapper;
         }
 
+        [Route("")]
+        [HttpPost]
         public IHttpActionResult CreateCoin(CoinDto coinDto)
         {
             try
@@ -73,6 +75,29 @@ namespace GreenMonkey.Api.Controllers
 
                 return Created(string.Format("{0}/coins/{1}", Request.RequestUri, newCoin.Code),
                     _mapper.Map<CoinDto>(newCoin));
+            }
+            catch (Exception)
+            {
+                return InternalServerError();
+            }
+        }
+
+        [Route("{code}")]
+        [HttpGet]
+        public IHttpActionResult RetrieveCoin(int code)
+        {
+            try
+            {
+                var coin = _coinManager.RetrieveCoin(new Coin() { Code = code });
+
+                if (coin == null)
+                {
+                    return new ErrorResult(Request, HttpStatusCode.NotFound, new List<ValidationFailure>() {
+                        new ValidationFailure("Coin", string.Format("The coin code: {0} does not exists", code) )
+                    });
+                }
+
+                return Ok(_mapper.Map<CoinDto>(coin));
             }
             catch (Exception)
             {
