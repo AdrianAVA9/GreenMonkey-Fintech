@@ -25,5 +25,10 @@ namespace GreenMonkey.Manager
         {
             return AccountFactory.Retrieve<Account>(account);
         }
+
+        public List<Account> RetrieveAccountByCustomer(Account account)
+        {
+            return AccountFactory.RetrieveAllByCustomer<Account>(account);
+        }
     }
 }
