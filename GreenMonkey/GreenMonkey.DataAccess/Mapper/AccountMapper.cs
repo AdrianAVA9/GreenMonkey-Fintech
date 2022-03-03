@@ -40,6 +40,15 @@ namespace GreenMonkey.DataAccess.Mapper
             throw new NotImplementedException();
         }
 
+        public SqlOperation GetRetriveAllByCustomerStatement(BaseEntity entity)
+        {
+            var operation = new SqlOperation { ProcedureName = "RET_ALL_BY_CUSTOMER_PR" };
+            var a = (Account)entity;
+            operation.AddVarcharParam(DB_COL_CUSTOMER_ID, a.CustomerId);
+
+            return operation;
+        }
+
         public SqlOperation GetRetriveStatement(BaseEntity entity)
         {
             var operation = new SqlOperation { ProcedureName = "RET_ACCOUNT_PR" };
@@ -55,14 +64,32 @@ namespace GreenMonkey.DataAccess.Mapper
             throw new NotImplementedException();
         }
 
-        public BaseEntity BuildObject(Dictionary<string, object> row)
-        {
-            throw new NotImplementedException();
-        }
-
         public List<BaseEntity> BuildObjects(List<Dictionary<string, object>> lstRows)
         {
-            throw new NotImplementedException();
+            var lstResults = new List<BaseEntity>();
+
+            foreach (var row in lstRows)
+            {
+                var account = BuildObject(row);
+                lstResults.Add(account);
+            }
+
+            return lstResults;
+        }
+
+        public BaseEntity BuildObject(Dictionary<string, object> row)
+        {
+            var account = new Account
+            {
+                Number = GetStringValue(row, DB_COL_NUMBER),
+                Name = GetStringValue(row, DB_COL_NAME),
+                Status = GetStringValue(row, DB_COL_STATUS),
+                CustomerId = GetStringValue(row, DB_COL_CUSTOMER_ID),
+                CoinCode = GetIntValue(row, DB_COL_COIN_CODE),
+                RegisteredAt = GetDateValue(row, DB_COL_REGISTERED_AT),
+            };
+
+            return account;
         }
     }
 }
