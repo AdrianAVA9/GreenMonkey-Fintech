@@ -52,3 +52,9 @@ CREATE TABLE TBL_Transaction(
 	Type [nvarchar](20) NOT NULL,
 	AccountNumber [nvarchar](14) NOT NULL
 )
+
+
+ALTER TABLE TBL_Coin ADD FOREIGN KEY (FintechCode) REFERENCES TBL_Suscriptor(Code);
+ALTER TABLE TBL_Account ADD FOREIGN KEY (CustomerId) REFERENCES TBL_Customer(Id);
+ALTER TABLE TBL_Account ADD FOREIGN KEY (CoinCode) REFERENCES TBL_Coin(Code);
+ALTER TABLE TBL_Transaction ADD FOREIGN KEY (AccountNumber) REFERENCES TBL_Account(Number);
