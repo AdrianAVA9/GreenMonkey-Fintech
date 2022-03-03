@@ -52,5 +52,21 @@ namespace GreenMonkey.Api.Controllers
                 return InternalServerError();
             }
         }
+
+        [Route("account")]
+        [HttpGet]
+        public IHttpActionResult RetrieveTransactionsByAccount(string accountNumber)
+        {
+            try
+            {
+                var transactions = _transactionManager.RetrieveTransactionsByAccount(new Transaction() { AccountNumber = accountNumber });
+
+                return Ok(transactions.Select(transaction => _mapper.Map<TransactionDto>(transaction)));
+            }
+            catch (Exception)
+            {
+                return InternalServerError();
+            }
+        }
     }
 }
