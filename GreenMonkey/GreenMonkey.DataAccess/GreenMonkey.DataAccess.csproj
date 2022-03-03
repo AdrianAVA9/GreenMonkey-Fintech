@@ -64,6 +64,7 @@
     <Compile Include="Crud\CustomerCrudFactory.cs" />
     <Compile Include="Crud\SuscriptorCrudFactory.cs" />
     <Compile Include="Crud\SuscriptorStatusCrudFactory.cs" />
+    <Compile Include="Crud\TransactionCrudFactory.cs" />
     <Compile Include="Mapper\AccountMapper.cs" />
     <Compile Include="Mapper\CoinMapper.cs" />
     <Compile Include="Mapper\CustomerMapper.cs" />
@@ -75,6 +76,7 @@
     <Compile Include="Mapper\IObjectMapper.cs" />
     <Compile Include="Mapper\ISqlStaments.cs" />
     <Compile Include="Mapper\SuscriptorMapper.cs" />
+    <Compile Include="Mapper\TransactionMapper.cs" />
     <Compile Include="MemoryPersistence.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

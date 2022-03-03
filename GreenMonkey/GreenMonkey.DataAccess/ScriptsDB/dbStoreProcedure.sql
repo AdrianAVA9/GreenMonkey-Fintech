@@ -336,3 +336,22 @@ END
 EXEC RET_ACCOUNT_PR 'Credito', 'Activa', '116410260', 2
 EXEC RET_ACCOUNT_PR 'CR_1028_000001'
 EXEC RET_ALL_BY_CUSTOMER_PR '116410260'
+
+
+
+
+------------------------------------------- STORE PROCEDURE OF TRANSACTION --------------------------------------------------
+
+-- Create transaction
+CREATE PROCEDURE CRE_TRANSACTION_PR(
+	@P_AMOUNT DECIMAL,
+	@P_TYPE NVARCHAR(20),
+	@P_ACCOUNT_NUMBER NVARCHAR(14)
+)
+AS
+BEGIN
+	INSERT INTO TBL_Transaction(Amount, Type, AccountNumber, RegisteredAt)
+	VALUES(@P_AMOUNT, @P_TYPE, @P_ACCOUNT_NUMBER, GETDATE())
+END
+
+EXEC CRE_TRANSACTION_PR 1000, 'haber', 'CR_1028_000002'

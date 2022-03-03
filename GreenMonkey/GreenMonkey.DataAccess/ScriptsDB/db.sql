@@ -43,3 +43,12 @@ CREATE TABLE TBL_Account(
 	CoinCode [int] NOT NULL,
 	RegisteredAt [datetime] NOT NULL
 )
+
+
+CREATE TABLE TBL_Transaction(
+	Id [int] IDENTITY(1,1) PRIMARY KEY,
+	Amount [decimal] NOT NULL,
+	RegisteredAt [datetime] NOT NULL,
+	Type [nvarchar](20) NOT NULL,
+	AccountNumber [nvarchar](14) NOT NULL
+)
