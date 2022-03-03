@@ -20,5 +20,10 @@ namespace GreenMonkey.Manager
         {
             AccountFactory.Create(account);
         }
+
+        public Account RetrieveAccount(Account account)
+        {
+            return AccountFactory.Retrieve<Account>(account);
+        }
     }
 }

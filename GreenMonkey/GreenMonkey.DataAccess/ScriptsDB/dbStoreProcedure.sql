@@ -270,7 +270,9 @@ EXEC RET_COIN_PR 1
 
 
 
-------------------------------------------- STORE PROCEDURE OF COIN --------------------------------------------------
+------------------------------------------- STORE PROCEDURE OF ACCOUNT --------------------------------------------------
+
+-- Create account
 CREATE PROCEDURE CRE_ACCOUNT_PR(
 	@P_NAME NVARCHAR(50),
 	@P_STATUS NVARCHAR(15),
@@ -293,3 +295,25 @@ BEGIN
 	INSERT INTO TBL_Account(Number, Consecutive, Name, Status, CustomerId, CoinCode, RegisteredAt)
 	VALUES (@ACCOUNT_NUMBER, @ACCOUNT_ID, @P_NAME, @P_STATUS, @P_CUSTOMER_ID, @P_COIN_CODE, GETDATE())
 END
+
+-- Retrieve account
+CREATE PROCEDURE RET_ACCOUNT_PR(
+	@P_NUMBER NVARCHAR(14)
+)
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	SELECT Number AS NUMBER
+		,Name AS NAME
+		,Status AS STATUS
+		,CustomerId AS CUSTOMER_ID
+		,CoinCode AS COIN_CODE
+		,RegisteredAt AS REGISTERED_AT
+	FROM TBL_Account
+	WHERE Number = @P_NUMBER
+END
+
+
+EXEC RET_ACCOUNT_PR 'Credito', 'Activa', '116410260', 2
+EXEC RET_ACCOUNT_PR 'CR_1028_000001'
