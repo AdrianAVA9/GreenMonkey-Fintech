@@ -25,6 +25,8 @@ namespace GreenMonkey.Api.App_Start
                     .ReverseMap();
                 mapConfig.CreateMap<Customer, CustomerDto>()
                     .ReverseMap();
+                mapConfig.CreateMap<Coin, CoinDto>()
+                    .ReverseMap();
             });
 
             var mapper = mapperConfiguration.CreateMapper();
@@ -33,6 +35,7 @@ namespace GreenMonkey.Api.App_Start
             builder.RegisterInstance(mapper);
             builder.RegisterInstance(new SuscriptorValidator());
             builder.RegisterInstance(new CustomerValidator());
+            builder.RegisterInstance(new CoinValidator());
             builder.RegisterApiControllers(System.Reflection.Assembly.GetExecutingAssembly());
             
             var container = builder.Build();

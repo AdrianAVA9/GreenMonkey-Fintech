@@ -120,5 +120,21 @@ namespace GreenMonkey.Api.Controllers
                 return InternalServerError();
             }
         }
+
+        [Route("")]
+        [HttpGet]
+        public IHttpActionResult RetrieveAllCoins()
+        {
+            try
+            {
+                var coins = _coinManager.RetrieveAllCoin();
+
+                return Ok(coins.Select(coin => _mapper.Map<CoinDto>(coin)));
+            }
+            catch (Exception)
+            {
+                return InternalServerError();
+            }
+        }
     }
 }
