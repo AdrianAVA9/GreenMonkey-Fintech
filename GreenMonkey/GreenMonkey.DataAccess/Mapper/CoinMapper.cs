@@ -38,7 +38,22 @@ namespace GreenMonkey.DataAccess.Mapper
 
         public SqlOperation GetRetriveStatement(BaseEntity entity)
         {
-            throw new NotImplementedException();
+            var operation = new SqlOperation { ProcedureName = "RET_COIN_PR" };
+
+            var c = (Coin)entity;
+            operation.AddIntParam(DB_COL_CODE, c.Code);
+
+            return operation;
+        }
+
+        public SqlOperation GetRetriveByFintechStatement(BaseEntity entity)
+        {
+            var operation = new SqlOperation { ProcedureName = "RET_COIN_BY_FINTECH_PR" };
+
+            var c = (Coin)entity;
+            operation.AddVarcharParam(DB_COL_FINTECH_CODE, c.FintechCode);
+
+            return operation;
         }
 
         public SqlOperation GetUpdateStatement(BaseEntity entity)

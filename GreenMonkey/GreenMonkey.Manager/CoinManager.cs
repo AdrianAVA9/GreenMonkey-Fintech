@@ -25,5 +25,14 @@ namespace GreenMonkey.Manager
         {
             return CoinFactory.RetrieveAll<Coin>();
         }
+        public Coin RetrieveCoin(Coin coin)
+        {
+            return CoinFactory.Retrieve<Coin>(coin);
+        }
+
+        public Coin RetrieveCoinByFintech(Coin coin)
+        {
+            return CoinFactory.RetrieveByFintech<Coin>(coin);
+        }
     }
 }
