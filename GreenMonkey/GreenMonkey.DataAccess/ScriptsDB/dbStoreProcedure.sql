@@ -342,6 +342,7 @@ EXEC RET_ALL_BY_CUSTOMER_PR '116410260'
 
 ------------------------------------------- STORE PROCEDURE OF TRANSACTION --------------------------------------------------
 
+
 -- Create transaction
 CREATE PROCEDURE CRE_TRANSACTION_PR(
 	@P_AMOUNT DECIMAL,
@@ -354,4 +355,23 @@ BEGIN
 	VALUES(@P_AMOUNT, @P_TYPE, @P_ACCOUNT_NUMBER, GETDATE())
 END
 
+
+-- Retrieve transaction
+CREATE PROCEDURE RET_TRANSACTION_PR(
+	@P_ID INT
+)
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	SELECT Amount AS AMOUNT
+		,Type AS TYPE
+		,AccountNumber AS ACCOUNT_NUMBER
+		,RegisteredAt AS REGISTERED_AT
+	FROM TBL_Transaction
+	WHERE Id = @P_ID
+END
+
+
 EXEC CRE_TRANSACTION_PR 1000, 'haber', 'CR_1028_000002'
+EXEC RET_TRANSACTION_PR 1

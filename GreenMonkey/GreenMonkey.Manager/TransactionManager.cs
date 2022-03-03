@@ -21,5 +21,10 @@ namespace GreenMonkey.Manager
         {
             TransactionFactory.Create(transaction);
         }
+
+        public Transaction RetrieveTransaction(Transaction transaction)
+        {
+            return TransactionFactory.Retrieve<Transaction>(transaction);
+        }
     }
 }

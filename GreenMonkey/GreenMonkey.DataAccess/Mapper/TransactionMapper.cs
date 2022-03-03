@@ -40,7 +40,12 @@ namespace GreenMonkey.DataAccess.Mapper
 
         public SqlOperation GetRetriveStatement(BaseEntity entity)
         {
-            throw new NotImplementedException();
+            var operation = new SqlOperation { ProcedureName = "RET_TRANSACTION_PR" };
+
+            var t = (Transaction)entity;
+            operation.AddIntParam(DB_COL_ID, t.Id);
+
+            return operation;
         }
 
         public SqlOperation GetUpdateStatement(BaseEntity entity)
