@@ -26,3 +26,9 @@ CREATE TABLE [dbo].[TBL_Customer](
 	[RegisteredAt] [Datetime] NOT NULL,
 	[Active] [char](1) NOT NULL DEFAULT('S'),
 )
+
+CREATE TABLE TBL_Coin(
+	Code [nvarchar](6) NOT NULL PRIMARY KEY,
+	Name [nvarchar](50) NOT NULL,
+	FintechCode [nvarchar](4) NOT NULL
+)

@@ -41,8 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Acount.cs" />
     <Compile Include="ApplicationMessage.cs" />
     <Compile Include="BaseEntity.cs" />
+    <Compile Include="Coin.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="FintechStatus.cs" />
     <Compile Include="ObjectDumper.cs" />

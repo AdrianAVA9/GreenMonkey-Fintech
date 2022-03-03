@@ -208,3 +208,20 @@ EXEC UPD_CUSTOMER_PR '116410260', 'Adrián Antonio', 'Vega Acevedo', 'Adrián', 
 EXEC DEL_CUSTOMER_PR '116410260'
 EXEC RET_CUSTOMER_PR '116410260'
 EXEC RET_ALL_CUSTOMER_PR
+
+
+
+------------------------------------------- STORE PROCEDURE OF COIN --------------------------------------------------
+
+-- Create customer
+CREATE PROCEDURE CRE_COIN_PR(
+	@FINTECH_CODE NVARCHAR(4),
+	@P_NAME NVARCHAR(50)
+)
+AS
+BEGIN
+	SET NOCOUNT ON;
+	INSERT INTO TBL_Coin(Name, FintechCode) VALUES(@P_NAME, @FINTECH_CODE)
+END
+
+EXEC CRE_COIN_PR '1028', 'MonkeyCoin'
