@@ -32,3 +32,14 @@ CREATE TABLE TBL_Coin(
 	Name [nvarchar](50) NOT NULL,
 	FintechCode [nvarchar](4) NOT NULL
 )
+
+
+CREATE TABLE TBL_Account(
+	Number [nvarchar](14) NOT NULL PRIMARY KEY,
+	Consecutive [int] NOT NULL,
+	Name [nvarchar](50) NOT NULL,
+	Status [nvarchar](15) NOT NULL,
+	CustomerId [nvarchar](15) NOT NULL,
+	CoinCode [int] NOT NULL,
+	RegisteredAt [datetime] NOT NULL
+)

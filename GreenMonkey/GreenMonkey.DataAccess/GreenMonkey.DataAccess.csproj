@@ -57,12 +57,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Crud\AccountCrudFactory.cs" />
     <Compile Include="Crud\AppMessagesCrudFactory.cs" />
     <Compile Include="Crud\CoinCrudFactory.cs" />
     <Compile Include="Crud\CrudFactory.cs" />
     <Compile Include="Crud\CustomerCrudFactory.cs" />
     <Compile Include="Crud\SuscriptorCrudFactory.cs" />
     <Compile Include="Crud\SuscriptorStatusCrudFactory.cs" />
+    <Compile Include="Mapper\AccountMapper.cs" />
     <Compile Include="Mapper\CoinMapper.cs" />
     <Compile Include="Mapper\CustomerMapper.cs" />
     <Compile Include="Mapper\SuscriptorStatusMapper.cs" />
