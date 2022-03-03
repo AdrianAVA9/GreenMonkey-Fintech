@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiResponse.cs" />
+    <Compile Include="CoinDto.cs" />
     <Compile Include="CustomerDto.cs" />
     <Compile Include="FintechStatusDto.cs" />
     <Compile Include="SuscriptorDto.cs" />
