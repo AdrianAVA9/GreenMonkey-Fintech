@@ -28,7 +28,7 @@ CREATE TABLE [dbo].[TBL_Customer](
 )
 
 CREATE TABLE TBL_Coin(
-	Code [nvarchar](6) NOT NULL PRIMARY KEY,
+	Code [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
 	Name [nvarchar](50) NOT NULL,
 	FintechCode [nvarchar](4) NOT NULL
 )
