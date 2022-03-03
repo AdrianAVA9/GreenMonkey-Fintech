@@ -55,11 +55,11 @@ namespace GreenMonkey.Api.Controllers
 
         [Route("account")]
         [HttpGet]
-        public IHttpActionResult RetrieveTransactionsByAccount(string accountNumber)
+        public IHttpActionResult RetrieveTransactionsByAccount(string number)
         {
             try
             {
-                var transactions = _transactionManager.RetrieveTransactionsByAccount(new Transaction() { AccountNumber = accountNumber });
+                var transactions = _transactionManager.RetrieveTransactionsByAccount(new Transaction() { AccountNumber = number });
 
                 return Ok(transactions.Select(transaction => _mapper.Map<TransactionDto>(transaction)));
             }
