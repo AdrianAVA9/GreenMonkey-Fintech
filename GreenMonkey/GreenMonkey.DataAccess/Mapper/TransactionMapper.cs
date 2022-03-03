@@ -48,18 +48,45 @@ namespace GreenMonkey.DataAccess.Mapper
             return operation;
         }
 
+        public SqlOperation GetRetriveAllByAccountStatement(BaseEntity entity)
+        {
+            var operation = new SqlOperation { ProcedureName = "RET_TRANSACTION_BY_ACCOUNT_PR" };
+
+            var t = (Transaction)entity;
+            operation.AddVarcharParam(DB_COL_ACCOUNT_NUMBER, t.AccountNumber);
+
+            return operation;
+        }
+
         public SqlOperation GetUpdateStatement(BaseEntity entity)
         {
             throw new NotImplementedException();
         }
         public BaseEntity BuildObject(Dictionary<string, object> row)
         {
-            throw new NotImplementedException();
+            var transaction = new Transaction
+            {
+                Id = GetIntValue(row, DB_COL_ID),
+                AccountNumber = GetStringValue(row, DB_COL_ACCOUNT_NUMBER),
+                Amount = GetDecimalValue(row, DB_COL_AMOUNT),
+                Type = GetStringValue(row, DB_COL_TYPE),
+                RegisteredAt = GetDateValue(row, DB_COL_REGISTERED_AT)
+            };
+
+            return transaction;
         }
 
         public List<BaseEntity> BuildObjects(List<Dictionary<string, object>> lstRows)
         {
-            throw new NotImplementedException();
+            var lstResults = new List<BaseEntity>();
+
+            foreach (var row in lstRows)
+            {
+                var transaction = BuildObject(row);
+                lstResults.Add(transaction);
+            }
+
+            return lstResults;
         }
     }
 }

@@ -32,6 +32,15 @@ namespace GreenMonkey.DataAccess.Mapper
             return -1;
         }
 
+        protected decimal GetDecimalValue(Dictionary<string, object> dic, string attName)
+        {
+            var val = dic[attName];
+            if (dic.ContainsKey(attName) && val is decimal)
+                return (decimal)dic[attName];
+
+            return -1;
+        }
+
         protected DateTime GetDateValue(Dictionary<string, object> dic, string attName)
         {
             var val = dic[attName];

@@ -26,5 +26,10 @@ namespace GreenMonkey.Manager
         {
             return TransactionFactory.Retrieve<Transaction>(transaction);
         }
+
+        public List<Transaction> RetrieveTransactionsByAccount(Transaction transaction)
+        {
+            return TransactionFactory.RetrieveAllByAccount<Transaction>(transaction);
+        }
     }
 }

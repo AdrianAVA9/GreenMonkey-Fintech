@@ -46,6 +46,24 @@ namespace GreenMonkey.DataAccess.Crud
             return default(T);
         }
 
+        public List<T> RetrieveAllByAccount<T>(BaseEntity entity)
+        {
+            var lstCoins = new List<T>();
+
+            var lstResult = dao.ExecuteQueryProcedure(mapper.GetRetriveAllByAccountStatement(entity));
+            var dic = new Dictionary<string, object>();
+            if (lstResult.Count > 0)
+            {
+                var objs = mapper.BuildObjects(lstResult);
+                foreach (var c in objs)
+                {
+                    lstCoins.Add((T)Convert.ChangeType(c, typeof(T)));
+                }
+            }
+
+            return lstCoins;
+        }
+
         public override List<T> RetrieveAll<T>()
         {
             throw new NotImplementedException();
