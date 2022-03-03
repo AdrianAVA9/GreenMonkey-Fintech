@@ -104,5 +104,21 @@ namespace GreenMonkey.Api.Controllers
                 return InternalServerError();
             }
         }
+
+        [Route("fintech")]
+        [HttpGet]
+        public IHttpActionResult RetrieveCoinByFintech(string code)
+        {
+            try
+            {
+                var coin = _coinManager.RetrieveCoinByFintech(new Coin() { FintechCode = code });
+
+                return Ok(_mapper.Map<CoinDto>(coin));
+            }
+            catch (Exception)
+            {
+                return InternalServerError();
+            }
+        }
     }
 }
