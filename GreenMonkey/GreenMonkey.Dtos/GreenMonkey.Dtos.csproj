@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountDto.cs" />
     <Compile Include="ApiResponse.cs" />
     <Compile Include="CoinDto.cs" />
     <Compile Include="CustomerDto.cs" />
