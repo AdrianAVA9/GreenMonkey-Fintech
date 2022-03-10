@@ -65,7 +65,7 @@ namespace GreenMonkey.Api.Controllers
                 return Created(string.Format("{0}/customers/{1}", Request.RequestUri, newCustomer.Id),
                     _mapper.Map<CustomerDto>(newCustomer));
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return InternalServerError();
             }

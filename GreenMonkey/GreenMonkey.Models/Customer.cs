@@ -19,6 +19,12 @@ namespace GreenMonkey.Models
                 return DateTime.Today.Year - Birthdate.Year;
             }
         }
+        public string Fullname { 
+            get { 
+                return Name + " " + LastName;
+            } 
+        }
+
         public DateTime RegisteredAt { get; set; }
     }
 }

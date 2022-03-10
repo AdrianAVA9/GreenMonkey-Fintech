@@ -30,6 +30,52 @@ namespace GreenMonkey.Api.Controllers
             _mapper = mapper;
         }
 
+        [Route("")]
+        [HttpPost]
+        public IHttpActionResult CreateTransaction(TransactionDto transactionDto)
+        {
+            try
+            {
+                if (transactionDto == null || !_validator.Validate(transactionDto).IsValid)
+                {
+                    var validations = new List<ValidationFailure>();
+
+                    if (transactionDto == null)
+                    {
+                        validations.Add(new ValidationFailure("Transaction", "The Transaction can not be null"));
+                    }
+                    else
+                    {
+                        validations.AddRange(_validator.Validate(transactionDto).Errors);
+                    }
+
+                    return new ErrorResult(Request, HttpStatusCode.BadRequest, validations);
+                }
+
+                var transaction = _mapper.Map<Transaction>(transactionDto);
+                var existingAccount = _accountManager.RetrieveAccount(new Account() { Number = transaction.AccountNumber });
+
+                if (existingAccount == null)
+                {
+                    return new ErrorResult(Request, HttpStatusCode.Conflict, new List<ValidationFailure>() {
+                        new ValidationFailure("AccountNumber", string.Format("The account number: {0} does not exists", transaction.AccountNumber))
+                    });
+                }
+
+                _transactionManager.CreateTransaction(transaction);
+                var transactions = _transactionManager.RetrieveTransactionsByAccount(transaction);
+                var newTrasaction = transactions.OrderBy(t => t.Id)
+                    .LastOrDefault();
+
+                return Created(string.Format("{0}/transactions/{1}", Request.RequestUri, newTrasaction.Id),
+                    _mapper.Map<TransactionDto>(newTrasaction));
+            }
+            catch (Exception)
+            {
+                return InternalServerError();
+            }
+        }
+
         [Route("{id}")]
         [HttpGet]
         public IHttpActionResult RetrieveTransaction(int id)

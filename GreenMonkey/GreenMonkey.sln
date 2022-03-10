@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenMonkey.Models", "Green
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenMonkey.UI", "GreenMonkey.UI\GreenMonkey.UI.csproj", "{A11310CE-1060-438A-961C-102A633EA07A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenMonkey.Desktop", "GreenMonkey.Desktop\GreenMonkey.Desktop.csproj", "{50CAC9DE-4388-4CE1-AF86-7D87CB9E6D39}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{A11310CE-1060-438A-961C-102A633EA07A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A11310CE-1060-438A-961C-102A633EA07A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A11310CE-1060-438A-961C-102A633EA07A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50CAC9DE-4388-4CE1-AF86-7D87CB9E6D39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50CAC9DE-4388-4CE1-AF86-7D87CB9E6D39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50CAC9DE-4388-4CE1-AF86-7D87CB9E6D39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50CAC9DE-4388-4CE1-AF86-7D87CB9E6D39}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
