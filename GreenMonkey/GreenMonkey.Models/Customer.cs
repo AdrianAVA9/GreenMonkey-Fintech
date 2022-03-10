@@ -26,5 +26,7 @@ namespace GreenMonkey.Models
         }
 
         public DateTime RegisteredAt { get; set; }
+
+        public List<Account> Accounts { get; set; }
     }
 }

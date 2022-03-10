@@ -11,9 +11,11 @@ namespace GreenMonkey.Manager
     public class CustomerManager : BaseManager
     {
         private CustomerCrudFactory CustomerFactory { get; set; }
+        private AccountCrudFactory AccountFactory { get; set; }
         public CustomerManager()
         {
             CustomerFactory = new CustomerCrudFactory();
+            AccountFactory = new AccountCrudFactory();
         }
 
         public void CreateCustomer(Customer customer)
@@ -24,6 +26,19 @@ namespace GreenMonkey.Manager
         public Customer RetrieveCustomer(Customer customer)
         {
             return CustomerFactory.Retrieve<Customer>(customer);
+        }
+
+        public Customer RetrieveCustomerWithAccounts(Customer customer)
+        {
+            var existingCustomer = CustomerFactory.Retrieve<Customer>(customer);
+
+            if (existingCustomer == null)
+                return null;
+
+            existingCustomer.Accounts = AccountFactory
+                .RetrieveAllByCustomer<Account>(new Account { CustomerId = existingCustomer.Id });
+
+            return existingCustomer;
         }
 
         public List<Customer> RetrieveAllCustomers()
