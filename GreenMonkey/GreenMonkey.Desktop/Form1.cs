@@ -121,7 +121,7 @@ namespace GreenMonkey.Desktop
                 var row = new string[] {
                     account.CustomerId,
                     account.Number,
-                    "",
+                    account.FormattedAmount,
                     account.Name,
                     account.Status,
                 };

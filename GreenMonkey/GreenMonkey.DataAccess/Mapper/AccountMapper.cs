@@ -15,6 +15,7 @@ namespace GreenMonkey.DataAccess.Mapper
         private const string DB_COL_STATUS = "STATUS";
         private const string DB_COL_CUSTOMER_ID = "CUSTOMER_ID";
         private const string DB_COL_COIN_CODE = "COIN_CODE";
+        private const string DB_COL_AMOUNT = "AMOUNT";
         private const string DB_COL_REGISTERED_AT = "REGISTERED_AT";
 
         public SqlOperation GetCreateStatement(BaseEntity entity)
@@ -86,6 +87,7 @@ namespace GreenMonkey.DataAccess.Mapper
                 Status = GetStringValue(row, DB_COL_STATUS),
                 CustomerId = GetStringValue(row, DB_COL_CUSTOMER_ID),
                 CoinCode = GetIntValue(row, DB_COL_COIN_CODE),
+                Amount = GetDecimalValue(row, DB_COL_AMOUNT),
                 RegisteredAt = GetDateValue(row, DB_COL_REGISTERED_AT),
             };
 

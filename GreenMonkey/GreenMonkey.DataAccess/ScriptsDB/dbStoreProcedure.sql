@@ -302,7 +302,7 @@ END
 
 
 -- Retrieve account
-CREATE PROCEDURE RET_ACCOUNT_PR(
+ALTER PROCEDURE RET_ACCOUNT_PR(
 	@P_NUMBER NVARCHAR(14)
 )
 AS
@@ -315,12 +315,23 @@ BEGIN
 		,CustomerId AS CUSTOMER_ID
 		,CoinCode AS COIN_CODE
 		,RegisteredAt AS REGISTERED_AT
+		,(
+			SELECT SUM( 
+				CASE 
+					WHEN Type = 'haber'
+					THEN -Amount
+					ELSE Amount
+				END
+			) AS AMOUNT
+			FROM TBL_Transaction
+			WHERE AccountNumber = TBL_Account.Number
+		) AS AMOUNT
 	FROM TBL_Account
 	WHERE Number = @P_NUMBER
 END
 
 -- Retrieve account by customer
-CREATE PROCEDURE RET_ALL_BY_CUSTOMER_PR(
+ALTER PROCEDURE RET_ALL_BY_CUSTOMER_PR(
 	@P_CUSTOMER_ID NVARCHAR(14)
 )
 AS
@@ -333,6 +344,17 @@ BEGIN
 		,CustomerId AS CUSTOMER_ID
 		,CoinCode AS COIN_CODE
 		,RegisteredAt AS REGISTERED_AT
+		,(
+			SELECT SUM( 
+				CASE 
+					WHEN Type = 'haber'
+					THEN -Amount
+					ELSE Amount
+				END
+			) AS AMOUNT
+			FROM TBL_Transaction
+			WHERE AccountNumber = TBL_Account.Number
+		) AS AMOUNT
 	FROM TBL_Account
 	WHERE CustomerId = @P_CUSTOMER_ID
 END
