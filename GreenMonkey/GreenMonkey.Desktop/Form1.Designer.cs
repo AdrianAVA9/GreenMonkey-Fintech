@@ -37,11 +37,11 @@ namespace GreenMonkey.Desktop
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
-            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox2 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox3 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox4 = new MetroFramework.Controls.MetroTextBox();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.customerIdTextField = new MetroFramework.Controls.MetroTextBox();
+            this.customernameTextField = new MetroFramework.Controls.MetroTextBox();
+            this.customerLastnameTextField = new MetroFramework.Controls.MetroTextBox();
+            this.customerAgeTextField = new MetroFramework.Controls.MetroTextBox();
+            this.searchCustomer = new MetroFramework.Controls.MetroButton();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
             this.metroButton4 = new MetroFramework.Controls.MetroButton();
@@ -109,56 +109,57 @@ namespace GreenMonkey.Desktop
             this.metroLabel5.TabIndex = 4;
             this.metroLabel5.Text = "Age";
             // 
-            // metroTextBox1
+            // customerIdTextField
             // 
-            this.metroTextBox1.BackColor = System.Drawing.Color.White;
-            this.metroTextBox1.Location = new System.Drawing.Point(54, 82);
-            this.metroTextBox1.Name = "metroTextBox1";
-            this.metroTextBox1.Size = new System.Drawing.Size(127, 23);
-            this.metroTextBox1.Style = MetroFramework.MetroColorStyle.White;
-            this.metroTextBox1.TabIndex = 5;
-            this.metroTextBox1.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox1.UseStyleColors = true;
+            this.customerIdTextField.BackColor = System.Drawing.Color.White;
+            this.customerIdTextField.Location = new System.Drawing.Point(54, 82);
+            this.customerIdTextField.Name = "customerIdTextField";
+            this.customerIdTextField.Size = new System.Drawing.Size(127, 23);
+            this.customerIdTextField.Style = MetroFramework.MetroColorStyle.White;
+            this.customerIdTextField.TabIndex = 5;
+            this.customerIdTextField.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.customerIdTextField.UseStyleColors = true;
             // 
-            // metroTextBox2
+            // customernameTextField
             // 
-            this.metroTextBox2.Location = new System.Drawing.Point(292, 82);
-            this.metroTextBox2.Name = "metroTextBox2";
-            this.metroTextBox2.Size = new System.Drawing.Size(126, 23);
-            this.metroTextBox2.Style = MetroFramework.MetroColorStyle.White;
-            this.metroTextBox2.TabIndex = 6;
-            this.metroTextBox2.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox2.UseStyleColors = true;
+            this.customernameTextField.Location = new System.Drawing.Point(292, 82);
+            this.customernameTextField.Name = "customernameTextField";
+            this.customernameTextField.Size = new System.Drawing.Size(126, 23);
+            this.customernameTextField.Style = MetroFramework.MetroColorStyle.White;
+            this.customernameTextField.TabIndex = 6;
+            this.customernameTextField.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.customernameTextField.UseStyleColors = true;
             // 
-            // metroTextBox3
+            // customerLastnameTextField
             // 
-            this.metroTextBox3.Location = new System.Drawing.Point(531, 82);
-            this.metroTextBox3.Name = "metroTextBox3";
-            this.metroTextBox3.Size = new System.Drawing.Size(134, 23);
-            this.metroTextBox3.Style = MetroFramework.MetroColorStyle.White;
-            this.metroTextBox3.TabIndex = 7;
-            this.metroTextBox3.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox3.UseStyleColors = true;
+            this.customerLastnameTextField.Location = new System.Drawing.Point(531, 82);
+            this.customerLastnameTextField.Name = "customerLastnameTextField";
+            this.customerLastnameTextField.Size = new System.Drawing.Size(134, 23);
+            this.customerLastnameTextField.Style = MetroFramework.MetroColorStyle.White;
+            this.customerLastnameTextField.TabIndex = 7;
+            this.customerLastnameTextField.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.customerLastnameTextField.UseStyleColors = true;
             // 
-            // metroTextBox4
+            // customerAgeTextField
             // 
-            this.metroTextBox4.Location = new System.Drawing.Point(738, 82);
-            this.metroTextBox4.Name = "metroTextBox4";
-            this.metroTextBox4.Size = new System.Drawing.Size(134, 23);
-            this.metroTextBox4.Style = MetroFramework.MetroColorStyle.White;
-            this.metroTextBox4.TabIndex = 8;
-            this.metroTextBox4.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox4.UseStyleColors = true;
+            this.customerAgeTextField.Location = new System.Drawing.Point(738, 82);
+            this.customerAgeTextField.Name = "customerAgeTextField";
+            this.customerAgeTextField.Size = new System.Drawing.Size(134, 23);
+            this.customerAgeTextField.Style = MetroFramework.MetroColorStyle.White;
+            this.customerAgeTextField.TabIndex = 8;
+            this.customerAgeTextField.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.customerAgeTextField.UseStyleColors = true;
             // 
-            // metroButton1
+            // searchCustomer
             // 
-            this.metroButton1.Location = new System.Drawing.Point(955, 82);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(75, 23);
-            this.metroButton1.Style = MetroFramework.MetroColorStyle.Black;
-            this.metroButton1.TabIndex = 9;
-            this.metroButton1.Text = "Buscar";
-            this.metroButton1.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.searchCustomer.Location = new System.Drawing.Point(955, 82);
+            this.searchCustomer.Name = "searchCustomer";
+            this.searchCustomer.Size = new System.Drawing.Size(75, 23);
+            this.searchCustomer.Style = MetroFramework.MetroColorStyle.Black;
+            this.searchCustomer.TabIndex = 9;
+            this.searchCustomer.Text = "Buscar";
+            this.searchCustomer.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.searchCustomer.Click += new System.EventHandler(this.SearchCustomer);
             // 
             // metroTabControl1
             // 
@@ -332,11 +333,11 @@ namespace GreenMonkey.Desktop
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1438, 777);
             this.Controls.Add(this.metroTabControl1);
-            this.Controls.Add(this.metroButton1);
-            this.Controls.Add(this.metroTextBox4);
-            this.Controls.Add(this.metroTextBox3);
-            this.Controls.Add(this.metroTextBox2);
-            this.Controls.Add(this.metroTextBox1);
+            this.Controls.Add(this.searchCustomer);
+            this.Controls.Add(this.customerAgeTextField);
+            this.Controls.Add(this.customerLastnameTextField);
+            this.Controls.Add(this.customernameTextField);
+            this.Controls.Add(this.customerIdTextField);
             this.Controls.Add(this.metroLabel5);
             this.Controls.Add(this.metroLabel4);
             this.Controls.Add(this.metroLabel3);
@@ -360,11 +361,11 @@ namespace GreenMonkey.Desktop
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroLabel metroLabel5;
-        private MetroFramework.Controls.MetroTextBox metroTextBox1;
-        private MetroFramework.Controls.MetroTextBox metroTextBox2;
-        private MetroFramework.Controls.MetroTextBox metroTextBox3;
-        private MetroFramework.Controls.MetroTextBox metroTextBox4;
-        private MetroFramework.Controls.MetroButton metroButton1;
+        private MetroFramework.Controls.MetroTextBox customerIdTextField;
+        private MetroFramework.Controls.MetroTextBox customernameTextField;
+        private MetroFramework.Controls.MetroTextBox customerLastnameTextField;
+        private MetroFramework.Controls.MetroTextBox customerAgeTextField;
+        private MetroFramework.Controls.MetroButton searchCustomer;
         private MetroFramework.Controls.MetroTabControl metroTabControl1;
         private MetroFramework.Controls.MetroTabPage metroTabPage1;
         private MetroFramework.Controls.MetroTabPage Coins;

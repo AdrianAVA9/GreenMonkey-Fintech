@@ -16,6 +16,7 @@ namespace GreenMonkey.Desktop
     {
         public CustomerManager CustomerManager { get; set; }
         public List<Customer> Customers { get; set; }
+        public List<Customer> FilteredCustomer { get; set; }
         public Form1()
         {
             InitializeComponent();
@@ -32,8 +33,32 @@ namespace GreenMonkey.Desktop
         private void SetupCustomerDataGrid()
         {
             Customers = CustomerManager.RetrieveAllCustomers();
+            FilteredCustomer = Customers;
 
-            foreach(var customer in Customers)
+            FillDataGrid();
+        }
+
+        private void SearchCustomer(object sender, EventArgs e)
+        {
+            var name = customernameTextField.Text;
+            var lastname = customerLastnameTextField.Text;
+            var id = customerIdTextField.Text;
+            var age = int.TryParse(customerAgeTextField.Text, out _) ? int.Parse(customerAgeTextField.Text) : - 1;
+
+            FilteredCustomer = Customers.Where(customer => customer.Id.Contains(id)
+                && customer.LastName.Contains(lastname)
+                && customer.Name.Contains(name)
+                && (age == -1 || customer.Age == age)
+                ).ToList();
+
+            FillDataGrid();
+        }
+
+        private void FillDataGrid()
+        {
+            this.customerDataGrid.Rows.Clear();
+            
+            foreach (var customer in FilteredCustomer)
             {
                 var row = new string[] {
                     customer.Id,
