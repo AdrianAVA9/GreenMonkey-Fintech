@@ -60,7 +60,9 @@ namespace GreenMonkey.Desktop
                     customer.Id,
                     customer.Name,
                     customer.LastName,
-                    customer.Age.ToString()
+                    customer.Age.ToString(),
+                    customer.PhoneNumber,
+                    customer.Email
                 };
 
                 this.customerDataGrid.Rows.Add(row);

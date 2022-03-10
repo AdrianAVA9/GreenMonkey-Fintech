@@ -13,6 +13,8 @@ namespace GreenMonkey.DataAccess.Mapper
         private const string DB_COL_STATUS = "STATUS";
         private const string DB_COL_BIRTHDATE = "BIRTHDATE";
         private const string DB_COL_REGISTER_AT = "REGISTERED_AT";
+        private const string DB_COL_PHONE_NUMBER = "PHONE_NUMBER";
+        private const string DB_COL_EMAIL = "EMAIL";
 
         public SqlOperation GetCreateStatement(BaseEntity entity)
         {
@@ -92,6 +94,8 @@ namespace GreenMonkey.DataAccess.Mapper
                 Nickname = GetStringValue(row, DB_COL_NICKNAME),
                 Status = GetStringValue(row, DB_COL_STATUS),
                 Birthdate = GetDateValue(row, DB_COL_BIRTHDATE),
+                PhoneNumber = GetStringValue(row, DB_COL_PHONE_NUMBER),
+                Email = GetStringValue(row, DB_COL_EMAIL),
                 RegisteredAt = GetDateValue(row, DB_COL_REGISTER_AT),
             };
 

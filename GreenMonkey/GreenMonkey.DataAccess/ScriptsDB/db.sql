@@ -23,6 +23,8 @@ CREATE TABLE [dbo].[TBL_Customer](
 	[Nickname] [nvarchar](30) NOT NULL,
 	[Status] [nvarchar](15) NOT NULL,
 	[Birthdate] [Datetime] NOT NULL,
+	[Phonenumber] [nvarchar(15)] NOT NULL,
+	[Email] [nvarchar(50)] NOT NULL,
 	[RegisteredAt] [Datetime] NOT NULL,
 	[Active] [char](1) NOT NULL DEFAULT('S'),
 )

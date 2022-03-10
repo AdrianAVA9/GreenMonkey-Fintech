@@ -50,7 +50,18 @@ namespace GreenMonkey.Desktop
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.accountsTab = new MetroFramework.Controls.MetroTabPage();
+            this.accountsDataGrid = new System.Windows.Forms.DataGridView();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.coinsTab = new MetroFramework.Controls.MetroTabPage();
+            this.coinsDataGrid = new System.Windows.Forms.DataGridView();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.transferNowTab = new MetroFramework.Controls.MetroTabPage();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
@@ -63,36 +74,27 @@ namespace GreenMonkey.Desktop
             this.customerAgeTextField = new MetroFramework.Controls.MetroTextBox();
             this.searchCustomer = new MetroFramework.Controls.MetroButton();
             this.editTFAge = new MetroFramework.Controls.MetroTextBox();
-            this.accountsDataGrid = new System.Windows.Forms.DataGridView();
-            this.coinsDataGrid = new System.Windows.Forms.DataGridView();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             contentTab = new MetroFramework.Controls.MetroTabControl();
             contentTab.SuspendLayout();
             this.customerTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customerDataGrid)).BeginInit();
             this.accountsTab.SuspendLayout();
-            this.coinsTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accountsDataGrid)).BeginInit();
+            this.coinsTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.coinsDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // contentTab
             // 
             contentTab.Controls.Add(this.customerTab);
-            contentTab.Controls.Add(this.accountsTab);
             contentTab.Controls.Add(this.coinsTab);
+            contentTab.Controls.Add(this.accountsTab);
             contentTab.Controls.Add(this.transferNowTab);
             contentTab.Location = new System.Drawing.Point(28, 147);
             contentTab.Name = "contentTab";
-            contentTab.SelectedIndex = 2;
+            contentTab.SelectedIndex = 0;
             contentTab.Size = new System.Drawing.Size(1002, 541);
             contentTab.TabIndex = 10;
             // 
@@ -220,7 +222,9 @@ namespace GreenMonkey.Desktop
             this.Column1,
             this.Column2,
             this.Column3,
-            this.Column4});
+            this.Column4,
+            this.Column14,
+            this.Column15});
             this.customerDataGrid.Location = new System.Drawing.Point(0, 32);
             this.customerDataGrid.Name = "customerDataGrid";
             this.customerDataGrid.Size = new System.Drawing.Size(977, 150);
@@ -258,6 +262,46 @@ namespace GreenMonkey.Desktop
             this.accountsTab.Text = "Accounts";
             this.accountsTab.VerticalScrollbarBarColor = true;
             // 
+            // accountsDataGrid
+            // 
+            this.accountsDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.accountsDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column5,
+            this.Column6,
+            this.Column12,
+            this.Column7,
+            this.Column13});
+            this.accountsDataGrid.Location = new System.Drawing.Point(54, 32);
+            this.accountsDataGrid.Name = "accountsDataGrid";
+            this.accountsDataGrid.Size = new System.Drawing.Size(560, 150);
+            this.accountsDataGrid.TabIndex = 2;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Customer Id";
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Account Number";
+            this.Column6.Name = "Column6";
+            // 
+            // Column12
+            // 
+            this.Column12.HeaderText = "Amount";
+            this.Column12.Name = "Column12";
+            this.Column12.ToolTipText = "Status";
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Name";
+            this.Column7.Name = "Column7";
+            // 
+            // Column13
+            // 
+            this.Column13.HeaderText = "Status";
+            this.Column13.Name = "Column13";
+            // 
             // coinsTab
             // 
             this.coinsTab.Controls.Add(this.coinsDataGrid);
@@ -268,6 +312,39 @@ namespace GreenMonkey.Desktop
             this.coinsTab.TabIndex = 1;
             this.coinsTab.Text = "Coins";
             this.coinsTab.VerticalScrollbarBarColor = true;
+            // 
+            // coinsDataGrid
+            // 
+            this.coinsDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.coinsDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column9,
+            this.Column10,
+            this.Column11,
+            this.Column8});
+            this.coinsDataGrid.Location = new System.Drawing.Point(80, 60);
+            this.coinsDataGrid.Name = "coinsDataGrid";
+            this.coinsDataGrid.Size = new System.Drawing.Size(471, 150);
+            this.coinsDataGrid.TabIndex = 2;
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Fintech code";
+            this.Column9.Name = "Column9";
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "Fintech";
+            this.Column10.Name = "Column10";
+            // 
+            // Column11
+            // 
+            this.Column11.HeaderText = "Code";
+            this.Column11.Name = "Column11";
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Name";
+            this.Column8.Name = "Column8";
             // 
             // transferNowTab
             // 
@@ -386,78 +463,15 @@ namespace GreenMonkey.Desktop
             this.editTFAge.Theme = MetroFramework.MetroThemeStyle.Light;
             this.editTFAge.UseStyleColors = true;
             // 
-            // accountsDataGrid
+            // Column14
             // 
-            this.accountsDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.accountsDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column5,
-            this.Column6,
-            this.Column12,
-            this.Column7,
-            this.Column13});
-            this.accountsDataGrid.Location = new System.Drawing.Point(54, 32);
-            this.accountsDataGrid.Name = "accountsDataGrid";
-            this.accountsDataGrid.Size = new System.Drawing.Size(560, 150);
-            this.accountsDataGrid.TabIndex = 2;
+            this.Column14.HeaderText = "Phone number";
+            this.Column14.Name = "Column14";
             // 
-            // coinsDataGrid
+            // Column15
             // 
-            this.coinsDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.coinsDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column9,
-            this.Column10,
-            this.Column11,
-            this.Column8});
-            this.coinsDataGrid.Location = new System.Drawing.Point(80, 60);
-            this.coinsDataGrid.Name = "coinsDataGrid";
-            this.coinsDataGrid.Size = new System.Drawing.Size(471, 150);
-            this.coinsDataGrid.TabIndex = 2;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Customer Id";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Account Number";
-            this.Column6.Name = "Column6";
-            // 
-            // Column12
-            // 
-            this.Column12.HeaderText = "Amount";
-            this.Column12.Name = "Column12";
-            this.Column12.ToolTipText = "Status";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Name";
-            this.Column7.Name = "Column7";
-            // 
-            // Column13
-            // 
-            this.Column13.HeaderText = "Status";
-            this.Column13.Name = "Column13";
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Fintech code";
-            this.Column9.Name = "Column9";
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "Fintech";
-            this.Column10.Name = "Column10";
-            // 
-            // Column11
-            // 
-            this.Column11.HeaderText = "Code";
-            this.Column11.Name = "Column11";
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Name";
-            this.Column8.Name = "Column8";
+            this.Column15.HeaderText = "Email";
+            this.Column15.Name = "Column15";
             // 
             // Form1
             // 
@@ -484,8 +498,8 @@ namespace GreenMonkey.Desktop
             this.customerTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customerDataGrid)).EndInit();
             this.accountsTab.ResumeLayout(false);
-            this.coinsTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.accountsDataGrid)).EndInit();
+            this.coinsTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.coinsDataGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -536,6 +550,8 @@ namespace GreenMonkey.Desktop
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
     }
 }
 

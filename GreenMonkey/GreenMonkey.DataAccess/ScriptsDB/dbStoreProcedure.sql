@@ -153,6 +153,8 @@ BEGIN
 		,Nickname AS NICKNAME
 		,Status AS STATUS
 		,Birthdate AS BIRTHDATE
+		,Phonenumber AS PHONE_NUMBER
+		,Email AS EMAIL
 		,RegisteredAt AS REGISTERED_AT
 	FROM TBL_Customer WHERE Id = @P_ID AND Active = 'S'
 END
@@ -169,6 +171,8 @@ BEGIN
 		,Nickname AS NICKNAME
 		,Status AS STATUS
 		,Birthdate AS BIRTHDATE
+		,Phonenumber AS PHONE_NUMBER
+		,Email AS EMAIL
 		,RegisteredAt AS REGISTERED_AT
 	FROM TBL_Customer WHERE Active = 'S'
 END
