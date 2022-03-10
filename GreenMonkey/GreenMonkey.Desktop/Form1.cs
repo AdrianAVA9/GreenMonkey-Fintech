@@ -15,7 +15,7 @@ namespace GreenMonkey.Desktop
     public partial class Form1 : Form
     {
         public CustomerManager CustomerManager { get; set; }
-        //public CoinManager CoinManager { get; set; }
+        public CoinManager CoinManager { get; set; }
         public List<Customer> Customers { get; set; }
         public List<Coin> Coins { get; set; }
 
@@ -24,31 +24,31 @@ namespace GreenMonkey.Desktop
             InitializeComponent();
             this.Load += new EventHandler(LoadForm);
             CustomerManager = new CustomerManager();
-            //CoinManager = new CoinManager();
+            CoinManager = new CoinManager();
         }
 
         private void LoadForm(System.Object sender, System.EventArgs e)
         {
             SetupCustomerDataGrid();
-            //SetupCoinsDataGrid();
+            SetupCoinsDataGrid();
         }
 
-        //private void SetupCoinsDataGrid()
-        //{
-        //    Coins = CoinManager.RetrieveAllCoin();
+        private void SetupCoinsDataGrid()
+        {
+            Coins = CoinManager.RetrieveAllCoinWithFintech();
 
-        //    foreach (var coin in Coins)
-        //    {
-        //        var row = new string[] {
-        //            customer.Id,
-        //            customer.Name,
-        //            customer.LastName,
-        //            customer.Age.ToString()
-        //        };
+            foreach (var coin in Coins)
+            {
+                var row = new string[] {
+                    coin.Fintech?.Name,
+                    coin.FintechCode,
+                    coin.Code.ToString(),
+                    coin.Name
+                };
 
-        //        this.customerDataGrid.Rows.Add(row);
-        //    }
-        //}
+                this.coinsDataGrid.Rows.Add(row);
+            }
+        }
 
         private void SetupCustomerDataGrid()
         {

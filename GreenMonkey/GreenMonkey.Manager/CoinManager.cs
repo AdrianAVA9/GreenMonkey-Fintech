@@ -11,9 +11,11 @@ namespace GreenMonkey.Manager
     public class CoinManager
     {
         public CoinCrudFactory CoinFactory { get; private set; }
+        public SuscriptorCrudFactory SuscriptorFactory { get; private set; }
         public CoinManager()
         {
             CoinFactory = new CoinCrudFactory();
+            SuscriptorFactory = new SuscriptorCrudFactory();
         }
 
         public void CreateCoin(Coin coin)
@@ -24,6 +26,18 @@ namespace GreenMonkey.Manager
         public List<Coin> RetrieveAllCoin()
         {
             return CoinFactory.RetrieveAll<Coin>();
+        }
+
+        public List<Coin> RetrieveAllCoinWithFintech()
+        {
+            var coins = CoinFactory.RetrieveAll<Coin>();
+
+            foreach(var coin in coins)
+            {
+                coin.Fintech = SuscriptorFactory.Retrieve<Suscriptor>(new Suscriptor() { Code = coin.FintechCode });
+            }
+
+            return coins;
         }
 
         public Coin RetrieveCoin(Coin coin)

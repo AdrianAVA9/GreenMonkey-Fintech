@@ -64,15 +64,16 @@ namespace GreenMonkey.Desktop
             this.searchCustomer = new MetroFramework.Controls.MetroButton();
             this.editTFAge = new MetroFramework.Controls.MetroTextBox();
             this.accountsDataGrid = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coinsDataGrid = new System.Windows.Forms.DataGridView();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             contentTab = new MetroFramework.Controls.MetroTabControl();
             contentTab.SuspendLayout();
             this.customerTab.SuspendLayout();
@@ -80,7 +81,7 @@ namespace GreenMonkey.Desktop
             this.accountsTab.SuspendLayout();
             this.coinsTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accountsDataGrid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.coinsDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // contentTab
@@ -91,7 +92,7 @@ namespace GreenMonkey.Desktop
             contentTab.Controls.Add(this.transferNowTab);
             contentTab.Location = new System.Drawing.Point(28, 147);
             contentTab.Name = "contentTab";
-            contentTab.SelectedIndex = 1;
+            contentTab.SelectedIndex = 2;
             contentTab.Size = new System.Drawing.Size(1002, 541);
             contentTab.TabIndex = 10;
             // 
@@ -259,7 +260,7 @@ namespace GreenMonkey.Desktop
             // 
             // coinsTab
             // 
-            this.coinsTab.Controls.Add(this.dataGridView2);
+            this.coinsTab.Controls.Add(this.coinsDataGrid);
             this.coinsTab.HorizontalScrollbarBarColor = true;
             this.coinsTab.Location = new System.Drawing.Point(4, 35);
             this.coinsTab.Name = "coinsTab";
@@ -399,32 +400,18 @@ namespace GreenMonkey.Desktop
             this.accountsDataGrid.Size = new System.Drawing.Size(560, 150);
             this.accountsDataGrid.TabIndex = 2;
             // 
-            // dataGridView2
+            // coinsDataGrid
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.coinsDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.coinsDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column9,
             this.Column10,
-            this.Column11});
-            this.dataGridView2.Location = new System.Drawing.Point(80, 60);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(360, 150);
-            this.dataGridView2.TabIndex = 2;
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Account";
-            this.Column9.Name = "Column9";
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "Type";
-            this.Column10.Name = "Column10";
-            // 
-            // Column11
-            // 
-            this.Column11.HeaderText = "Amount";
-            this.Column11.Name = "Column11";
+            this.Column11,
+            this.Column8});
+            this.coinsDataGrid.Location = new System.Drawing.Point(80, 60);
+            this.coinsDataGrid.Name = "coinsDataGrid";
+            this.coinsDataGrid.Size = new System.Drawing.Size(471, 150);
+            this.coinsDataGrid.TabIndex = 2;
             // 
             // Column5
             // 
@@ -451,6 +438,26 @@ namespace GreenMonkey.Desktop
             // 
             this.Column13.HeaderText = "Status";
             this.Column13.Name = "Column13";
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Fintech code";
+            this.Column9.Name = "Column9";
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "Fintech";
+            this.Column10.Name = "Column10";
+            // 
+            // Column11
+            // 
+            this.Column11.HeaderText = "Code";
+            this.Column11.Name = "Column11";
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Name";
+            this.Column8.Name = "Column8";
             // 
             // Form1
             // 
@@ -479,7 +486,7 @@ namespace GreenMonkey.Desktop
             this.accountsTab.ResumeLayout(false);
             this.coinsTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.accountsDataGrid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.coinsDataGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -519,15 +526,16 @@ namespace GreenMonkey.Desktop
         private MetroFramework.Controls.MetroLabel metroLabel9;
         private MetroFramework.Controls.MetroTextBox editTFAge;
         private System.Windows.Forms.DataGridView accountsDataGrid;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
+        private System.Windows.Forms.DataGridView coinsDataGrid;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
     }
 }
 

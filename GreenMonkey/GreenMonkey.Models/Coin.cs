@@ -11,5 +11,6 @@ namespace GreenMonkey.Models
         public int Code { get; set; }
         public string Name { get; set; }
         public string FintechCode { get; set; }
+        public Suscriptor Fintech { get;set;}
     }
 }
