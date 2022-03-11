@@ -9,3 +9,15 @@ C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey
 C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Manager\obj\Debug\GreenMonkey.Manager.csproj.CopyComplete
 C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Manager\obj\Debug\GreenMonkey.Manager.dll
 C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Manager\obj\Debug\GreenMonkey.Manager.pdb
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Manager\bin\Debug\GreenMonkey.Utils.dll
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Manager\bin\Debug\Twilio.dll
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Manager\bin\Debug\Newtonsoft.Json.dll
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Manager\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Manager\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Manager\bin\Debug\Microsoft.IdentityModel.Logging.dll
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Manager\bin\Debug\GreenMonkey.Utils.pdb
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Manager\bin\Debug\GreenMonkey.Utils.dll.config
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Manager\bin\Debug\Twilio.xml
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Manager\bin\Debug\Newtonsoft.Json.xml
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Manager\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Manager\bin\Debug\Microsoft.IdentityModel.Tokens.xml

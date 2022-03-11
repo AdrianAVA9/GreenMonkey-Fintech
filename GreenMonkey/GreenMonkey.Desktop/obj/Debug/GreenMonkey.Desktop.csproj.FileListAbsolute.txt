@@ -18,3 +18,16 @@ C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey
 C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Desktop\bin\Debug\GreenMonkey.Manager.pdb
 C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Desktop\bin\Debug\GreenMonkey.Models.pdb
 C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Desktop\bin\Debug\GreenMonkey.DataAccess.pdb
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Desktop\bin\Debug\GreenMonkey.Utils.dll
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Desktop\bin\Debug\Twilio.dll
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Desktop\bin\Debug\Newtonsoft.Json.dll
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Desktop\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Desktop\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Desktop\bin\Debug\Microsoft.IdentityModel.Logging.dll
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Desktop\bin\Debug\GreenMonkey.Utils.pdb
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Desktop\bin\Debug\GreenMonkey.Utils.dll.config
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Desktop\bin\Debug\Twilio.xml
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Desktop\bin\Debug\Newtonsoft.Json.xml
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Desktop\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Desktop\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Desktop\obj\Debug\GreenMonkey.Desktop.exe.config

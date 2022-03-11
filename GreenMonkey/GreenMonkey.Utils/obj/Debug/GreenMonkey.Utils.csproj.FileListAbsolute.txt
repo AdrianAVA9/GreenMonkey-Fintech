@@ -1,0 +1,17 @@
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Utils\bin\Debug\GreenMonkey.Utils.dll.config
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Utils\bin\Debug\GreenMonkey.Utils.dll
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Utils\bin\Debug\GreenMonkey.Utils.pdb
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Utils\bin\Debug\Microsoft.IdentityModel.Logging.dll
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Utils\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Utils\bin\Debug\Newtonsoft.Json.dll
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Utils\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Utils\bin\Debug\Twilio.dll
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Utils\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Utils\bin\Debug\Newtonsoft.Json.xml
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Utils\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Utils\bin\Debug\Twilio.xml
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Utils\obj\Debug\GreenMonkey.Utils.csproj.AssemblyReference.cache
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Utils\obj\Debug\GreenMonkey.Utils.csproj.CoreCompileInputs.cache
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Utils\obj\Debug\GreenMonkey.Utils.csproj.CopyComplete
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Utils\obj\Debug\GreenMonkey.Utils.dll
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Utils\obj\Debug\GreenMonkey.Utils.pdb
