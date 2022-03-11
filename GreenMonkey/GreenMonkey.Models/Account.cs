@@ -12,7 +12,7 @@ namespace GreenMonkey.Models
         public string Name { get; set; }
         public string Status { get; set; }
         public string CustomerId { get; set; }
-        public int CoinCode { get; set; }
+        public string CoinCode { get; set; }
         public decimal Amount { get; set; }
         public string FormattedAmount {
             get { 

@@ -109,7 +109,7 @@ namespace GreenMonkey.Desktop
             contentTab.Controls.Add(this.transferNowTab);
             contentTab.Location = new System.Drawing.Point(28, 147);
             contentTab.Name = "contentTab";
-            contentTab.SelectedIndex = 0;
+            contentTab.SelectedIndex = 3;
             contentTab.Size = new System.Drawing.Size(1221, 541);
             contentTab.TabIndex = 10;
             // 
@@ -548,7 +548,7 @@ namespace GreenMonkey.Desktop
             this.transferNowTab.Name = "transferNowTab";
             this.transferNowTab.Size = new System.Drawing.Size(1213, 502);
             this.transferNowTab.TabIndex = 3;
-            this.transferNowTab.Text = "Transfer now";
+            this.transferNowTab.Text = "Transactions";
             this.transferNowTab.VerticalScrollbarBarColor = true;
             // 
             // metroLabel1

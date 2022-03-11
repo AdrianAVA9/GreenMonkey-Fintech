@@ -85,7 +85,7 @@ namespace GreenMonkey.Api.Controllers
 
         [Route("{code}")]
         [HttpGet]
-        public IHttpActionResult RetrieveCoin(int code)
+        public IHttpActionResult RetrieveCoin(string code)
         {
             try
             {

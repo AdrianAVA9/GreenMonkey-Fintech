@@ -30,7 +30,7 @@ CREATE TABLE [dbo].[TBL_Customer](
 )
 
 CREATE TABLE TBL_Coin(
-	Code [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
+	Code [nvarchar](10) NOT NULL PRIMARY KEY,
 	Name [nvarchar](50) NOT NULL,
 	FintechCode [nvarchar](4) NOT NULL
 )
@@ -42,7 +42,7 @@ CREATE TABLE TBL_Account(
 	Name [nvarchar](50) NOT NULL,
 	Status [nvarchar](15) NOT NULL,
 	CustomerId [nvarchar](15) NOT NULL,
-	CoinCode [int] NOT NULL,
+	CoinCode [nvarchar](10) NOT NULL,
 	RegisteredAt [datetime] NOT NULL
 )
 

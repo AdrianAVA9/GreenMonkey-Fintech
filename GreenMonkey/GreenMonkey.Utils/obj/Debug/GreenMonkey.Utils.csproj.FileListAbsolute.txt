@@ -10,7 +10,6 @@ C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey
 C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Utils\bin\Debug\Newtonsoft.Json.xml
 C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Utils\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
 C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Utils\bin\Debug\Twilio.xml
-C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Utils\obj\Debug\GreenMonkey.Utils.csproj.AssemblyReference.cache
 C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Utils\obj\Debug\GreenMonkey.Utils.csproj.CoreCompileInputs.cache
 C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Utils\obj\Debug\GreenMonkey.Utils.csproj.CopyComplete
 C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Utils\obj\Debug\GreenMonkey.Utils.dll

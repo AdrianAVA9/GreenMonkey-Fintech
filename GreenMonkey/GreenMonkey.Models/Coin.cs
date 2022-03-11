@@ -8,7 +8,7 @@ namespace GreenMonkey.Models
 {
     public class Coin : BaseEntity
     {
-        public int Code { get; set; }
+        public string Code { get; set; }
         public string Name { get; set; }
         public string FintechCode { get; set; }
         public Suscriptor Fintech { get;set;}

@@ -26,7 +26,7 @@ namespace GreenMonkey.DataAccess.Mapper
             operation.AddVarcharParam(DB_COL_NAME, account.Name);
             operation.AddVarcharParam(DB_COL_STATUS, account.Name);
             operation.AddVarcharParam(DB_COL_CUSTOMER_ID, account.CustomerId);
-            operation.AddIntParam(DB_COL_COIN_CODE, account.CoinCode);
+            operation.AddVarcharParam(DB_COL_COIN_CODE, account.CoinCode);
 
             return operation;
         }
@@ -86,7 +86,7 @@ namespace GreenMonkey.DataAccess.Mapper
                 Name = GetStringValue(row, DB_COL_NAME),
                 Status = GetStringValue(row, DB_COL_STATUS),
                 CustomerId = GetStringValue(row, DB_COL_CUSTOMER_ID),
-                CoinCode = GetIntValue(row, DB_COL_COIN_CODE),
+                CoinCode = GetStringValue(row, DB_COL_COIN_CODE),
                 Amount = GetDecimalValue(row, DB_COL_AMOUNT),
                 RegisteredAt = GetDateValue(row, DB_COL_REGISTERED_AT),
             };

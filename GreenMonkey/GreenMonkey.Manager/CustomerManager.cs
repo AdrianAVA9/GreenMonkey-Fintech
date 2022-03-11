@@ -27,7 +27,7 @@ namespace GreenMonkey.Manager
                 Status = "Activa",
                 Name = "Credito",
                 CustomerId = customer.Id,
-                CoinCode = 2
+                CoinCode = "1028"
             });
         }
 

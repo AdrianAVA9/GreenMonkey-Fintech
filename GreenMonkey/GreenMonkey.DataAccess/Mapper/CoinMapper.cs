@@ -41,7 +41,7 @@ namespace GreenMonkey.DataAccess.Mapper
             var operation = new SqlOperation { ProcedureName = "RET_COIN_PR" };
 
             var c = (Coin)entity;
-            operation.AddIntParam(DB_COL_CODE, c.Code);
+            operation.AddVarcharParam(DB_COL_CODE, c.Code);
 
             return operation;
         }
@@ -65,7 +65,7 @@ namespace GreenMonkey.DataAccess.Mapper
         {
             var coin = new Coin
             {
-                Code = GetIntValue(row, DB_COL_CODE),
+                Code = GetStringValue(row, DB_COL_CODE),
                 Name = GetStringValue(row, DB_COL_NAME),
                 FintechCode = GetStringValue(row, DB_COL_FINTECH_CODE)
             };
