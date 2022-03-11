@@ -34,14 +34,29 @@ namespace GreenMonkey.Desktop
         {
             MetroFramework.Controls.MetroTabControl contentTab;
             this.customerTab = new MetroFramework.Controls.MetroTabPage();
+            this.resetCustomerForm = new MetroFramework.Controls.MetroButton();
+            this.editTFNickname = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel14 = new MetroFramework.Controls.MetroLabel();
+            this.editTFStatus = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel13 = new MetroFramework.Controls.MetroLabel();
+            this.editTFBirdthdate = new System.Windows.Forms.DateTimePicker();
+            this.otpTokenPanel = new MetroFramework.Controls.MetroPanel();
+            this.metroTile1 = new MetroFramework.Controls.MetroTile();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.TFotpToken = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
+            this.editTFEmail = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
+            this.editTFPhoneNumber = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
             this.metroButton4 = new MetroFramework.Controls.MetroButton();
-            this.metroButton3 = new MetroFramework.Controls.MetroButton();
-            this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.editTFLastaname = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
+            this.updateCustomerInformation = new MetroFramework.Controls.MetroButton();
             this.editTFCustomername = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
+            this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.editTFCustomerId = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.customerDataGrid = new System.Windows.Forms.DataGridView();
@@ -49,6 +64,14 @@ namespace GreenMonkey.Desktop
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coinsTab = new MetroFramework.Controls.MetroTabPage();
+            this.coinsDataGrid = new System.Windows.Forms.DataGridView();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.accountsTab = new MetroFramework.Controls.MetroTabPage();
             this.accountsDataGrid = new System.Windows.Forms.DataGridView();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,12 +79,6 @@ namespace GreenMonkey.Desktop
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.coinsTab = new MetroFramework.Controls.MetroTabPage();
-            this.coinsDataGrid = new System.Windows.Forms.DataGridView();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.transferNowTab = new MetroFramework.Controls.MetroTabPage();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
@@ -73,17 +90,15 @@ namespace GreenMonkey.Desktop
             this.customerLastnameTextField = new MetroFramework.Controls.MetroTextBox();
             this.customerAgeTextField = new MetroFramework.Controls.MetroTextBox();
             this.searchCustomer = new MetroFramework.Controls.MetroButton();
-            this.editTFAge = new MetroFramework.Controls.MetroTextBox();
-            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             contentTab = new MetroFramework.Controls.MetroTabControl();
             contentTab.SuspendLayout();
             this.customerTab.SuspendLayout();
+            this.otpTokenPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customerDataGrid)).BeginInit();
-            this.accountsTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.accountsDataGrid)).BeginInit();
             this.coinsTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.coinsDataGrid)).BeginInit();
+            this.accountsTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.accountsDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // contentTab
@@ -95,42 +110,210 @@ namespace GreenMonkey.Desktop
             contentTab.Location = new System.Drawing.Point(28, 147);
             contentTab.Name = "contentTab";
             contentTab.SelectedIndex = 0;
-            contentTab.Size = new System.Drawing.Size(1002, 541);
+            contentTab.Size = new System.Drawing.Size(1221, 541);
             contentTab.TabIndex = 10;
             // 
             // customerTab
             // 
+            this.customerTab.Controls.Add(this.resetCustomerForm);
+            this.customerTab.Controls.Add(this.editTFNickname);
+            this.customerTab.Controls.Add(this.metroLabel14);
+            this.customerTab.Controls.Add(this.editTFStatus);
+            this.customerTab.Controls.Add(this.metroLabel13);
+            this.customerTab.Controls.Add(this.editTFBirdthdate);
+            this.customerTab.Controls.Add(this.otpTokenPanel);
+            this.customerTab.Controls.Add(this.editTFEmail);
+            this.customerTab.Controls.Add(this.metroLabel11);
+            this.customerTab.Controls.Add(this.editTFPhoneNumber);
+            this.customerTab.Controls.Add(this.metroLabel10);
             this.customerTab.Controls.Add(this.metroLabel9);
             this.customerTab.Controls.Add(this.metroButton4);
-            this.customerTab.Controls.Add(this.metroButton3);
-            this.customerTab.Controls.Add(this.metroButton2);
             this.customerTab.Controls.Add(this.editTFLastaname);
             this.customerTab.Controls.Add(this.metroLabel8);
+            this.customerTab.Controls.Add(this.updateCustomerInformation);
             this.customerTab.Controls.Add(this.editTFCustomername);
             this.customerTab.Controls.Add(this.metroLabel7);
+            this.customerTab.Controls.Add(this.metroButton2);
             this.customerTab.Controls.Add(this.editTFCustomerId);
             this.customerTab.Controls.Add(this.metroLabel6);
             this.customerTab.Controls.Add(this.customerDataGrid);
             this.customerTab.HorizontalScrollbarBarColor = true;
             this.customerTab.Location = new System.Drawing.Point(4, 35);
             this.customerTab.Name = "customerTab";
-            this.customerTab.Size = new System.Drawing.Size(994, 502);
+            this.customerTab.Size = new System.Drawing.Size(1213, 502);
             this.customerTab.TabIndex = 0;
             this.customerTab.Text = "Customers";
             this.customerTab.VerticalScrollbarBarColor = true;
             // 
+            // resetCustomerForm
+            // 
+            this.resetCustomerForm.Location = new System.Drawing.Point(366, 458);
+            this.resetCustomerForm.Name = "resetCustomerForm";
+            this.resetCustomerForm.Size = new System.Drawing.Size(75, 23);
+            this.resetCustomerForm.Style = MetroFramework.MetroColorStyle.Red;
+            this.resetCustomerForm.TabIndex = 27;
+            this.resetCustomerForm.Text = "Reset";
+            this.resetCustomerForm.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.resetCustomerForm.Click += new System.EventHandler(this.resetCustomerForm_Click);
+            // 
+            // editTFNickname
+            // 
+            this.editTFNickname.Location = new System.Drawing.Point(663, 259);
+            this.editTFNickname.Name = "editTFNickname";
+            this.editTFNickname.Size = new System.Drawing.Size(213, 23);
+            this.editTFNickname.Style = MetroFramework.MetroColorStyle.White;
+            this.editTFNickname.TabIndex = 26;
+            this.editTFNickname.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.editTFNickname.UseStyleColors = true;
+            // 
+            // metroLabel14
+            // 
+            this.metroLabel14.AutoSize = true;
+            this.metroLabel14.Location = new System.Drawing.Point(590, 263);
+            this.metroLabel14.Name = "metroLabel14";
+            this.metroLabel14.Size = new System.Drawing.Size(67, 19);
+            this.metroLabel14.TabIndex = 25;
+            this.metroLabel14.Text = "Nickname";
+            // 
+            // editTFStatus
+            // 
+            this.editTFStatus.Location = new System.Drawing.Point(663, 224);
+            this.editTFStatus.Name = "editTFStatus";
+            this.editTFStatus.Size = new System.Drawing.Size(213, 23);
+            this.editTFStatus.Style = MetroFramework.MetroColorStyle.White;
+            this.editTFStatus.TabIndex = 24;
+            this.editTFStatus.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.editTFStatus.UseStyleColors = true;
+            // 
+            // metroLabel13
+            // 
+            this.metroLabel13.AutoSize = true;
+            this.metroLabel13.Location = new System.Drawing.Point(589, 228);
+            this.metroLabel13.Name = "metroLabel13";
+            this.metroLabel13.Size = new System.Drawing.Size(43, 19);
+            this.metroLabel13.TabIndex = 23;
+            this.metroLabel13.Text = "Status";
+            // 
+            // editTFBirdthdate
+            // 
+            this.editTFBirdthdate.Location = new System.Drawing.Point(348, 227);
+            this.editTFBirdthdate.Name = "editTFBirdthdate";
+            this.editTFBirdthdate.Size = new System.Drawing.Size(213, 20);
+            this.editTFBirdthdate.TabIndex = 22;
+            // 
+            // otpTokenPanel
+            // 
+            this.otpTokenPanel.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.otpTokenPanel.BorderStyle = MetroFramework.Drawing.MetroBorderStyle.FixedSingle;
+            this.otpTokenPanel.Controls.Add(this.metroTile1);
+            this.otpTokenPanel.Controls.Add(this.metroButton1);
+            this.otpTokenPanel.Controls.Add(this.TFotpToken);
+            this.otpTokenPanel.Controls.Add(this.metroLabel12);
+            this.otpTokenPanel.CustomBackground = true;
+            this.otpTokenPanel.HorizontalScrollbarBarColor = true;
+            this.otpTokenPanel.HorizontalScrollbarHighlightOnWheel = false;
+            this.otpTokenPanel.HorizontalScrollbarSize = 10;
+            this.otpTokenPanel.Location = new System.Drawing.Point(74, 331);
+            this.otpTokenPanel.Name = "otpTokenPanel";
+            this.otpTokenPanel.Size = new System.Drawing.Size(312, 98);
+            this.otpTokenPanel.TabIndex = 21;
+            this.otpTokenPanel.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.otpTokenPanel.VerticalScrollbarBarColor = true;
+            this.otpTokenPanel.VerticalScrollbarHighlightOnWheel = false;
+            this.otpTokenPanel.VerticalScrollbarSize = 10;
+            this.otpTokenPanel.Visible = false;
+            // 
+            // metroTile1
+            // 
+            this.metroTile1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.metroTile1.CustomBackground = true;
+            this.metroTile1.Location = new System.Drawing.Point(3, 3);
+            this.metroTile1.Name = "metroTile1";
+            this.metroTile1.Size = new System.Drawing.Size(306, 23);
+            this.metroTile1.TabIndex = 21;
+            this.metroTile1.Text = "Email Verification";
+            // 
+            // metroButton1
+            // 
+            this.metroButton1.Location = new System.Drawing.Point(193, 64);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(75, 23);
+            this.metroButton1.TabIndex = 19;
+            this.metroButton1.Text = "Verificar";
+            this.metroButton1.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroButton1.Click += new System.EventHandler(this.SaveUser);
+            // 
+            // TFotpToken
+            // 
+            this.TFotpToken.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.TFotpToken.CustomBackground = true;
+            this.TFotpToken.Location = new System.Drawing.Point(15, 64);
+            this.TFotpToken.Name = "TFotpToken";
+            this.TFotpToken.Size = new System.Drawing.Size(161, 23);
+            this.TFotpToken.TabIndex = 20;
+            // 
+            // metroLabel12
+            // 
+            this.metroLabel12.AutoSize = true;
+            this.metroLabel12.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.metroLabel12.CustomBackground = true;
+            this.metroLabel12.CustomForeColor = true;
+            this.metroLabel12.Location = new System.Drawing.Point(15, 32);
+            this.metroLabel12.Name = "metroLabel12";
+            this.metroLabel12.Size = new System.Drawing.Size(155, 19);
+            this.metroLabel12.TabIndex = 18;
+            this.metroLabel12.Text = "OTP is sent to your email";
+            // 
+            // editTFEmail
+            // 
+            this.editTFEmail.Location = new System.Drawing.Point(348, 293);
+            this.editTFEmail.Name = "editTFEmail";
+            this.editTFEmail.Size = new System.Drawing.Size(213, 23);
+            this.editTFEmail.Style = MetroFramework.MetroColorStyle.White;
+            this.editTFEmail.TabIndex = 17;
+            this.editTFEmail.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.editTFEmail.UseStyleColors = true;
+            // 
+            // metroLabel11
+            // 
+            this.metroLabel11.AutoSize = true;
+            this.metroLabel11.Location = new System.Drawing.Point(301, 293);
+            this.metroLabel11.Name = "metroLabel11";
+            this.metroLabel11.Size = new System.Drawing.Size(41, 19);
+            this.metroLabel11.TabIndex = 16;
+            this.metroLabel11.Text = "Email";
+            // 
+            // editTFPhoneNumber
+            // 
+            this.editTFPhoneNumber.Location = new System.Drawing.Point(348, 259);
+            this.editTFPhoneNumber.Name = "editTFPhoneNumber";
+            this.editTFPhoneNumber.Size = new System.Drawing.Size(213, 23);
+            this.editTFPhoneNumber.Style = MetroFramework.MetroColorStyle.White;
+            this.editTFPhoneNumber.TabIndex = 15;
+            this.editTFPhoneNumber.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.editTFPhoneNumber.UseStyleColors = true;
+            // 
+            // metroLabel10
+            // 
+            this.metroLabel10.AutoSize = true;
+            this.metroLabel10.Location = new System.Drawing.Point(243, 263);
+            this.metroLabel10.Name = "metroLabel10";
+            this.metroLabel10.Size = new System.Drawing.Size(99, 19);
+            this.metroLabel10.TabIndex = 14;
+            this.metroLabel10.Text = "Phone Number";
+            // 
             // metroLabel9
             // 
             this.metroLabel9.AutoSize = true;
-            this.metroLabel9.Location = new System.Drawing.Point(866, 255);
+            this.metroLabel9.Location = new System.Drawing.Point(272, 231);
             this.metroLabel9.Name = "metroLabel9";
-            this.metroLabel9.Size = new System.Drawing.Size(33, 19);
+            this.metroLabel9.Size = new System.Drawing.Size(70, 19);
             this.metroLabel9.TabIndex = 12;
-            this.metroLabel9.Text = "Age";
+            this.metroLabel9.Text = "Birdthdate";
             // 
             // metroButton4
             // 
-            this.metroButton4.Location = new System.Drawing.Point(239, 336);
+            this.metroButton4.Location = new System.Drawing.Point(260, 458);
             this.metroButton4.Name = "metroButton4";
             this.metroButton4.Size = new System.Drawing.Size(75, 23);
             this.metroButton4.Style = MetroFramework.MetroColorStyle.Red;
@@ -138,31 +321,11 @@ namespace GreenMonkey.Desktop
             this.metroButton4.Text = "Delete";
             this.metroButton4.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
-            // metroButton3
-            // 
-            this.metroButton3.Location = new System.Drawing.Point(134, 336);
-            this.metroButton3.Name = "metroButton3";
-            this.metroButton3.Size = new System.Drawing.Size(75, 23);
-            this.metroButton3.Style = MetroFramework.MetroColorStyle.Yellow;
-            this.metroButton3.TabIndex = 10;
-            this.metroButton3.Text = "Update";
-            this.metroButton3.Theme = MetroFramework.MetroThemeStyle.Light;
-            // 
-            // metroButton2
-            // 
-            this.metroButton2.Location = new System.Drawing.Point(22, 336);
-            this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(75, 23);
-            this.metroButton2.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroButton2.TabIndex = 9;
-            this.metroButton2.Text = "Save";
-            this.metroButton2.Theme = MetroFramework.MetroThemeStyle.Light;
-            // 
             // editTFLastaname
             // 
-            this.editTFLastaname.Location = new System.Drawing.Point(597, 255);
+            this.editTFLastaname.Location = new System.Drawing.Point(74, 293);
             this.editTFLastaname.Name = "editTFLastaname";
-            this.editTFLastaname.Size = new System.Drawing.Size(205, 23);
+            this.editTFLastaname.Size = new System.Drawing.Size(161, 23);
             this.editTFLastaname.Style = MetroFramework.MetroColorStyle.White;
             this.editTFLastaname.TabIndex = 8;
             this.editTFLastaname.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -171,17 +334,28 @@ namespace GreenMonkey.Desktop
             // metroLabel8
             // 
             this.metroLabel8.AutoSize = true;
-            this.metroLabel8.Location = new System.Drawing.Point(535, 255);
+            this.metroLabel8.Location = new System.Drawing.Point(10, 293);
             this.metroLabel8.Name = "metroLabel8";
-            this.metroLabel8.Size = new System.Drawing.Size(58, 19);
+            this.metroLabel8.Size = new System.Drawing.Size(64, 19);
             this.metroLabel8.TabIndex = 7;
-            this.metroLabel8.Text = "Apellido";
+            this.metroLabel8.Text = "Lastname";
+            // 
+            // updateCustomerInformation
+            // 
+            this.updateCustomerInformation.Location = new System.Drawing.Point(169, 458);
+            this.updateCustomerInformation.Name = "updateCustomerInformation";
+            this.updateCustomerInformation.Size = new System.Drawing.Size(75, 23);
+            this.updateCustomerInformation.Style = MetroFramework.MetroColorStyle.Yellow;
+            this.updateCustomerInformation.TabIndex = 10;
+            this.updateCustomerInformation.Text = "Update";
+            this.updateCustomerInformation.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.updateCustomerInformation.Click += new System.EventHandler(this.UpdateCustomer);
             // 
             // editTFCustomername
             // 
-            this.editTFCustomername.Location = new System.Drawing.Point(291, 255);
+            this.editTFCustomername.Location = new System.Drawing.Point(74, 259);
             this.editTFCustomername.Name = "editTFCustomername";
-            this.editTFCustomername.Size = new System.Drawing.Size(202, 23);
+            this.editTFCustomername.Size = new System.Drawing.Size(161, 23);
             this.editTFCustomername.Style = MetroFramework.MetroColorStyle.White;
             this.editTFCustomername.TabIndex = 6;
             this.editTFCustomername.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -190,15 +364,26 @@ namespace GreenMonkey.Desktop
             // metroLabel7
             // 
             this.metroLabel7.AutoSize = true;
-            this.metroLabel7.Location = new System.Drawing.Point(239, 255);
+            this.metroLabel7.Location = new System.Drawing.Point(23, 263);
             this.metroLabel7.Name = "metroLabel7";
             this.metroLabel7.Size = new System.Drawing.Size(45, 19);
             this.metroLabel7.TabIndex = 5;
             this.metroLabel7.Text = "Name";
             // 
+            // metroButton2
+            // 
+            this.metroButton2.Location = new System.Drawing.Point(74, 458);
+            this.metroButton2.Name = "metroButton2";
+            this.metroButton2.Size = new System.Drawing.Size(75, 23);
+            this.metroButton2.Style = MetroFramework.MetroColorStyle.Green;
+            this.metroButton2.TabIndex = 9;
+            this.metroButton2.Text = "Save";
+            this.metroButton2.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroButton2.Click += new System.EventHandler(this.CreateUser);
+            // 
             // editTFCustomerId
             // 
-            this.editTFCustomerId.Location = new System.Drawing.Point(48, 255);
+            this.editTFCustomerId.Location = new System.Drawing.Point(74, 227);
             this.editTFCustomerId.Name = "editTFCustomerId";
             this.editTFCustomerId.Size = new System.Drawing.Size(161, 23);
             this.editTFCustomerId.Style = MetroFramework.MetroColorStyle.White;
@@ -209,7 +394,7 @@ namespace GreenMonkey.Desktop
             // metroLabel6
             // 
             this.metroLabel6.AutoSize = true;
-            this.metroLabel6.Location = new System.Drawing.Point(22, 255);
+            this.metroLabel6.Location = new System.Drawing.Point(48, 231);
             this.metroLabel6.Name = "metroLabel6";
             this.metroLabel6.Size = new System.Drawing.Size(20, 19);
             this.metroLabel6.TabIndex = 3;
@@ -225,7 +410,7 @@ namespace GreenMonkey.Desktop
             this.Column4,
             this.Column14,
             this.Column15});
-            this.customerDataGrid.Location = new System.Drawing.Point(0, 32);
+            this.customerDataGrid.Location = new System.Drawing.Point(10, 29);
             this.customerDataGrid.Name = "customerDataGrid";
             this.customerDataGrid.Size = new System.Drawing.Size(977, 150);
             this.customerDataGrid.TabIndex = 2;
@@ -251,13 +436,67 @@ namespace GreenMonkey.Desktop
             this.Column4.HeaderText = "Age";
             this.Column4.Name = "Column4";
             // 
+            // Column14
+            // 
+            this.Column14.HeaderText = "Phone number";
+            this.Column14.Name = "Column14";
+            // 
+            // Column15
+            // 
+            this.Column15.HeaderText = "Email";
+            this.Column15.Name = "Column15";
+            // 
+            // coinsTab
+            // 
+            this.coinsTab.Controls.Add(this.coinsDataGrid);
+            this.coinsTab.HorizontalScrollbarBarColor = true;
+            this.coinsTab.Location = new System.Drawing.Point(4, 35);
+            this.coinsTab.Name = "coinsTab";
+            this.coinsTab.Size = new System.Drawing.Size(1213, 502);
+            this.coinsTab.TabIndex = 1;
+            this.coinsTab.Text = "Coins";
+            this.coinsTab.VerticalScrollbarBarColor = true;
+            // 
+            // coinsDataGrid
+            // 
+            this.coinsDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.coinsDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column9,
+            this.Column10,
+            this.Column11,
+            this.Column8});
+            this.coinsDataGrid.Location = new System.Drawing.Point(3, 19);
+            this.coinsDataGrid.Name = "coinsDataGrid";
+            this.coinsDataGrid.Size = new System.Drawing.Size(742, 150);
+            this.coinsDataGrid.TabIndex = 2;
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Fintech code";
+            this.Column9.Name = "Column9";
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "Fintech";
+            this.Column10.Name = "Column10";
+            // 
+            // Column11
+            // 
+            this.Column11.HeaderText = "Code";
+            this.Column11.Name = "Column11";
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Name";
+            this.Column8.Name = "Column8";
+            // 
             // accountsTab
             // 
             this.accountsTab.Controls.Add(this.accountsDataGrid);
             this.accountsTab.HorizontalScrollbarBarColor = true;
             this.accountsTab.Location = new System.Drawing.Point(4, 35);
             this.accountsTab.Name = "accountsTab";
-            this.accountsTab.Size = new System.Drawing.Size(994, 502);
+            this.accountsTab.Size = new System.Drawing.Size(1213, 502);
             this.accountsTab.TabIndex = 2;
             this.accountsTab.Text = "Accounts";
             this.accountsTab.VerticalScrollbarBarColor = true;
@@ -271,9 +510,9 @@ namespace GreenMonkey.Desktop
             this.Column12,
             this.Column7,
             this.Column13});
-            this.accountsDataGrid.Location = new System.Drawing.Point(54, 32);
+            this.accountsDataGrid.Location = new System.Drawing.Point(3, 19);
             this.accountsDataGrid.Name = "accountsDataGrid";
-            this.accountsDataGrid.Size = new System.Drawing.Size(560, 150);
+            this.accountsDataGrid.Size = new System.Drawing.Size(837, 150);
             this.accountsDataGrid.TabIndex = 2;
             // 
             // Column5
@@ -302,56 +541,12 @@ namespace GreenMonkey.Desktop
             this.Column13.HeaderText = "Status";
             this.Column13.Name = "Column13";
             // 
-            // coinsTab
-            // 
-            this.coinsTab.Controls.Add(this.coinsDataGrid);
-            this.coinsTab.HorizontalScrollbarBarColor = true;
-            this.coinsTab.Location = new System.Drawing.Point(4, 35);
-            this.coinsTab.Name = "coinsTab";
-            this.coinsTab.Size = new System.Drawing.Size(994, 502);
-            this.coinsTab.TabIndex = 1;
-            this.coinsTab.Text = "Coins";
-            this.coinsTab.VerticalScrollbarBarColor = true;
-            // 
-            // coinsDataGrid
-            // 
-            this.coinsDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.coinsDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column9,
-            this.Column10,
-            this.Column11,
-            this.Column8});
-            this.coinsDataGrid.Location = new System.Drawing.Point(80, 60);
-            this.coinsDataGrid.Name = "coinsDataGrid";
-            this.coinsDataGrid.Size = new System.Drawing.Size(471, 150);
-            this.coinsDataGrid.TabIndex = 2;
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Fintech code";
-            this.Column9.Name = "Column9";
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "Fintech";
-            this.Column10.Name = "Column10";
-            // 
-            // Column11
-            // 
-            this.Column11.HeaderText = "Code";
-            this.Column11.Name = "Column11";
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Name";
-            this.Column8.Name = "Column8";
-            // 
             // transferNowTab
             // 
             this.transferNowTab.HorizontalScrollbarBarColor = true;
             this.transferNowTab.Location = new System.Drawing.Point(4, 35);
             this.transferNowTab.Name = "transferNowTab";
-            this.transferNowTab.Size = new System.Drawing.Size(994, 502);
+            this.transferNowTab.Size = new System.Drawing.Size(1213, 502);
             this.transferNowTab.TabIndex = 3;
             this.transferNowTab.Text = "Transfer now";
             this.transferNowTab.VerticalScrollbarBarColor = true;
@@ -453,33 +648,12 @@ namespace GreenMonkey.Desktop
             this.searchCustomer.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.searchCustomer.Click += new System.EventHandler(this.SearchCustomer);
             // 
-            // editTFAge
-            // 
-            this.editTFAge.Location = new System.Drawing.Point(937, 437);
-            this.editTFAge.Name = "editTFAge";
-            this.editTFAge.Size = new System.Drawing.Size(205, 23);
-            this.editTFAge.Style = MetroFramework.MetroColorStyle.White;
-            this.editTFAge.TabIndex = 13;
-            this.editTFAge.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.editTFAge.UseStyleColors = true;
-            // 
-            // Column14
-            // 
-            this.Column14.HeaderText = "Phone number";
-            this.Column14.Name = "Column14";
-            // 
-            // Column15
-            // 
-            this.Column15.HeaderText = "Email";
-            this.Column15.Name = "Column15";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1438, 777);
-            this.Controls.Add(this.editTFAge);
             this.Controls.Add(contentTab);
             this.Controls.Add(this.searchCustomer);
             this.Controls.Add(this.customerAgeTextField);
@@ -496,11 +670,13 @@ namespace GreenMonkey.Desktop
             contentTab.ResumeLayout(false);
             this.customerTab.ResumeLayout(false);
             this.customerTab.PerformLayout();
+            this.otpTokenPanel.ResumeLayout(false);
+            this.otpTokenPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customerDataGrid)).EndInit();
-            this.accountsTab.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.accountsDataGrid)).EndInit();
             this.coinsTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.coinsDataGrid)).EndInit();
+            this.accountsTab.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.accountsDataGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -526,7 +702,7 @@ namespace GreenMonkey.Desktop
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private MetroFramework.Controls.MetroButton metroButton4;
-        private MetroFramework.Controls.MetroButton metroButton3;
+        private MetroFramework.Controls.MetroButton updateCustomerInformation;
         private MetroFramework.Controls.MetroButton metroButton2;
         private MetroFramework.Controls.MetroTextBox editTFLastaname;
         private MetroFramework.Controls.MetroLabel metroLabel8;
@@ -538,7 +714,6 @@ namespace GreenMonkey.Desktop
         private System.Windows.Forms.DataGridViewTextBoxColumn Age;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private MetroFramework.Controls.MetroLabel metroLabel9;
-        private MetroFramework.Controls.MetroTextBox editTFAge;
         private System.Windows.Forms.DataGridView accountsDataGrid;
         private System.Windows.Forms.DataGridView coinsDataGrid;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
@@ -552,6 +727,21 @@ namespace GreenMonkey.Desktop
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
+        private MetroFramework.Controls.MetroTextBox editTFEmail;
+        private MetroFramework.Controls.MetroLabel metroLabel11;
+        private MetroFramework.Controls.MetroTextBox editTFPhoneNumber;
+        private MetroFramework.Controls.MetroLabel metroLabel10;
+        private MetroFramework.Controls.MetroPanel otpTokenPanel;
+        private MetroFramework.Controls.MetroButton metroButton1;
+        private MetroFramework.Controls.MetroTextBox TFotpToken;
+        private MetroFramework.Controls.MetroLabel metroLabel12;
+        private MetroFramework.Controls.MetroTile metroTile1;
+        private System.Windows.Forms.DateTimePicker editTFBirdthdate;
+        private MetroFramework.Controls.MetroTextBox editTFNickname;
+        private MetroFramework.Controls.MetroLabel metroLabel14;
+        private MetroFramework.Controls.MetroTextBox editTFStatus;
+        private MetroFramework.Controls.MetroLabel metroLabel13;
+        private MetroFramework.Controls.MetroButton resetCustomerForm;
     }
 }
 

@@ -57,6 +57,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="OTPClient.cs" />
     <Compile Include="SMSClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

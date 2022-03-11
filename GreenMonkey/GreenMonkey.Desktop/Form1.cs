@@ -1,8 +1,10 @@
 ﻿using GreenMonkey.Manager;
 using GreenMonkey.Models;
+using GreenMonkey.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -18,6 +20,9 @@ namespace GreenMonkey.Desktop
         public CoinManager CoinManager { get; set; }
         public List<Customer> Customers { get; set; }
         public List<Coin> Coins { get; set; }
+        private SMSClient _SMSClient { get; set; }
+        private string _OTPToken { get; set; }
+        private Customer _CUSTOMER_IN_PROCESS { get; set; }
 
         public Form1()
         {
@@ -25,6 +30,11 @@ namespace GreenMonkey.Desktop
             this.Load += new EventHandler(LoadForm);
             CustomerManager = new CustomerManager();
             CoinManager = new CoinManager();
+
+            var phoneNumber = ConfigurationManager.AppSettings["TWILIO_PHONE_NUMBER"];
+            var accountSId = ConfigurationManager.AppSettings["TWILIO_ACCOUNT_SID"];
+            var token = ConfigurationManager.AppSettings["TWILIO_TOKEN"];
+            _SMSClient = new SMSClient(token, accountSId, phoneNumber);
         }
 
         private void LoadForm(System.Object sender, System.EventArgs e)
@@ -53,6 +63,7 @@ namespace GreenMonkey.Desktop
         private void SetupCustomerDataGrid()
         {
             Customers = CustomerManager.RetrieveAllCustomers();
+            this.customerDataGrid.Rows.Clear();
 
             foreach (var customer in Customers)
             {
@@ -83,9 +94,99 @@ namespace GreenMonkey.Desktop
                 return;
 
             editTFCustomerId.Text = customer.Id;
-            editTFCustomername.Text = customer.Fullname;
+            editTFCustomername.Text = customer.Name;
             editTFLastaname.Text = customer.LastName;
-            editTFAge.Text = customer.Age.ToString();
+            editTFBirdthdate.Value = customer.Birthdate;
+            editTFEmail.Text = customer.Email;
+            editTFPhoneNumber.Text = customer.PhoneNumber;
+            editTFNickname.Text = customer.Nickname;
+            editTFStatus.Text = customer.Status;
+        }
+
+        private void CreateUser(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if(!IsCustomerFormValid())
+                {
+                    MessageBox.Show("All fields are requerid");
+                    return;
+                }
+
+                _CUSTOMER_IN_PROCESS = new Customer()
+                {
+                    Id = editTFCustomerId.Text,
+                    Name = editTFCustomername.Text,
+                    LastName = editTFLastaname.Text,
+                    Birthdate = editTFBirdthdate.Value,
+                    Email = editTFEmail.Text,
+                    PhoneNumber = "+506" + editTFPhoneNumber.Text,
+                    Nickname = editTFNickname.Text,
+                    Status = editTFStatus.Text
+                };
+
+                _OTPToken = OTPClient.GenerateOTP(6);
+                var message = string.Format("Your 6-digit security code is {0}. Don't share this code whit anyone", _OTPToken);
+
+                _SMSClient.SendMessage(message, _CUSTOMER_IN_PROCESS.PhoneNumber);
+
+                otpTokenPanel.Visible = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void SaveUser(object sender, EventArgs e)
+        {
+            var optToken = TFotpToken.Text;
+
+            if (!optToken.Equals(_OTPToken))
+            {
+                MessageBox.Show("Invalid OTP");
+                return;
+            }
+            
+            CustomerManager.CreateCustomer(_CUSTOMER_IN_PROCESS);
+            SetupCustomerDataGrid();
+            ResetCustomerForm();
+
+            _CUSTOMER_IN_PROCESS = null;
+            _OTPToken = string.Empty;
+        }
+
+        private void UpdateCustomer(object sender, EventArgs e)
+        {
+            if (!IsCustomerFormValid())
+            {
+                MessageBox.Show("All fields are requerid");
+                return;
+            }
+
+            var customer = new Customer()
+            {
+                Id = editTFCustomerId.Text,
+                Name = editTFCustomername.Text,
+                LastName = editTFLastaname.Text,
+                Birthdate = editTFBirdthdate.Value,
+                Email = editTFEmail.Text,
+                PhoneNumber = editTFPhoneNumber.Text,
+                Nickname = editTFNickname.Text,
+                Status = editTFStatus.Text
+            };
+
+            CustomerManager.UpdateCustomer(customer);
+            SetupCustomerDataGrid();
+        }
+
+        private bool IsCustomerFormValid()
+        {
+            Func<string, bool> isEmpty = (value) => string.IsNullOrEmpty(value);
+
+            return !(isEmpty(editTFCustomerId.Text) || isEmpty(editTFCustomername.Text) || isEmpty(editTFLastaname.Text) || isEmpty(editTFEmail.Text)
+                || isEmpty(editTFPhoneNumber.Text) || isEmpty(editTFNickname.Text) || isEmpty(editTFStatus.Text));
         }
 
         private void SearchCustomer(object sender, EventArgs e)
@@ -133,6 +234,30 @@ namespace GreenMonkey.Desktop
         private void ClearAccountDataGrid()
         {
             this.accountsDataGrid.Rows.Clear();
+        }
+
+        private void ClearCustomerForm()
+        {
+            editTFCustomerId.Text = "";
+            editTFCustomername.Text = "";
+            editTFLastaname.Text = "";
+            editTFBirdthdate.Value = DateTime.Now;
+            editTFEmail.Text = "";
+            editTFPhoneNumber.Text = "";
+            editTFStatus.Text = "";
+            editTFNickname.Text = "";
+        }
+
+        private void ResetCustomerForm()
+        {
+            ClearCustomerForm();
+            otpTokenPanel.Visible = false;
+            TFotpToken.Text = "";
+        }
+
+        private void resetCustomerForm_Click(object sender, EventArgs e)
+        {
+            ResetCustomerForm();
         }
 
         private void LoadTransactions(Customer customer)

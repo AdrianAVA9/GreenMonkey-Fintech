@@ -44,6 +44,7 @@
       <HintPath>..\packages\MetroFramework.Fonts.1.2.0.3\lib\net40\MetroFramework.Fonts.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -101,6 +102,10 @@
     <ProjectReference Include="..\GreenMonkey.Models\GreenMonkey.Models.csproj">
       <Project>{4ACB1A1A-0926-477C-BF6F-DAF30D861183}</Project>
       <Name>GreenMonkey.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GreenMonkey.Utils\GreenMonkey.Utils.csproj">
+      <Project>{8604C964-C8BD-41EB-BB13-8C1527A2B83C}</Project>
+      <Name>GreenMonkey.Utils</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

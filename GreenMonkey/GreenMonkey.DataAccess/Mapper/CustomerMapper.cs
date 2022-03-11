@@ -27,6 +27,8 @@ namespace GreenMonkey.DataAccess.Mapper
             operation.AddVarcharParam(DB_COL_NICKNAME, c.Nickname);
             operation.AddVarcharParam(DB_COL_STATUS, c.Status);
             operation.AddDateTimeParam(DB_COL_BIRTHDATE, c.Birthdate);
+            operation.AddVarcharParam(DB_COL_PHONE_NUMBER, c.PhoneNumber);
+            operation.AddVarcharParam(DB_COL_EMAIL, c.Email);
 
             return operation;
         }
@@ -58,6 +60,8 @@ namespace GreenMonkey.DataAccess.Mapper
             operation.AddVarcharParam(DB_COL_NICKNAME, c.Nickname);
             operation.AddVarcharParam(DB_COL_STATUS, c.Status);
             operation.AddDateTimeParam(DB_COL_BIRTHDATE, c.Birthdate);
+            operation.AddVarcharParam(DB_COL_PHONE_NUMBER, c.PhoneNumber);
+            operation.AddVarcharParam(DB_COL_EMAIL, c.Email);
 
             return operation;
         }

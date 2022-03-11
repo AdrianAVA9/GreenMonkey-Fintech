@@ -22,12 +22,17 @@ namespace GreenMonkey.Manager
         public void CreateCustomer(Customer customer)
         {
             CustomerFactory.Create(customer);
+            AccountFactory.Create(new Account()
+            {
+                Status = "Activa",
+                Name = "Credito",
+                CustomerId = customer.Id,
+                CoinCode = 2
+            });
         }
 
         public Customer RetrieveCustomer(Customer customer)
         {
-            var smsClient = new SMSClient("092a341683abe9326d9866e622d907e8", "ACf01d579cfb2428dd04e5e6962b97ab7c", "+15402992669");
-            smsClient.SendMessage("Hello World", "+50671221940");
             return CustomerFactory.Retrieve<Customer>(customer);
         }
 

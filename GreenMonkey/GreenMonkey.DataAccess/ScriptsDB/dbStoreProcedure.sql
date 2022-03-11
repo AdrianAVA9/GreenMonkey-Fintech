@@ -128,15 +128,17 @@ CREATE PROCEDURE CRE_CUSTOMER_PR(
 	@P_LASTNAME nvarchar(50),
 	@P_NICKNAME nvarchar(30),
 	@P_STATUS nvarchar(15),
-	@P_BIRTHDATE DATETIME
+	@P_BIRTHDATE DATETIME,
+	@P_PHONE_NUMBER nvarchar(15),
+	@P_EMAIL nvarchar(50)
 )
 AS
 BEGIN
 	SET NOCOUNT ON;
 
-	INSERT INTO TBL_Customer(Id, Name, Lastname, Nickname, Status, Birthdate, RegisteredAt, Active)
+	INSERT INTO TBL_Customer(Id, Name, Lastname, Nickname, Status, Birthdate, Phonenumber, Email, RegisteredAt, Active)
 	VALUES
-		(@P_ID, @P_NAME, @P_LASTNAME, @P_NICKNAME, @P_STATUS, @P_BIRTHDATE, GETDATE(), 'S')
+		(@P_ID, @P_NAME, @P_LASTNAME, @P_NICKNAME, @P_STATUS, @P_BIRTHDATE, @P_PHONE_NUMBER, @P_EMAIL, GETDATE(), 'S')
 END
 
 
@@ -183,14 +185,16 @@ CREATE PROCEDURE UPD_CUSTOMER_PR(
 	@P_LASTNAME nvarchar(50),
 	@P_NICKNAME nvarchar(30),
 	@P_STATUS nvarchar(15),
-	@P_BIRTHDATE DATETIME
+	@P_BIRTHDATE DATETIME,
+	@P_PHONE_NUMBER nvarchar(15),
+	@P_EMAIL nvarchar(50)
 )
 AS
 BEGIN
 	SET NOCOUNT ON;
 
 	UPDATE TBL_Customer
-	SET Name = @P_NAME, Lastname = @P_LASTNAME, Nickname = @P_NICKNAME, Status = @P_STATUS, Birthdate = @P_BIRTHDATE
+	SET Name = @P_NAME, Lastname = @P_LASTNAME, Nickname = @P_NICKNAME, Status = @P_STATUS, Birthdate = @P_BIRTHDATE, Phonenumber = @P_PHONE_NUMBER, Email = @P_EMAIL
 	WHERE Id = @P_ID
 END
 
