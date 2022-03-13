@@ -66,7 +66,17 @@ namespace GreenMonkey.Desktop
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.transferNowTab = new MetroFramework.Controls.MetroTabPage();
             this.coinsTab = new MetroFramework.Controls.MetroTabPage();
+            this.resetCoinForm = new MetroFramework.Controls.MetroButton();
+            this.updateCoin = new MetroFramework.Controls.MetroButton();
+            this.SaveCoin = new MetroFramework.Controls.MetroButton();
+            this.editTFCoinCode = new MetroFramework.Controls.MetroTextBox();
+            this.editTFCoinName = new MetroFramework.Controls.MetroTextBox();
+            this.editTFCoinFintech = new MetroFramework.Controls.MetroComboBox();
+            this.metroLabel17 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel16 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel15 = new MetroFramework.Controls.MetroLabel();
             this.coinsDataGrid = new System.Windows.Forms.DataGridView();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,7 +89,6 @@ namespace GreenMonkey.Desktop
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.transferNowTab = new MetroFramework.Controls.MetroTabPage();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
@@ -104,12 +113,12 @@ namespace GreenMonkey.Desktop
             // contentTab
             // 
             contentTab.Controls.Add(this.customerTab);
+            contentTab.Controls.Add(this.transferNowTab);
             contentTab.Controls.Add(this.coinsTab);
             contentTab.Controls.Add(this.accountsTab);
-            contentTab.Controls.Add(this.transferNowTab);
             contentTab.Location = new System.Drawing.Point(28, 147);
             contentTab.Name = "contentTab";
-            contentTab.SelectedIndex = 3;
+            contentTab.SelectedIndex = 1;
             contentTab.Size = new System.Drawing.Size(1221, 541);
             contentTab.TabIndex = 10;
             // 
@@ -446,8 +455,27 @@ namespace GreenMonkey.Desktop
             this.Column15.HeaderText = "Email";
             this.Column15.Name = "Column15";
             // 
+            // transferNowTab
+            // 
+            this.transferNowTab.HorizontalScrollbarBarColor = true;
+            this.transferNowTab.Location = new System.Drawing.Point(4, 35);
+            this.transferNowTab.Name = "transferNowTab";
+            this.transferNowTab.Size = new System.Drawing.Size(1213, 502);
+            this.transferNowTab.TabIndex = 3;
+            this.transferNowTab.Text = "Transactions";
+            this.transferNowTab.VerticalScrollbarBarColor = true;
+            // 
             // coinsTab
             // 
+            this.coinsTab.Controls.Add(this.resetCoinForm);
+            this.coinsTab.Controls.Add(this.updateCoin);
+            this.coinsTab.Controls.Add(this.SaveCoin);
+            this.coinsTab.Controls.Add(this.editTFCoinCode);
+            this.coinsTab.Controls.Add(this.editTFCoinName);
+            this.coinsTab.Controls.Add(this.editTFCoinFintech);
+            this.coinsTab.Controls.Add(this.metroLabel17);
+            this.coinsTab.Controls.Add(this.metroLabel16);
+            this.coinsTab.Controls.Add(this.metroLabel15);
             this.coinsTab.Controls.Add(this.coinsDataGrid);
             this.coinsTab.HorizontalScrollbarBarColor = true;
             this.coinsTab.Location = new System.Drawing.Point(4, 35);
@@ -456,6 +484,80 @@ namespace GreenMonkey.Desktop
             this.coinsTab.TabIndex = 1;
             this.coinsTab.Text = "Coins";
             this.coinsTab.VerticalScrollbarBarColor = true;
+            // 
+            // resetCoinForm
+            // 
+            this.resetCoinForm.Location = new System.Drawing.Point(336, 355);
+            this.resetCoinForm.Name = "resetCoinForm";
+            this.resetCoinForm.Size = new System.Drawing.Size(75, 23);
+            this.resetCoinForm.TabIndex = 11;
+            this.resetCoinForm.Text = "Reset";
+            // 
+            // updateCoin
+            // 
+            this.updateCoin.Location = new System.Drawing.Point(239, 355);
+            this.updateCoin.Name = "updateCoin";
+            this.updateCoin.Size = new System.Drawing.Size(75, 23);
+            this.updateCoin.TabIndex = 10;
+            this.updateCoin.Text = "Update";
+            // 
+            // SaveCoin
+            // 
+            this.SaveCoin.Location = new System.Drawing.Point(133, 355);
+            this.SaveCoin.Name = "SaveCoin";
+            this.SaveCoin.Size = new System.Drawing.Size(75, 23);
+            this.SaveCoin.TabIndex = 9;
+            this.SaveCoin.Text = "Save";
+            // 
+            // editTFCoinCode
+            // 
+            this.editTFCoinCode.Location = new System.Drawing.Point(133, 281);
+            this.editTFCoinCode.Name = "editTFCoinCode";
+            this.editTFCoinCode.Size = new System.Drawing.Size(147, 23);
+            this.editTFCoinCode.TabIndex = 8;
+            // 
+            // editTFCoinName
+            // 
+            this.editTFCoinName.Location = new System.Drawing.Point(133, 242);
+            this.editTFCoinName.Name = "editTFCoinName";
+            this.editTFCoinName.Size = new System.Drawing.Size(147, 23);
+            this.editTFCoinName.TabIndex = 7;
+            // 
+            // editTFCoinFintech
+            // 
+            this.editTFCoinFintech.FormattingEnabled = true;
+            this.editTFCoinFintech.ItemHeight = 23;
+            this.editTFCoinFintech.Location = new System.Drawing.Point(133, 197);
+            this.editTFCoinFintech.Name = "editTFCoinFintech";
+            this.editTFCoinFintech.Size = new System.Drawing.Size(147, 29);
+            this.editTFCoinFintech.TabIndex = 6;
+            // 
+            // metroLabel17
+            // 
+            this.metroLabel17.AutoSize = true;
+            this.metroLabel17.Location = new System.Drawing.Point(66, 285);
+            this.metroLabel17.Name = "metroLabel17";
+            this.metroLabel17.Size = new System.Drawing.Size(41, 19);
+            this.metroLabel17.TabIndex = 5;
+            this.metroLabel17.Text = "Code";
+            // 
+            // metroLabel16
+            // 
+            this.metroLabel16.AutoSize = true;
+            this.metroLabel16.Location = new System.Drawing.Point(62, 246);
+            this.metroLabel16.Name = "metroLabel16";
+            this.metroLabel16.Size = new System.Drawing.Size(45, 19);
+            this.metroLabel16.TabIndex = 4;
+            this.metroLabel16.Text = "Name";
+            // 
+            // metroLabel15
+            // 
+            this.metroLabel15.AutoSize = true;
+            this.metroLabel15.Location = new System.Drawing.Point(57, 207);
+            this.metroLabel15.Name = "metroLabel15";
+            this.metroLabel15.Size = new System.Drawing.Size(50, 19);
+            this.metroLabel15.TabIndex = 3;
+            this.metroLabel15.Text = "Fintech";
             // 
             // coinsDataGrid
             // 
@@ -540,16 +642,6 @@ namespace GreenMonkey.Desktop
             // 
             this.Column13.HeaderText = "Status";
             this.Column13.Name = "Column13";
-            // 
-            // transferNowTab
-            // 
-            this.transferNowTab.HorizontalScrollbarBarColor = true;
-            this.transferNowTab.Location = new System.Drawing.Point(4, 35);
-            this.transferNowTab.Name = "transferNowTab";
-            this.transferNowTab.Size = new System.Drawing.Size(1213, 502);
-            this.transferNowTab.TabIndex = 3;
-            this.transferNowTab.Text = "Transactions";
-            this.transferNowTab.VerticalScrollbarBarColor = true;
             // 
             // metroLabel1
             // 
@@ -653,7 +745,7 @@ namespace GreenMonkey.Desktop
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1438, 777);
+            this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(contentTab);
             this.Controls.Add(this.searchCustomer);
             this.Controls.Add(this.customerAgeTextField);
@@ -674,6 +766,7 @@ namespace GreenMonkey.Desktop
             this.otpTokenPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customerDataGrid)).EndInit();
             this.coinsTab.ResumeLayout(false);
+            this.coinsTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.coinsDataGrid)).EndInit();
             this.accountsTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.accountsDataGrid)).EndInit();
@@ -742,6 +835,15 @@ namespace GreenMonkey.Desktop
         private MetroFramework.Controls.MetroTextBox editTFStatus;
         private MetroFramework.Controls.MetroLabel metroLabel13;
         private MetroFramework.Controls.MetroButton resetCustomerForm;
+        private MetroFramework.Controls.MetroButton resetCoinForm;
+        private MetroFramework.Controls.MetroButton updateCoin;
+        private MetroFramework.Controls.MetroButton SaveCoin;
+        private MetroFramework.Controls.MetroTextBox editTFCoinCode;
+        private MetroFramework.Controls.MetroTextBox editTFCoinName;
+        private MetroFramework.Controls.MetroComboBox editTFCoinFintech;
+        private MetroFramework.Controls.MetroLabel metroLabel17;
+        private MetroFramework.Controls.MetroLabel metroLabel16;
+        private MetroFramework.Controls.MetroLabel metroLabel15;
     }
 }
 

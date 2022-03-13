@@ -40,7 +40,12 @@
       "ProjectGuid": "50cac9de-4388-4ce1-af86-7d87cb9e6d39",
       "DisplayName": "GreenMonkey.Desktop",
       "ColorIndex": 6
+    },
+    "8604c964-c8bd-41eb-bb13-8c1527a2b83c": {
+      "ProjectGuid": "8604c964-c8bd-41eb-bb13-8c1527a2b83c",
+      "DisplayName": "GreenMonkey.Utils",
+      "ColorIndex": 7
     }
   },
-  "NextColorIndex": 7
+  "NextColorIndex": 8
 }
