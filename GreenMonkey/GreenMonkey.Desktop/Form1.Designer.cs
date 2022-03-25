@@ -89,6 +89,17 @@ namespace GreenMonkey.Desktop
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TransferTab = new MetroFramework.Controls.MetroTabPage();
+            this.btnTransfer = new MetroFramework.Controls.MetroButton();
+            this.transferTypeTF = new MetroFramework.Controls.MetroComboBox();
+            this.metroLabel22 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel21 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel20 = new MetroFramework.Controls.MetroLabel();
+            this.transferFromTF = new MetroFramework.Controls.MetroComboBox();
+            this.transferAmountTF = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel19 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel18 = new MetroFramework.Controls.MetroLabel();
+            this.transferToTF = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
@@ -99,6 +110,10 @@ namespace GreenMonkey.Desktop
             this.customerLastnameTextField = new MetroFramework.Controls.MetroTextBox();
             this.customerAgeTextField = new MetroFramework.Controls.MetroTextBox();
             this.searchCustomer = new MetroFramework.Controls.MetroButton();
+            this.transferOTPPanel = new MetroFramework.Controls.MetroPanel();
+            this.metroLabel23 = new MetroFramework.Controls.MetroLabel();
+            this.transferOTPTF = new MetroFramework.Controls.MetroTextBox();
+            this.btnTransferTokenVerification = new MetroFramework.Controls.MetroButton();
             contentTab = new MetroFramework.Controls.MetroTabControl();
             contentTab.SuspendLayout();
             this.customerTab.SuspendLayout();
@@ -108,17 +123,20 @@ namespace GreenMonkey.Desktop
             ((System.ComponentModel.ISupportInitialize)(this.coinsDataGrid)).BeginInit();
             this.accountsTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accountsDataGrid)).BeginInit();
+            this.TransferTab.SuspendLayout();
+            this.transferOTPPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // contentTab
             // 
             contentTab.Controls.Add(this.customerTab);
-            contentTab.Controls.Add(this.transferNowTab);
+            contentTab.Controls.Add(this.TransferTab);
             contentTab.Controls.Add(this.coinsTab);
             contentTab.Controls.Add(this.accountsTab);
+            contentTab.Controls.Add(this.transferNowTab);
             contentTab.Location = new System.Drawing.Point(28, 147);
             contentTab.Name = "contentTab";
-            contentTab.SelectedIndex = 1;
+            contentTab.SelectedIndex = 4;
             contentTab.Size = new System.Drawing.Size(1221, 541);
             contentTab.TabIndex = 10;
             // 
@@ -643,6 +661,113 @@ namespace GreenMonkey.Desktop
             this.Column13.HeaderText = "Status";
             this.Column13.Name = "Column13";
             // 
+            // TransferTab
+            // 
+            this.TransferTab.Controls.Add(this.transferOTPPanel);
+            this.TransferTab.Controls.Add(this.btnTransfer);
+            this.TransferTab.Controls.Add(this.transferTypeTF);
+            this.TransferTab.Controls.Add(this.metroLabel22);
+            this.TransferTab.Controls.Add(this.metroLabel21);
+            this.TransferTab.Controls.Add(this.metroLabel20);
+            this.TransferTab.Controls.Add(this.transferFromTF);
+            this.TransferTab.Controls.Add(this.transferAmountTF);
+            this.TransferTab.Controls.Add(this.metroLabel19);
+            this.TransferTab.Controls.Add(this.metroLabel18);
+            this.TransferTab.Controls.Add(this.transferToTF);
+            this.TransferTab.HorizontalScrollbarBarColor = true;
+            this.TransferTab.Location = new System.Drawing.Point(4, 35);
+            this.TransferTab.Name = "TransferTab";
+            this.TransferTab.Size = new System.Drawing.Size(1213, 502);
+            this.TransferTab.TabIndex = 4;
+            this.TransferTab.Text = "Transfer now";
+            this.TransferTab.VerticalScrollbarBarColor = true;
+            // 
+            // btnTransfer
+            // 
+            this.btnTransfer.Location = new System.Drawing.Point(84, 398);
+            this.btnTransfer.Name = "btnTransfer";
+            this.btnTransfer.Size = new System.Drawing.Size(75, 23);
+            this.btnTransfer.TabIndex = 11;
+            this.btnTransfer.Text = "Tranfer";
+            this.btnTransfer.Click += new System.EventHandler(this.btnTransfer_Click);
+            // 
+            // transferTypeTF
+            // 
+            this.transferTypeTF.FormattingEnabled = true;
+            this.transferTypeTF.ItemHeight = 23;
+            this.transferTypeTF.Location = new System.Drawing.Point(84, 173);
+            this.transferTypeTF.Name = "transferTypeTF";
+            this.transferTypeTF.Size = new System.Drawing.Size(212, 29);
+            this.transferTypeTF.TabIndex = 10;
+            // 
+            // metroLabel22
+            // 
+            this.metroLabel22.AutoSize = true;
+            this.metroLabel22.Location = new System.Drawing.Point(33, 176);
+            this.metroLabel22.Name = "metroLabel22";
+            this.metroLabel22.Size = new System.Drawing.Size(36, 19);
+            this.metroLabel22.TabIndex = 9;
+            this.metroLabel22.Text = "Type";
+            // 
+            // metroLabel21
+            // 
+            this.metroLabel21.AutoSize = true;
+            this.metroLabel21.Location = new System.Drawing.Point(316, 76);
+            this.metroLabel21.Name = "metroLabel21";
+            this.metroLabel21.Size = new System.Drawing.Size(22, 19);
+            this.metroLabel21.TabIndex = 8;
+            this.metroLabel21.Text = "To";
+            // 
+            // metroLabel20
+            // 
+            this.metroLabel20.AutoSize = true;
+            this.metroLabel20.Location = new System.Drawing.Point(28, 76);
+            this.metroLabel20.Name = "metroLabel20";
+            this.metroLabel20.Size = new System.Drawing.Size(41, 19);
+            this.metroLabel20.TabIndex = 7;
+            this.metroLabel20.Text = "From";
+            // 
+            // transferFromTF
+            // 
+            this.transferFromTF.FormattingEnabled = true;
+            this.transferFromTF.ItemHeight = 23;
+            this.transferFromTF.Location = new System.Drawing.Point(84, 66);
+            this.transferFromTF.Name = "transferFromTF";
+            this.transferFromTF.Size = new System.Drawing.Size(212, 29);
+            this.transferFromTF.TabIndex = 6;
+            // 
+            // transferAmountTF
+            // 
+            this.transferAmountTF.Location = new System.Drawing.Point(84, 125);
+            this.transferAmountTF.Name = "transferAmountTF";
+            this.transferAmountTF.Size = new System.Drawing.Size(212, 23);
+            this.transferAmountTF.TabIndex = 5;
+            // 
+            // metroLabel19
+            // 
+            this.metroLabel19.AutoSize = true;
+            this.metroLabel19.Location = new System.Drawing.Point(13, 129);
+            this.metroLabel19.Name = "metroLabel19";
+            this.metroLabel19.Size = new System.Drawing.Size(56, 19);
+            this.metroLabel19.TabIndex = 4;
+            this.metroLabel19.Text = "Amount";
+            // 
+            // metroLabel18
+            // 
+            this.metroLabel18.AutoSize = true;
+            this.metroLabel18.Location = new System.Drawing.Point(84, 35);
+            this.metroLabel18.Name = "metroLabel18";
+            this.metroLabel18.Size = new System.Drawing.Size(109, 19);
+            this.metroLabel18.TabIndex = 3;
+            this.metroLabel18.Text = "Account Number";
+            // 
+            // transferToTF
+            // 
+            this.transferToTF.Location = new System.Drawing.Point(344, 72);
+            this.transferToTF.Name = "transferToTF";
+            this.transferToTF.Size = new System.Drawing.Size(186, 23);
+            this.transferToTF.TabIndex = 2;
+            // 
             // metroLabel1
             // 
             this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
@@ -740,6 +865,47 @@ namespace GreenMonkey.Desktop
             this.searchCustomer.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.searchCustomer.Click += new System.EventHandler(this.SearchCustomer);
             // 
+            // transferOTPPanel
+            // 
+            this.transferOTPPanel.Controls.Add(this.btnTransferTokenVerification);
+            this.transferOTPPanel.Controls.Add(this.transferOTPTF);
+            this.transferOTPPanel.Controls.Add(this.metroLabel23);
+            this.transferOTPPanel.HorizontalScrollbarBarColor = true;
+            this.transferOTPPanel.HorizontalScrollbarHighlightOnWheel = false;
+            this.transferOTPPanel.HorizontalScrollbarSize = 10;
+            this.transferOTPPanel.Location = new System.Drawing.Point(84, 237);
+            this.transferOTPPanel.Name = "transferOTPPanel";
+            this.transferOTPPanel.Size = new System.Drawing.Size(325, 127);
+            this.transferOTPPanel.TabIndex = 12;
+            this.transferOTPPanel.VerticalScrollbarBarColor = true;
+            this.transferOTPPanel.VerticalScrollbarHighlightOnWheel = false;
+            this.transferOTPPanel.VerticalScrollbarSize = 10;
+            this.transferOTPPanel.Visible = false;
+            // 
+            // metroLabel23
+            // 
+            this.metroLabel23.AutoSize = true;
+            this.metroLabel23.Location = new System.Drawing.Point(15, 11);
+            this.metroLabel23.Name = "metroLabel23";
+            this.metroLabel23.Size = new System.Drawing.Size(128, 19);
+            this.metroLabel23.TabIndex = 2;
+            this.metroLabel23.Text = "Enter the OTP/Token";
+            // 
+            // transferOTPTF
+            // 
+            this.transferOTPTF.Location = new System.Drawing.Point(15, 48);
+            this.transferOTPTF.Name = "transferOTPTF";
+            this.transferOTPTF.Size = new System.Drawing.Size(268, 23);
+            this.transferOTPTF.TabIndex = 3;
+            // 
+            // btnTransferTokenVerification
+            // 
+            this.btnTransferTokenVerification.Location = new System.Drawing.Point(208, 88);
+            this.btnTransferTokenVerification.Name = "btnTransferTokenVerification";
+            this.btnTransferTokenVerification.Size = new System.Drawing.Size(75, 23);
+            this.btnTransferTokenVerification.TabIndex = 4;
+            this.btnTransferTokenVerification.Text = "Verify";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -770,6 +936,10 @@ namespace GreenMonkey.Desktop
             ((System.ComponentModel.ISupportInitialize)(this.coinsDataGrid)).EndInit();
             this.accountsTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.accountsDataGrid)).EndInit();
+            this.TransferTab.ResumeLayout(false);
+            this.TransferTab.PerformLayout();
+            this.transferOTPPanel.ResumeLayout(false);
+            this.transferOTPPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -844,6 +1014,21 @@ namespace GreenMonkey.Desktop
         private MetroFramework.Controls.MetroLabel metroLabel17;
         private MetroFramework.Controls.MetroLabel metroLabel16;
         private MetroFramework.Controls.MetroLabel metroLabel15;
+        private MetroFramework.Controls.MetroTabPage TransferTab;
+        private MetroFramework.Controls.MetroButton btnTransfer;
+        private MetroFramework.Controls.MetroComboBox transferTypeTF;
+        private MetroFramework.Controls.MetroLabel metroLabel22;
+        private MetroFramework.Controls.MetroLabel metroLabel21;
+        private MetroFramework.Controls.MetroLabel metroLabel20;
+        private MetroFramework.Controls.MetroComboBox transferFromTF;
+        private MetroFramework.Controls.MetroTextBox transferAmountTF;
+        private MetroFramework.Controls.MetroLabel metroLabel19;
+        private MetroFramework.Controls.MetroLabel metroLabel18;
+        private MetroFramework.Controls.MetroTextBox transferToTF;
+        private MetroFramework.Controls.MetroPanel transferOTPPanel;
+        private MetroFramework.Controls.MetroButton btnTransferTokenVerification;
+        private MetroFramework.Controls.MetroTextBox transferOTPTF;
+        private MetroFramework.Controls.MetroLabel metroLabel23;
     }
 }
 

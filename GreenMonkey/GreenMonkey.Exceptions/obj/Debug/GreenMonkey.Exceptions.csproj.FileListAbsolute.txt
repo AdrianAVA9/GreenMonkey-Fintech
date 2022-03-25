@@ -1,0 +1,9 @@
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Exceptions\obj\Debug\GreenMonkey.Exceptions.csproj.AssemblyReference.cache
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Exceptions\obj\Debug\GreenMonkey.Exceptions.csproj.CoreCompileInputs.cache
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Exceptions\bin\Debug\GreenMonkey.Exceptions.dll
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Exceptions\bin\Debug\GreenMonkey.Exceptions.pdb
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Exceptions\bin\Debug\GreenMonkey.Models.dll
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Exceptions\bin\Debug\GreenMonkey.Models.pdb
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Exceptions\obj\Debug\GreenMonkey.Exceptions.csproj.CopyComplete
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Exceptions\obj\Debug\GreenMonkey.Exceptions.dll
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Exceptions\obj\Debug\GreenMonkey.Exceptions.pdb

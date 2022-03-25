@@ -17,10 +17,10 @@ namespace GreenMonkey.Api.Validators
 
             RuleFor(x => x.Type)
                 .NotEmpty()
-                .Must(x => x == "debe" || x == "haber")
+                .Must(x => x == "credito" || x == "debito")
                 .WithMessage("Invalid type");
 
-            RuleFor(x => x.AccountNumber)
+            RuleFor(x => x.UBAN)
                .NotEmpty()
                .Length(14, 14);
         }

@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenMonkey.Desktop", "Gree
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenMonkey.Utils", "GreenMonkey.Utils\GreenMonkey.Utils.csproj", "{8604C964-C8BD-41EB-BB13-8C1527A2B83C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenMonkey.Exceptions", "GreenMonkey.Exceptions\GreenMonkey.Exceptions.csproj", "{886FDCFD-16AB-4B35-AB3D-A47BAE7B6E6E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{8604C964-C8BD-41EB-BB13-8C1527A2B83C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8604C964-C8BD-41EB-BB13-8C1527A2B83C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8604C964-C8BD-41EB-BB13-8C1527A2B83C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{886FDCFD-16AB-4B35-AB3D-A47BAE7B6E6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{886FDCFD-16AB-4B35-AB3D-A47BAE7B6E6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{886FDCFD-16AB-4B35-AB3D-A47BAE7B6E6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{886FDCFD-16AB-4B35-AB3D-A47BAE7B6E6E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

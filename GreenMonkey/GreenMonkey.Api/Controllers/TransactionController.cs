@@ -53,12 +53,12 @@ namespace GreenMonkey.Api.Controllers
                 }
 
                 var transaction = _mapper.Map<Transaction>(transactionDto);
-                var existingAccount = _accountManager.RetrieveAccount(new Account() { Number = transaction.AccountNumber });
+                var existingAccount = _accountManager.RetrieveAccount(new Account() { Number = transaction.UBAN });
 
                 if (existingAccount == null)
                 {
                     return new ErrorResult(Request, HttpStatusCode.Conflict, new List<ValidationFailure>() {
-                        new ValidationFailure("AccountNumber", string.Format("The account number: {0} does not exists", transaction.AccountNumber))
+                        new ValidationFailure("AccountNumber", string.Format("The account number: {0} does not exists", transaction.UBAN))
                     });
                 }
 
@@ -105,7 +105,7 @@ namespace GreenMonkey.Api.Controllers
         {
             try
             {
-                var transactions = _transactionManager.RetrieveTransactionsByAccount(new Transaction() { AccountNumber = number });
+                var transactions = _transactionManager.RetrieveTransactionsByAccount(new Transaction() { UBAN = number });
 
                 return Ok(transactions.Select(transaction => _mapper.Map<TransactionDto>(transaction)));
             }

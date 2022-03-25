@@ -21,8 +21,17 @@ namespace GreenMonkey.Desktop
         public List<Customer> Customers { get; set; }
         public List<Coin> Coins { get; set; }
         private SMSClient _SMSClient { get; set; }
-        private string _OTPToken { get; set; }
+
+        /** Properties for customer registration **/
+        private string _CustomerRegistrationOTPToken { get; set; }
         private Customer _CUSTOMER_IN_PROCESS { get; set; }
+        
+        /** Properties for transaction **/
+        private string _TransactionOTPToken { get; set; }
+        private Transaction _TRANSACTION_IN_PROCESS { get; set; }
+
+        /** Properties for consulted customer **/
+        private Customer _CUSTOMER_IN_ACTION { get; set; }
 
         public Form1()
         {
@@ -41,6 +50,13 @@ namespace GreenMonkey.Desktop
         {
             SetupCustomerDataGrid();
             SetupCoinsDataGrid();
+            SetupTransactionType();
+        }
+
+        private void SetupTransactionType()
+        {
+            transferTypeTF.Items.Add("Credito");
+            transferTypeTF.Items.Add("Debito");
         }
 
         private void SetupCoinsDataGrid()
@@ -126,8 +142,8 @@ namespace GreenMonkey.Desktop
                     Status = editTFStatus.Text
                 };
 
-                _OTPToken = OTPClient.GenerateOTP(6);
-                var message = string.Format("Your 6-digit security code is {0}. Don't share this code whit anyone", _OTPToken);
+                _CustomerRegistrationOTPToken = OTPClient.GenerateOTP(6);
+                var message = string.Format("Your 6-digit security code is {0}. Don't share this code whit anyone", _CustomerRegistrationOTPToken);
 
                 _SMSClient.SendMessage(message, _CUSTOMER_IN_PROCESS.PhoneNumber);
 
@@ -143,7 +159,7 @@ namespace GreenMonkey.Desktop
         {
             var optToken = TFotpToken.Text;
 
-            if (!optToken.Equals(_OTPToken))
+            if (!optToken.Equals(_CustomerRegistrationOTPToken))
             {
                 MessageBox.Show("Invalid OTP");
                 return;
@@ -154,7 +170,7 @@ namespace GreenMonkey.Desktop
             ResetCustomerForm();
 
             _CUSTOMER_IN_PROCESS = null;
-            _OTPToken = string.Empty;
+            _CustomerRegistrationOTPToken = string.Empty;
         }
 
         private void UpdateCustomer(object sender, EventArgs e)
@@ -199,11 +215,13 @@ namespace GreenMonkey.Desktop
                 customernameTextField.Text = existingCustomer.Name;
                 customerLastnameTextField.Text = existingCustomer.LastName;
                 customerAgeTextField.Text = existingCustomer.Age.ToString();
-                
+                _CUSTOMER_IN_ACTION = existingCustomer;
+
                 LoadAccounts(existingCustomer.Accounts);
             }
             else
             {
+                _CUSTOMER_IN_ACTION = null;
                 customernameTextField.Text = "";
                 customerLastnameTextField.Text = "";
                 customerAgeTextField.Text = "";
@@ -228,6 +246,7 @@ namespace GreenMonkey.Desktop
                 };
 
                 this.accountsDataGrid.Rows.Add(row);
+                this.transferFromTF.Items.Add(account.Number);
             }
         }
 
@@ -263,6 +282,63 @@ namespace GreenMonkey.Desktop
         private void LoadTransactions(Customer customer)
         {
 
+        }
+
+        private void btnTransfer_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (_CUSTOMER_IN_ACTION == null)
+                    throw new Exception("Plese select a customer");
+
+                Func<string, bool> isEmpty = (value) => string.IsNullOrEmpty(value);
+                var from = this.transferFromTF.Text;
+                var to = this.transferToTF.Text;
+                var amount = this.transferAmountTF.Text;
+                var type = this.transferTypeTF.Text;
+
+                if (isEmpty(from))
+                    throw new Exception("Invalid ");
+
+                if (isEmpty(to) && to.Length != 14)
+                    throw new Exception("Invalid destination account number. Must has 14 characters. ex: CR_0000_000000");
+
+                if (isEmpty(amount) || !decimal.TryParse(amount, out _) || decimal.Parse(amount) <= 0)
+                    throw new Exception("The amount must be numeric and up to zero");
+
+                if (isEmpty(type))
+                    throw new Exception("Please choose the transaction type");
+
+                var _TRANSACTION_IN_PROCESS = new Transaction()
+                {
+                    UBAN = to,
+                    Amount = decimal.Parse(amount),
+                    RegisteredAt = DateTime.Now,
+                    Type = type
+                };
+
+                if (isEmpty(_CUSTOMER_IN_ACTION.PhoneNumber))
+                    throw new Exception("The customer phoneNumber is invalid");
+
+                _TransactionOTPToken = OTPClient.GenerateOTP(6);
+                var message = string.Format("Your 6-digit security code is {0}. Don't share this code whit anyone", _TransactionOTPToken);
+
+                //_SMSClient.SendMessage(message, _CUSTOMER_IN_ACTION.PhoneNumber);
+                this.transferOTPTF.Text = _TransactionOTPToken; //Eliminar luego
+                transferOTPPanel.Visible = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ResetTransferForm()
+        {
+            this.transferFromTF.Text = "";
+            this.transferToTF.Text = "";
+            this.transferAmountTF.Text = "";
+            this.transferTypeTF.Text = "";
         }
     }
 }

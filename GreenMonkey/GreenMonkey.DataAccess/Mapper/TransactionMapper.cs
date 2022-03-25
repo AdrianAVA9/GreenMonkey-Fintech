@@ -23,7 +23,7 @@ namespace GreenMonkey.DataAccess.Mapper
             var transaction = (Transaction)entity;
             operation.AddDecimalParam(DB_COL_AMOUNT, transaction.Amount);
             operation.AddVarcharParam(DB_COL_TYPE, transaction.Type);
-            operation.AddVarcharParam(DB_COL_ACCOUNT_NUMBER, transaction.AccountNumber);
+            operation.AddVarcharParam(DB_COL_ACCOUNT_NUMBER, transaction.UBAN);
 
             return operation;
         }
@@ -53,7 +53,7 @@ namespace GreenMonkey.DataAccess.Mapper
             var operation = new SqlOperation { ProcedureName = "RET_TRANSACTION_BY_ACCOUNT_PR" };
 
             var t = (Transaction)entity;
-            operation.AddVarcharParam(DB_COL_ACCOUNT_NUMBER, t.AccountNumber);
+            operation.AddVarcharParam(DB_COL_ACCOUNT_NUMBER, t.UBAN);
 
             return operation;
         }
@@ -67,7 +67,7 @@ namespace GreenMonkey.DataAccess.Mapper
             var transaction = new Transaction
             {
                 Id = GetIntValue(row, DB_COL_ID),
-                AccountNumber = GetStringValue(row, DB_COL_ACCOUNT_NUMBER),
+                UBAN = GetStringValue(row, DB_COL_ACCOUNT_NUMBER),
                 Amount = GetDecimalValue(row, DB_COL_AMOUNT),
                 Type = GetStringValue(row, DB_COL_TYPE),
                 RegisteredAt = GetDateValue(row, DB_COL_REGISTERED_AT)

@@ -24,6 +24,10 @@ namespace GreenMonkey.Utils
         public void SendMessage(string message, string phoneNumber)
         {
             TwilioClient.Init(AccountId, Token);
+
+            if(!phoneNumber.StartsWith("+"))
+                phoneNumber = "+" + phoneNumber;
+
             var messageResource = MessageResource.Create(
                 body: message,
                 from: new PhoneNumber(PhoneNumber),

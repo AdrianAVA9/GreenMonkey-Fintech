@@ -45,7 +45,12 @@
       "ProjectGuid": "8604c964-c8bd-41eb-bb13-8c1527a2b83c",
       "DisplayName": "GreenMonkey.Utils",
       "ColorIndex": 7
+    },
+    "886fdcfd-16ab-4b35-ab3d-a47bae7b6e6e": {
+      "ProjectGuid": "886fdcfd-16ab-4b35-ab3d-a47bae7b6e6e",
+      "DisplayName": "GreenMonkey.Exceptions",
+      "ColorIndex": 8
     }
   },
-  "NextColorIndex": 8
+  "NextColorIndex": 9
 }
