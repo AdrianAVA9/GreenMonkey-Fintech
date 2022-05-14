@@ -1,51 +1,91 @@
-﻿@model ICollection<GreenMonkey.UI.Models.Suscriptor>
+﻿@using GreenMonkey.UI.Models.Helpers
+@*@model ICollection<GreenMonkey.UI.Models.Suscriptor>*@
+
+<script src="~/Scripts/Views/ListFintechs.js"></script>
 
 <p>
-    @Html.ActionLink("Registrar suscriptor", "SuscriptorForm", null, new { @class="btn btn-primary pull-right" } )
+    @Html.ActionLink("Registrar suscriptor", "SuscriptorForm", null, new { @class = "btn btn-primary pull-right" })
 </p>
-<table class="table table-hover table-sm" style="margin-top:70px;">
-    <tr class="table-primary">
-        <th>
-            Código
-        </th>
-        <th>
-            Nombre
-        </th>
-        <th>
-            Descripción
-        </th>
-        <th>
-            Propietario
-        </th>
-        <th>
-            Url
-        </th>
-        <th></th>
-    </tr>
+@Html.CtrlTextbox("List suscriptors", "search-suscriptor", "Buscar suscriptor")
+@Html.CtrlTable("ListFintechs", "tblListFintechs", "List of Fintech", "Code,Name", "Code,Name,Owner", "selectRow", "")
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Code)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Owner)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BaseUrl)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "Edit", new { code =item.Code }) |
-            @Html.ActionLink("Detalles", "Details", new { code = item.Code }) |
-            @Html.ActionLink("Eliminar", "Delete", new { code = item.Code })
-        </td>
-    </tr>
-}
+<form id="customer-form">
+    <fieldset>
+        <legend>Registrar cuenta</legend>
+        <div class="form-group">
+            @Html.CtrlTextbox("List-suscriptors", "customer-id", "Identification", classname: "form-control", type: "text", name: "Identification")
+        </div>
+        <div class="form-group">
+            @Html.CtrlTextbox("List-suscriptors", "customer-name", "Name", classname: "form-control", type: "text", name: "Name")
+        </div>
+        <div class="form-group">
+            @Html.CtrlTextbox("List-suscriptors", "customer-lastname", "Lastname", classname: "form-control", type: "text", name: "Lastname")
+        </div>
+        <div class="form-group">
+            @Html.CtrlTextbox("List-suscriptors", "customer-nickname", "Nickname", classname: "form-control", type: "text", name: "Nickname")
+        </div>
+        <div class="form-group">
+            @Html.CtrlTextbox("List-suscriptors", "customer-status", "Status", classname: "form-control", type: "text", name: "Status")
+        </div>
+        <div class="form-group">
+            @Html.CtrlTextbox("List-suscriptors", "customer-birthdate", "Birthdate", classname: "form-control", type: "date", name: "Birthdate")
+        </div>
+        <div class="form-group">
+            @Html.CtrlTextbox("List-suscriptors", "email-address", "Email address", classname: "form-control", type: "email", name: "Email")
+        </div>
+        <div class="form-group">
+            @Html.CtrlTextbox("List-suscriptors", "customer-phone", "Phone number", classname: "form-control", type: "text", name: "Phone")
+        </div>
+    </fieldset>
+</form>
+@Html.CtrlButton("ListFintechs", "create-customer", "Create", btnClass: "btn btn-success", onClickFunction: "createAccount")
+@Html.CtrlButton("ListFintechs", "clear-customer-form", "Clear", onClickFunction: "clearForm")
 
-</table>
+
+
+@*<table id="tbl-suscriptors" class="table table-hover table-sm" style="margin-top:70px;">
+        <tr class="table-primary">
+            <th>
+                Código
+            </th>
+            <th>
+                Nombre
+            </th>
+            <th>
+                Descripción
+            </th>
+            <th>
+                Propietario
+            </th>
+            <th>
+                Url
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Owner)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BaseUrl)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { code =item.Code }) |
+                @Html.ActionLink("Detalles", "Details", new { code = item.Code }) |
+                @Html.ActionLink("Eliminar", "Delete", new { code = item.Code })
+            </td>
+        </tr>
+    }
+
+    </table>*@

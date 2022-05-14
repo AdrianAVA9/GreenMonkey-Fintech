@@ -13,6 +13,7 @@ namespace GreenMonkey.Manager
     {
         private CustomerCrudFactory CustomerFactory { get; set; }
         private AccountCrudFactory AccountFactory { get; set; }
+
         public CustomerManager()
         {
             CustomerFactory = new CustomerCrudFactory();

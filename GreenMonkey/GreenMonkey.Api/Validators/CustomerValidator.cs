@@ -23,6 +23,14 @@ namespace GreenMonkey.Api.Validators
                 .NotEmpty()
                 .Length(1, 50);
 
+            RuleFor(x => x.PhoneNumber)
+                .NotEmpty()
+                .Length(1, 50);
+
+            RuleFor(x => x.Email)
+                .NotEmpty()
+                .Length(1, 50);
+
             RuleFor(x => x.Nickname)
                 .NotEmpty()
                 .Length(1, 30);

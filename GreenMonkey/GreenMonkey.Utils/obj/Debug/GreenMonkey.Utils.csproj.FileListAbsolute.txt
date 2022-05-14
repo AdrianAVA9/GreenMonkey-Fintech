@@ -14,3 +14,4 @@ C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey
 C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Utils\obj\Debug\GreenMonkey.Utils.csproj.CopyComplete
 C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Utils\obj\Debug\GreenMonkey.Utils.dll
 C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Utils\obj\Debug\GreenMonkey.Utils.pdb
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Utils\obj\Debug\GreenMonkey.Utils.csprojAssemblyReference.cache

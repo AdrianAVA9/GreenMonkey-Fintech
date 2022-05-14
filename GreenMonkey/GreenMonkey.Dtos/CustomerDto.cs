@@ -13,6 +13,8 @@ namespace GreenMonkey.Dtos
         public string LastName { get; set; }
         public string Nickname { get; set; }
         public string Status { get; set; }
+        public string PhoneNumber { get; set; }
+        public string Email { get; set; }
         public DateTime Birthdate { get; set; }
         public int Age { get; set; }
         public DateTime RegisteredAt { get; set; }

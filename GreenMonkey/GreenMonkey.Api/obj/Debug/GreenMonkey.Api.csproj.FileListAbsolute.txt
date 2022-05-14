@@ -78,7 +78,6 @@ C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey
 C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Api\bin\System.Web.WebPages.Razor.xml
 C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Api\bin\Antlr3.Runtime.pdb
 C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Api\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Api\obj\Debug\GreenMonkey.Api.csproj.AssemblyReference.cache
 C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Api\obj\Debug\GreenMonkey.Api.csproj.CoreCompileInputs.cache
 C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Api\obj\Debug\GreenMonkey.Api.csproj.CopyComplete
 C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Api\obj\Debug\GreenMonkey.Api.dll
@@ -120,3 +119,4 @@ C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey
 C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Api\bin\EntityFramework.xml
 C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Api\bin\EntityFramework.SqlServer.xml
 C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Api\bin\FluentValidation.xml
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Api\obj\Debug\GreenMonkey.Api.csproj.AssemblyReference.cache
