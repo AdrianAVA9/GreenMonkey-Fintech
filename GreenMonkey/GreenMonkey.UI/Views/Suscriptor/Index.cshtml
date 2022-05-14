@@ -1,5 +1,5 @@
 ﻿@using GreenMonkey.UI.Models.Helpers
-@*@model ICollection<GreenMonkey.UI.Models.Suscriptor>*@
+@model ICollection<GreenMonkey.UI.Models.Suscriptor>
 
 <script src="~/Scripts/Views/ListFintechs.js"></script>
 
@@ -7,7 +7,7 @@
     @Html.ActionLink("Registrar suscriptor", "SuscriptorForm", null, new { @class = "btn btn-primary pull-right" })
 </p>
 @Html.CtrlTextbox("List suscriptors", "search-suscriptor", "Buscar suscriptor")
-@Html.CtrlTable("ListFintechs", "tblListFintechs", "List of Fintech", "Code,Name", "Code,Name,Owner", "selectRow", "")
+@*@Html.CtrlTable("ListFintechs", "tblListFintechs", "List of Fintech", "Code,Name", "Code,Name,Owner", "selectRow", "")
 
 <form id="customer-form">
     <fieldset>
@@ -39,11 +39,11 @@
     </fieldset>
 </form>
 @Html.CtrlButton("ListFintechs", "create-customer", "Create", btnClass: "btn btn-success", onClickFunction: "createAccount")
-@Html.CtrlButton("ListFintechs", "clear-customer-form", "Clear", onClickFunction: "clearForm")
+@Html.CtrlButton("ListFintechs", "clear-customer-form", "Clear", onClickFunction: "clearForm")*@
 
 
 
-@*<table id="tbl-suscriptors" class="table table-hover table-sm" style="margin-top:70px;">
+<table id="tbl-suscriptors" class="table table-hover table-sm" style="margin-top:70px;">
         <tr class="table-primary">
             <th>
                 Código
@@ -88,4 +88,4 @@
         </tr>
     }
 
-    </table>*@
+    </table>

@@ -3,3 +3,4 @@ C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey
 C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Models\obj\Debug\GreenMonkey.Models.csproj.CoreCompileInputs.cache
 C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Models\obj\Debug\GreenMonkey.Models.dll
 C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Models\obj\Debug\GreenMonkey.Models.pdb
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Models\obj\Debug\GreenMonkey.Models.csprojAssemblyReference.cache

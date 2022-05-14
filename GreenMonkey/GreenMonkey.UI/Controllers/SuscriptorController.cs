@@ -19,10 +19,8 @@ namespace GreenMonkey.UI.Controllers
         }
         public ActionResult Index()
         {
-            //var sucriptors = _service.RetreaveSuscriptors();
-            //return View(sucriptors);
-
-            return View();
+            var sucriptors = _service.RetreaveSuscriptors();
+            return View(sucriptors);
         }
 
         public ActionResult Details(string code)

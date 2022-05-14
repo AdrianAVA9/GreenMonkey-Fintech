@@ -119,4 +119,4 @@ C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey
 C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Api\bin\EntityFramework.xml
 C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Api\bin\EntityFramework.SqlServer.xml
 C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Api\bin\FluentValidation.xml
-C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Api\obj\Debug\GreenMonkey.Api.csproj.AssemblyReference.cache
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Api\obj\Debug\GreenMonkey.Api.csprojAssemblyReference.cache

@@ -20,4 +20,4 @@ C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey
 C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Manager\bin\Debug\Newtonsoft.Json.xml
 C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Manager\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
 C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Manager\bin\Debug\Microsoft.IdentityModel.Tokens.xml
-C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Manager\obj\Debug\GreenMonkey.Manager.csproj.AssemblyReference.cache
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.Manager\obj\Debug\GreenMonkey.Manager.csprojAssemblyReference.cache
