@@ -30,7 +30,7 @@ namespace GreenMonkey.UI.Controllers
 
             var suscriptor = _service.RetreaveSuscriptor(code);
 
-            if(suscriptor == null)
+            if (suscriptor == null)
                 return RedirectToAction("NotFound", "Error");
 
             return View(suscriptor);
@@ -38,8 +38,10 @@ namespace GreenMonkey.UI.Controllers
 
         public ActionResult SuscriptorForm()
         {
-            var suscriptorViewModel = new SuscriptorForViewModel() { 
-                Heading = "Registrar suscriptor"
+            var suscriptorViewModel = new SuscriptorForViewModel()
+            {
+                Heading = "Registrar suscriptor",
+                FormAction = Models.Enums.FormAction.Create
             };
 
             return View(suscriptorViewModel);
@@ -53,6 +55,8 @@ namespace GreenMonkey.UI.Controllers
             {
                 if (!ModelState.IsValid)
                 {
+                    viewModel.Heading = "Registrar suscriptor";
+                    viewModel.FormAction = Models.Enums.FormAction.Create;
                     return View("SuscriptorForm", viewModel);
                 }
 
@@ -83,13 +87,15 @@ namespace GreenMonkey.UI.Controllers
             if (suscriptor == null)
                 return RedirectToAction("NotFound", "Error");
 
-            var suscriptorViewModel = new SuscriptorForViewModel() {
+            var suscriptorViewModel = new SuscriptorForViewModel()
+            {
                 Code = suscriptor.Code,
                 Name = suscriptor.Name,
                 Owner = suscriptor.Owner,
                 Description = suscriptor.Description,
                 BaseUrl = suscriptor.BaseUrl,
-                Heading = "Editar suscriptor"
+                Heading = "Editar suscriptor",
+                FormAction = Models.Enums.FormAction.Update
             };
 
             return View("SuscriptorForm", suscriptorViewModel);
@@ -103,6 +109,8 @@ namespace GreenMonkey.UI.Controllers
             {
                 if (!ModelState.IsValid)
                 {
+                    viewModel.Heading = "Editar suscriptor";
+                    viewModel.FormAction = Models.Enums.FormAction.Update;
                     return View("SuscriptorForm", viewModel);
                 }
 

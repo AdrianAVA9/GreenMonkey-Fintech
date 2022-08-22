@@ -1,4 +1,5 @@
 ﻿using GreenMonkey.UI.Controllers;
+using GreenMonkey.UI.Models.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -35,6 +36,8 @@ namespace GreenMonkey.UI.ViewModels
 
         public string Heading { get; set; }
 
+        public FormAction FormAction { get; set; }
+
         public string Action
         {
             get
@@ -45,7 +48,7 @@ namespace GreenMonkey.UI.ViewModels
                 Expression<Func<SuscriptorController, ActionResult>> create =
                     (c => c.Create(this));
 
-                var action = !string.IsNullOrEmpty(Code) ? update : create;
+                var action = FormAction == FormAction.Update ? update : create;
                 return (action.Body as MethodCallExpression).Method.Name;
             }
 

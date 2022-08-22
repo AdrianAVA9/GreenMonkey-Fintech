@@ -137,6 +137,7 @@
     <Compile Include="Models\Controls\CtrlButtonModel.cs" />
     <Compile Include="Models\Controls\CtrlTableModel.cs" />
     <Compile Include="Models\Controls\CtrlTextbox.cs" />
+    <Compile Include="Models\Enums\PageAction.cs" />
     <Compile Include="Models\Helpers\ControlExtensions.cs" />
     <Compile Include="Models\Suscriptor.cs" />
     <Compile Include="Models\SuscriptorStatus.cs" />
@@ -175,7 +176,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Suscriptor\Create.cshtml" />
     <Content Include="Views\Suscriptor\Index.cshtml" />
     <Content Include="Views\Error\NotFound.cshtml" />
     <Content Include="Views\Suscriptor\Details.cshtml" />

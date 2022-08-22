@@ -80,4 +80,4 @@ C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey
 C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.UI\bin\EntityFramework.SqlServer.dll
 C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.UI\bin\EntityFramework.xml
 C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.UI\bin\EntityFramework.SqlServer.xml
-C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.UI\obj\Debug\GreenMonkey.UI.csprojAssemblyReference.cache
+C:\Users\adria\Documents\Repositories\GreenMonkeyFintech\GreenMonkey\GreenMonkey.UI\obj\Debug\GreenMonkey.UI.csproj.AssemblyReference.cache
